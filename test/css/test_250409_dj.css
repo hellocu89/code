@@ -1,0 +1,30 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+/* *= 와일드카드 - 모든태그 전부를 뜻함 */
+*{
+    margin: 0;
+    padding: 0;
+}
+.about {
+    background-image: url(../images/about_bg.png);
+    height: 685px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #ffffff;
+    text-align: center;
+}
+.about h1 {
+    font-size: 75px;
+    font-weight: 700;
+    padding: 152px 0 50px 0;
+}
+.about p {
+    font-size: 75px;
+    font-weight: 700;
+}
