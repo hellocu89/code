@@ -12,6 +12,8 @@ body {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    /* width와 height와 padding을 같이주면 사이즈가 늘어남- 이 현상을 막는코드*/
 } /*브라우저가 기본으로 주는 여백 삭제*/
 h1,h2,h3,h4,h5,h6 {
     font-size: inherit;
@@ -44,7 +46,8 @@ a {
     padding: 355px 0 30px 0;
 }
 .esg .sub_tit,
-.int .sub_tit {
+.int .sub_tit,
+.mission .sub_tit {
     font-size: 48px;
     font-weight: 700;
     line-height: 1.4;
@@ -58,7 +61,7 @@ a {
     display: inline-block
 }
 .int {
-    margin: 208px 0 200px 0;
+    margin: 208px 0 0 0;
 }
 .int h1 {
    color: #002f87;
@@ -79,4 +82,26 @@ a {
 .int ul li strong {
     font-weight: 700;
     color: #1d1d1d;
+}
+.mission {
+    margin: 180px 0 200px 0;
+}
+.mission .inner {
+    background-image: url(../images/mission_bg.png);
+    height: 530px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 134px 0 0 82px;
+}
+.mission .cnt {
+    color: rgba(255,255,255,0.8); /*opacity 80%*/
+}
+section {
+    border-color: #555555;
+    background-color: #555555;
+}
+h2 {
+    start
 }
