@@ -1,0 +1,92 @@
+/* index 파일에서는 main.css만 호출, 
+   다른 필요한 css는 main이 부른다 */
+@import url(font.css);
+body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #555;
+    word-break: keep-all;
+}
+/* START : 태그의 기본 스타일 삭제(초기화)*/
+h1,h2,h3,h4,h5,h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+li { 
+    list-style: none; /* 동그라미 삭제*/
+}
+* {
+    margin: 0;
+    padding: 0; /* 여백 삭제*/
+    box-sizing: border-box;
+}
+/* END : 태그의 기본 스타일 삭제(초기화)*/
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto
+}
+.global h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #1d1d1d;
+    margin: 115px 0 16px 0;
+}
+.global .sub_tit {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #00b900;
+    margin: 0 0 9px 0;
+}
+
+.global .more a {
+    border: 1px solid #00b900;
+    padding: 5px 30px;
+    display: inline-block
+}
+.global .more {
+    color: #00b900;
+    padding: 28px 0 0 0;
+}
+.global .photo {
+    margin: 42px 0 89px 0;
+}
+.line h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #fff;
+    padding: 117px 0 15px 0;
+    text-align: center;
+}
+.line {
+    background-image: url(../images/ima3.png);
+    height: 642px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* 배경꽉채우기*/
+    color: #fff;
+}
+.line .more a {
+    border: 1px solid #fff;
+    padding: 5px 24px;
+    display: inline-block
+}
+.line .photo {
+    margin: 17px 0 100px 0;
+}
+.line .more {
+    color: #fff;
+    padding: 32px 0 26px 0;
+    text-align: center;
+}
+.line .sub_tit {
+    text-align: center;
+}
