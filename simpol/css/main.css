@@ -1,0 +1,28 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /*logo와 inner를 header 넓이 안에서 좌우 끝으로 배치*/
+    height: 100px;
+    padding: 0 70px 0 70px;
+}
+header .logo {
+    margin: 27px 0 0 0;
+}
+header .inner {
+    display: flex;
+    /*gnb shop을 좌우로*/
+}
+header .inner .gnb ul {
+    display: flex;
+}
+header .inner .gnb ul li a {
+    display: block; /* a 필수값*/
+    color: #1d1d1d;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    padding: 45px 23px;
+}
