@@ -15,6 +15,7 @@ header .logo {
 header .inner {
     display: flex;
     /*gnb shop을 좌우로*/
+    align-items: center; /*위아래 가운데*/
 }
 header .inner .gnb ul {
     display: flex;
@@ -24,5 +25,96 @@ header .inner .gnb ul li a {
     color: #1d1d1d;
     font-size: 20px;
     letter-spacing: -0.01em;
-    padding: 45px 23px;
+    padding: 0 23px;
+    line-height: 100px;
+    /* header의 높이랑 1차 메뉴의 a의 높이는 같아야함
+    a의 행간을 header의 높이값으로 줌
+    a의 높이가 생기고 글자는 위아래 가운데 정렬*/
+}
+header .inner .shop {
+    font-size: 20px;
+    color: #fff;
+    border: 1px solid #133e35;
+    padding: 7px 20px;
+    border-radius: 28px;
+    margin: 0 0 0 10px;
+    background-color: #133e35;
+}
+.visual {
+    background: url(../images/visual_bg2.jpg) no-repeat center center / cover;
+    height: 750px;
+    margin: 0 20px;
+    border-radius: 39px;
+    padding: ;
+}
+.visual h2 {
+    font-size: 50px;
+    padding: 380px 0 20px 0;
+    color: #1d1d1d;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+.product {
+    margin: 242px 0 0 0;
+}
+.product .tit {
+    color: #133e35;
+    text-align: center;
+}
+.product .tit p {
+    font-size: 50px;
+    font-weight: 800;
+    margin: 23px 0 77px 0;
+}
+.product .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.product .list ul li {
+    width: 404px;
+}
+.product .list ul li a {
+    display: block;
+}
+.product .list ul li a .photo {
+    font-size: 0;
+    line-height: 0;
+    /* 이미지하단에 여백 삭제하기 위해서
+    이미지 태그에 직접 주면 적용 안됨
+    이미지 태그만 감싸는 요소에 줘야함
+    ex) border 이미지말고 포토에 적용*/
+}
+.product .list ul li a h3 {
+    text-align: center;
+    margin: 16px 0 0 0;
+    white-space: nowrap; /* 1줄로 제한하기*/
+    overflow: hidden; /* 영역을 넘어가면 삭제*/
+}
+.network {
+    margin: 242px 0 0 0;
+    background: url(../images/network_bg.jpg) no-repeat center center / cover;
+    height: 800px;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+}
+.network h2 {
+    padding: 208px 0 52px 0;
+}
+.network .sub_tit {
+    font-size: 50px;
+    font-weight: 800;
+    margin: 0 0 17px 0;
+}
+.network a {
+    border: 1px solid #fff;
+    padding: 7px 25px;
+    display: inline-block;
+    margin: 62px 0 0 0;
+
+}
+
+
+
+footer{
+ margin: 400px 0 0 0;
 }
