@@ -45,7 +45,6 @@ header .inner .shop {
     height: 750px;
     margin: 0 20px;
     border-radius: 39px;
-    padding: ;
 }
 .visual h2 {
     font-size: 50px;
@@ -112,9 +111,111 @@ header .inner .shop {
     margin: 62px 0 0 0;
 
 }
-
-
-
+.coummunity {
+    margin: 242px 0 0 0;
+}
+.coummunity .tit {
+    color: #133e35;
+    text-align: center;
+}
+.coummunity .tit p {
+    font-size: 50px;
+    font-weight: 800;
+    margin: 23px 0 77px 0;
+}
+.coummunity .list {
+    display: flex; /*그룹 좌우로 배치*/
+    justify-content: space-between;
+    margin: 0 0 162px 0;
+}
+.coummunity .list .group {
+    width: calc(50% - 6px);
+    /*
+     몇개로 분할하냐? 2개이면 100/2=50%
+     사이의 여백의 총합 / 분할하는 갯수로 나눔 12/2=6px   
+     표가 3개면 사이 여백2개의 합   
+    */
+}
+.coummunity .list ul {
+    display: flex;
+    flex-wrap: wrap; /* li 2줄*/
+    gap : 12px;
+}    
+.coummunity .list ul li.color,
+.coummunity .list ul li.grey  {
+    width: calc(50% - 6px);
+}
+.coummunity .list ul li.review {
+    width: 100%; /*ul의기준100%, 나를 감싸는 요소의 넓이의 100%*/  
+}
+.coummunity .list ul li a{
+    padding: 0 31px 31px 31px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.coummunity .list ul li.color a,
+.coummunity .list ul li.grey a {
+    height: 246px;
+    color: #1d1d1d;
+}
+.coummunity .list ul li.review a {
+    height: 398px;
+}
+/*li의 사이즈와 a의 사이즈가 동일해야 함
+  1. li와 a 사이즈가 동일하고
+  2. 높이를 특정해서 줘야 되는 디자인에만
+   --li에는 넓이를 주고 a에는 높이를 준다*/
+.coummunity .list ul li.grey a {
+    background-color: #E3E1D7;
+}
+.coummunity .list ul li.color.bg1 a {
+    background-color: #133e35;
+    color: #fff;
+ }
+ .coummunity .list ul li.color.bg2 a {
+    background-color: #DFC642;
+    color: #fff;
+ }
+.coummunity .list ul li.review.bg1 a {
+    background: url(../images/commu-1.jpg) no-repeat center center / cover;
+    color: #fff;
+} 
+.coummunity .list ul li.review.bg2 a {
+    background: url(../images/commu-2.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.coummunity .list ul li a h3 {
+    font-size: 25px;
+        /* 1줄제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 3px 0 10px 0;
+}
+.coummunity .list ul li a .date {
+    display: flex;
+    gap: 38px;
+}
+.coummunity .list .group ul li.cover a .date,
+.coummunity .list .group ul li.review a .date {
+    color: #666;
+}
 footer{
- margin: 400px 0 0 0;
+    padding: 73px 0 77px 0;
+    background-color: #EAE7E2;
+    color: #666;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 44px;
+}
+footer .f_infor .group {
+    gap: 44px;
+    margin: 0 0 5PX 0;
+    
+}
+footer .f_infor {
+    margin: 60px 0 30px 0;
+    gap: 30px;
 }
