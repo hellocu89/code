@@ -1,0 +1,5 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+/*main.css는 index 메인페이지에만 들어가는 스타일을 정의한다.
+  다른 css를 호출한다*/

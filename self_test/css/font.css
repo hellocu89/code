@@ -1,0 +1,15 @@
+/*웹폰트를 선언하는 역할*/
+@font-face {
+	font-family: 'NanumSquareNeo';
+	font-weight: 400;
+	font-display: swap;
+	src: url(../font/NanumSquareNeoTTF-bRg.woff2) format("woff2"), url(../font/NanumSquareNeoTTF-bRg.woff) format("woff"),
+    url(../font/NanumSquareNeoTTF-bRg.eot.#iefix) format("embedded-opentype");
+}
+@font-face {
+	font-family: 'NanumSquareNeo';
+	font-weight: 800;
+	font-display: swap;
+	src: url(../font/NanumSquareNeoTTF-dEb.woff2) format("woff2"), url(../font/NanumSquareNeoTTF-dEb.woff) format("woff"),
+    url(../font/NanumSquareNeoTTF-dEb.eot.#iefix) format("embedded-opentype");
+}
