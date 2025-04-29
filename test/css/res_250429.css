@@ -155,6 +155,84 @@
 }
 /*브라우저 사이즈가 640px 이하일때만 적용되는 스타일*/
 
+
+
+.global {
+    margin: 230px 0 0 0;
+}
+.global .wrapper {
+    display: flex; /*text랑 photo 좌우배치*/
+    justify-content: space-between;
+}
+.global .txet {
+    width: calc(50% - 12px);
+    /* 2개니깐 50%에 둘 사이의 여백의 절반을 빼준다*/
+    padding: 31px 0;
+    /*왼쪽 글자의 높이에 padding만큼 오른쪽 이미지가 늘어남*/
+}
+.global .txet h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 32px 0;
+    position: relative;
+}
+.global .txet h2::after {
+    content: "";
+    position: absolute;
+    background-color: #cccccc;
+    left: 0;
+    bottom: -15px;
+    height: 1px;
+    width: 142px;
+
+}
+.global .photo {
+    width: calc(50% - 12px);
+    overflow: hidden;
+    border-radius: 41px;
+}
+.global .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:640px) {
+            .global {
+                margin: 75px 0 0 0;
+            }
+        
+            .global .txet {
+                width: calc(50% - 8px);
+                /* 2개니깐 50%에 둘 사이의 여백의 절반을 빼준다*/
+                padding: 24px 0;
+                /*왼쪽 글자의 높이에 padding만큼 오른쪽 이미지가 늘어남*/
+            }
+            .global .txet h2 {
+                font-size: 25px;
+                margin: 0 0 18px 0;
+                
+            }
+            .global .txet h2 br {
+                display: none;
+            }
+            .global .txet p br {
+                display: none;
+            }
+            .global .txet h2::after {
+                bottom: -11px;
+                width: 84px;
+            
+            }
+            .global .photo {
+                width: calc(50% - 8px);
+                
+                border-radius: 15px;
+            }
+            
+        }      
 body {
     margin: 0 0 200px 0;
 }
