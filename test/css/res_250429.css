@@ -233,6 +233,158 @@
             }
             
         }      
-body {
+
+
+.esg {
+    margin: 139px 0 0 0;
+}
+.esg .tit h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 12px 0;
+}
+.esg .list {
+    margin: 56px 0 0 0;
+}
+.esg .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.esg .list ul li {
+    width: calc(25% - 18px);
+    /*100% / 1줄에 나오는 갯수 100/4 = 25%
+     1줄 여백의 총합 / 1줄에 나오는 갯수  24+24+24 / 4 = 72/4 = 18*/
+}
+.esg .list ul li a {
+    display: flex;
+    height: 417px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.2;
+    align-items: flex-end; /*아래 정렬*/
+    justify-content: center; /*좌우 가운데*/
+    padding: 0 0 48px 0 ;
+}
+.esg .list ul li.list1 a {
+    background-image: url(../images/esg1.jpg);
+}
+.esg .list ul li.list2 a {
+    background-image: url(../images/esg2.jpg);
+}
+.esg .list ul li.list3 a {
+    background-image: url(../images/esg3.jpg);
+}
+.esg .list ul li.list4 a {
+    background-image: url(../images/esg4.jpg);
+}
+
+@media screen and (max-width:640px) {
+            .esg {
+                margin: 102px 0 0 0;
+            }
+            .esg .tit h2 {
+                font-size: 25px;  
+                margin: 0 0 4px 0;
+            }
+            .esg .list {
+                margin: 27px 0 0 0;
+            }
+            .esg .list ul {
+                justify-content: space-between;
+                row-gap: 16px;
+                flex-wrap: wrap /*2줄 허용*/
+                
+                
+            }
+            .esg .list ul li {
+                width: calc(50% - 8px);
+                /*100% / 1줄에 나오는 갯수 100/2 = 50%
+                1줄 여백의 총합 / 1줄에 나오는 갯수  16 / 2 = 8*/
+                
+            }
+            .esg .list ul li a {
+                height: 140px;
+                border-radius: 7px;
+                font-size: 16px;
+                align-items: center; /*위아래 가운데 정렬*/
+                padding: 0 ; /* 여백 삭제*/
+                
+
+
+            }
+           
+}
+.esg-fix {
+    margin: 120px 0 0 0;
+
+}
+.esg-fix .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.esg-fix .tit {
+    width: 23.57%;
+    /*297px / 1260 * 100 = 23.57%*/
+    position: sticky;
+    top: 20px;
+    align-items: flex-start;
+}
+
+
+
+.esg-fix .list {
+    width: 49.07%;
+    /*618 / 1260 * 100 = 49.07*/
+}
+.esg-fix .list ul li a {
+    display: block;
+    height: 417px; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.esg-fix .list ul li.list1 a {
+    background-image: url(../images/esg1.jpg);
+}
+.esg-fix .list ul li.list2 a {
+    background-image: url(../images/esg2.jpg);
+}
+.esg-fix .list ul li.list3 a {
+    background-image: url(../images/esg3.jpg);
+}
+.esg-fix .list ul li.list4 a {
+    background-image: url(../images/esg4.jpg);
+}
+.esg-fix .tit h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 12px 0;
+}
+
+
+
+
+
+
+@media screen and (max-width:640px) {
+
+}
+
+
+
+
+
+
+
+    body {
     margin: 0 0 200px 0;
 }
