@@ -259,7 +259,7 @@
 }
 .esg .list ul li a {
     display: flex;
-    height: 417px;
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -274,6 +274,7 @@
 }
 .esg .list ul li.list1 a {
     background-image: url(../images/esg1.jpg);
+    height: 417px;
 }
 .esg .list ul li.list2 a {
     background-image: url(../images/esg2.jpg);
