@@ -1,0 +1,343 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.section_tit {
+    font-family: 'Gmarket Sans';
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    color: #1d1d1d;
+}
+@media screen and (max-width:640px){
+                .section_tit {
+                    font-size: 25px;
+                }
+}/*@media*/
+
+header {
+    height: 100px;
+    position: absolute; /* wrap */
+    left: 0;
+    top: 0;
+    color: #fff;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    z-index: 100; /* 밑위에 배치 */
+}
+header .wrapper {
+    display: flex; /* logo/gnb/tnb 좌우 배치 */
+    justify-content: space-between; /* 좌우끝 */
+    align-items: center; /* 위아래 가운데 */
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none; /* 모바일에서만 보임 */
+}
+header .gnb .gnb_wrap ul {
+    display: flex; /* li를 좌우에 배치 */
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    font-family: 'Gmarket Sans';
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.05em;
+    line-height: 100px; 
+    /* header의 높이만큼 행간을 줌 - 그럼 글자가 높이가 header와 같아지고
+       위아래 가운데에 글자가 들어감 (밑에 하위메뉴를 열기위한 값) */
+    padding: 0 28px;
+}
+header .tnb {
+    display: flex; /* mypage/lang 좌우배치 */
+    gap: 9px;/* 둘사이 여백 */
+}
+header .tnb .mypage {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.2998 10.1401C9.02048 10.1401 7.92536 9.68464 7.01444 8.77372C6.10329 7.86258 5.64772 6.76734 5.64772 5.48802C5.64772 4.2087 6.10329 3.11358 7.01444 2.20265C7.92536 1.29151 9.02048 0.835938 10.2998 0.835938C11.5791 0.835938 12.6743 1.29151 13.5852 2.20265C14.4963 3.11358 14.9519 4.2087 14.9519 5.48802C14.9519 6.76734 14.4963 7.86258 13.5852 8.77372C12.6743 9.68464 11.5791 10.1401 10.2998 10.1401ZM0.331055 18.243V17.3073C0.331055 16.6565 0.507834 16.0537 0.861392 15.499C1.21495 14.9443 1.68747 14.5178 2.27895 14.2196C3.59261 13.5757 4.9179 13.0926 6.25482 12.7705C7.59174 12.4484 8.94007 12.2874 10.2998 12.2874C11.6595 12.2874 13.0079 12.4484 14.3448 12.7705C15.6817 13.0926 17.007 13.5757 18.3207 14.2196C18.9121 14.5178 19.3847 14.9443 19.7382 15.499C20.0918 16.0537 20.2686 16.6565 20.2686 17.3073V18.243C20.2686 18.8035 20.0722 19.2802 19.6794 19.6732C19.2866 20.066 18.8099 20.2624 18.2492 20.2624H2.35039C1.7897 20.2624 1.31298 20.066 0.920208 19.6732C0.527439 19.2802 0.331055 18.8035 0.331055 18.243ZM2.3248 18.2686H18.2748V17.3073C18.2748 17.0381 18.1968 16.7889 18.0409 16.5596C17.8849 16.3306 17.6732 16.1436 17.4059 15.9987C16.2606 15.4347 15.0929 15.0074 13.9028 14.7168C12.7126 14.4263 11.5116 14.2811 10.2998 14.2811C9.08805 14.2811 7.88704 14.4263 6.69677 14.7168C5.50672 15.0074 4.33905 15.4347 3.19375 15.9987C2.92636 16.1436 2.71469 16.3306 2.55874 16.5596C2.40278 16.7889 2.3248 17.0381 2.3248 17.3073V18.2686ZM10.2998 8.14635C11.0308 8.14635 11.6567 7.88606 12.1773 7.36547C12.6978 6.84488 12.9581 6.21906 12.9581 5.48802C12.9581 4.75698 12.6978 4.13116 12.1773 3.61057C11.6567 3.08998 11.0308 2.82969 10.2998 2.82969C9.56876 2.82969 8.94295 3.08998 8.42236 3.61057C7.90177 4.13116 7.64147 4.75698 7.64147 5.48802C7.64147 6.21906 7.90177 6.84488 8.42236 7.36547C8.94295 7.88606 9.56876 8.14635 10.2998 8.14635Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-size: 20px; /* 1개만 쓰면 넓이임, 높이는 비율에 맞게 알아서 들어감 */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+header .tnb .lang {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7462 22.4201C10.2487 22.4201 8.83559 22.1331 7.50675 21.559C6.17791 20.985 5.01903 20.2034 4.03011 19.2143C3.041 18.2253 2.25941 17.0665 1.68533 15.7376C1.11126 14.4088 0.824219 12.9956 0.824219 11.4982C0.824219 9.98882 1.11126 8.57269 1.68533 7.24979C2.25941 5.92689 3.041 4.77098 4.03011 3.78206C5.01903 2.79295 6.17791 2.01136 7.50675 1.43728C8.83559 0.86321 10.2487 0.576172 11.7462 0.576172C13.2555 0.576172 14.6717 0.86321 15.9946 1.43728C17.3175 2.01136 18.4734 2.79295 19.4623 3.78206C20.4514 4.77098 21.233 5.92689 21.8071 7.24979C22.3812 8.57269 22.6682 9.98882 22.6682 11.4982C22.6682 12.9956 22.3812 14.4088 21.8071 15.7376C21.233 17.0665 20.4514 18.2253 19.4623 19.2143C18.4734 20.2034 17.3175 20.985 15.9946 21.559C14.6717 22.1331 13.2555 22.4201 11.7462 22.4201ZM11.7462 20.6712C12.3329 19.893 12.8267 19.1082 13.2276 18.3166C13.6284 17.5251 13.9549 16.6599 14.2071 15.7209H9.28531C9.55223 16.6894 9.88247 17.5693 10.276 18.3609C10.6694 19.1525 11.1595 19.9226 11.7462 20.6712ZM9.51984 20.355C9.07913 19.7227 8.68335 19.0039 8.33251 18.1985C7.98166 17.393 7.709 16.5671 7.51451 15.7209H3.6145C4.22172 16.9149 5.03608 17.918 6.05757 18.7302C7.07907 19.5423 8.23316 20.0839 9.51984 20.355ZM13.9726 20.355C15.2593 20.0839 16.4133 19.5423 17.4348 18.7302C18.4563 17.918 19.2707 16.9149 19.8779 15.7209H15.9779C15.7464 16.5744 15.4553 17.4039 15.1044 18.2094C14.7538 19.015 14.3765 19.7302 13.9726 20.355ZM2.89135 13.9964H7.16529C7.09306 13.5691 7.04065 13.1502 7.00807 12.7395C6.97569 12.3291 6.9595 11.9153 6.9595 11.4982C6.9595 11.081 6.97569 10.6672 7.00807 10.2568C7.04065 9.84616 7.09306 9.4272 7.16529 8.9999H2.89135C2.78079 9.39041 2.69609 9.79644 2.63727 10.218C2.57825 10.6395 2.54874 11.0663 2.54874 11.4982C2.54874 11.9301 2.57825 12.3568 2.63727 12.7783C2.69609 13.1999 2.78079 13.6059 2.89135 13.9964ZM8.88953 13.9964H14.6029C14.6749 13.5691 14.7272 13.1539 14.7598 12.7507C14.7922 12.3476 14.8084 11.9301 14.8084 11.4982C14.8084 11.0663 14.7922 10.6487 14.7598 10.2456C14.7272 9.84242 14.6749 9.4272 14.6029 8.9999H8.88953C8.81748 9.4272 8.76517 9.84242 8.7326 10.2456C8.70022 10.6487 8.68402 11.0663 8.68402 11.4982C8.68402 11.9301 8.70022 12.3476 8.7326 12.7507C8.76517 13.1539 8.81748 13.5691 8.88953 13.9964ZM16.3271 13.9964H20.6011C20.7116 13.6059 20.7963 13.1999 20.8551 12.7783C20.9142 12.3568 20.9437 11.9301 20.9437 11.4982C20.9437 11.0663 20.9142 10.6395 20.8551 10.218C20.7963 9.79644 20.7116 9.39041 20.6011 8.9999H16.3271C16.3994 9.4272 16.4518 9.84616 16.4843 10.2568C16.5167 10.6672 16.5329 11.081 16.5329 11.4982C16.5329 11.9153 16.5167 12.3291 16.4843 12.7395C16.4518 13.1502 16.3994 13.5691 16.3271 13.9964ZM15.9779 7.27537H19.8779C19.2634 6.06667 18.4546 5.06357 17.4515 4.26608C16.4484 3.46877 15.2888 2.92344 13.9726 2.63008C14.4133 3.2992 14.8053 4.03106 15.1487 4.82569C15.4923 5.62012 15.7687 6.43668 15.9779 7.27537ZM9.28531 7.27537H14.2071C13.9402 6.31424 13.6045 5.4287 13.2 4.61874C12.7953 3.80879 12.3107 3.04425 11.7462 2.32513C11.1817 3.04425 10.6971 3.80879 10.2924 4.61874C9.88793 5.4287 9.55223 6.31424 9.28531 7.27537ZM3.6145 7.27537H7.51451C7.72375 6.43668 8.00015 5.62012 8.34372 4.82569C8.68709 4.03106 9.07913 3.2992 9.51984 2.63008C8.19618 2.92344 7.03471 3.47069 6.03544 4.27183C5.03599 5.07277 4.229 6.07396 3.6145 7.27537Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-size: 21px; /* 아이콘 크기 */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+@media screen and (max-width:640px){
+                    header {
+                        height: 56px;
+                    }
+                    header .wrapper {
+                        margin-right: 0;
+                        /* 오른쪽 여백만 삭제 - 메뉴열기 버튼이 오른쪽까지 배치되게 하려고 */
+                    }
+                    header .logo a img {
+                        width: 96px;
+                    }
+                    header .gnb .gnb_open {
+                        display: block; /* none으로 숨김요소를 다른속성만 주면 나타남 */
+                        width: 56px;
+                        height: 56px;
+                        background-image: url("data:image/svg+xml,%3Csvg width='22' height='18' viewBox='0 0 22 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.66667 3.16732C1.33611 3.16732 1.05903 3.05551 0.835417 2.8319C0.611806 2.60829 0.5 2.33121 0.5 2.00065C0.5 1.6701 0.611806 1.39301 0.835417 1.1694C1.05903 0.94579 1.33611 0.833984 1.66667 0.833984H20.3333C20.6639 0.833984 20.941 0.94579 21.1646 1.1694C21.3882 1.39301 21.5 1.6701 21.5 2.00065C21.5 2.33121 21.3882 2.60829 21.1646 2.8319C20.941 3.05551 20.6639 3.16732 20.3333 3.16732H1.66667ZM1.66667 17.1673C1.33611 17.1673 1.05903 17.0555 0.835417 16.8319C0.611806 16.6083 0.5 16.3312 0.5 16.0007C0.5 15.6701 0.611806 15.393 0.835417 15.1694C1.05903 14.9458 1.33611 14.834 1.66667 14.834H20.3333C20.6639 14.834 20.941 14.9458 21.1646 15.1694C21.3882 15.393 21.5 15.6701 21.5 16.0007C21.5 16.3312 21.3882 16.6083 21.1646 16.8319C20.941 17.0555 20.6639 17.1673 20.3333 17.1673H1.66667ZM1.66667 10.1673C1.33611 10.1673 1.05903 10.0555 0.835417 9.8319C0.611806 9.60829 0.5 9.33121 0.5 9.00065C0.5 8.6701 0.611806 8.39301 0.835417 8.1694C1.05903 7.94579 1.33611 7.83398 1.66667 7.83398H20.3333C20.6639 7.83398 20.941 7.94579 21.1646 8.1694C21.3882 8.39301 21.5 8.6701 21.5 9.00065C21.5 9.33121 21.3882 9.60829 21.1646 9.8319C20.941 10.0555 20.6639 10.1673 20.3333 10.1673H1.66667Z' fill='white'/%3E%3C/svg%3E%0A");
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: 21px;
+                    }
+                    header .gnb .gnb_wrap {
+                        display: none; /* 숨김 */
+                    }
+                    header .tnb {
+                        display: none; /* 숨김 */
+                    }
+}/*@media*/
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    height: 950px;
+    text-align: center;
+}
+.visual h2 {
+    font-size: 70px;
+    color: #fff;
+    padding: 412px 0 10px 0;
+}
+@media screen and (max-width:640px){
+                .visual {
+                    height: auto; /* 높이를 안준 것 처럼 - 콘텐츠 길이만큼 늘어남 */
+                    text-align: left;
+                    padding: 0 0 88px 0;
+                }
+                .visual h2 {
+                    font-size: 35px;
+                    padding: 222px 0 16px 0;
+                }
+                .visual h2 br {
+                    display: none; /* 줄바꿈 삭제 */
+                }
+}/*@media*/
+
+.project {
+    margin: 179px 0 0 0;
+}
+.project .wrapper {
+    display: flex; /* tit/list 좌우 배치 */
+    justify-content: space-between;
+    align-items: flex-start; /* tit의 높이를 존재하는 만큼만 주기 위해서 */
+}
+.project .tit {
+    position: sticky; /* 감싸는 wrapper를 기준으로 정렬 무조건 */
+    top: 20px; 
+    /* 좌우 정렬값 주면 안됨.. top값은 상단에 고정되었을때 위치값 
+       sticky의 단점 
+       감싸는 요소 중에 단한개라도 overflow:hidden;값을 가지고 있으면 
+       적용안됨. 사실상 못쓴다고 생각하면 됩니다. 
+    */
+}
+.project .tit h2 {
+    color: #244D8E;
+    margin: 0 0 14px 0;
+}
+.project .list {
+    width: 57.54%; /* 725/1260*100 =  */
+    margin: 197px 0 0 0;
+}
+.project .list ul {
+    display: flex;
+    flex-wrap: wrap; /* 2줄이상 허용 */
+    gap: 24px 24px;
+}
+.project .list ul li {
+    width: calc(50% - 12px);
+    /*  100% / 한줄에 보일 li 갯수 = 100%/2 = 50%
+        한줄에 있는 여백의 총합 / 한줄에 보일 li 갯수 = 24px/2 = 12px */
+}
+.project .list ul li:nth-child(even) { 
+    /* even - 짝수, odd - 홀수 */
+    transform: translateY(-181px);
+}
+.project .list ul li a {
+    display: block;
+    position: relative; /* txt 정렬의 기준 */
+}
+.project .list ul li a .photo {
+    overflow: hidden;
+    border-radius: 20px;
+    height: 500px;
+    position: relative; /* before 정렬의 기준 */
+}
+.project .list ul li a .photo::before {
+    content: "";
+    position: absolute; /* photo를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #244D8E;
+    opacity: 0;
+    transition: 0.2s;
+}
+.project .list ul li a .photo img {
+    /* 이미지를 감싸는 영역 photo 사이즈만큼만 나오게 리사이즈 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.project .list ul li a .txt {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: 52px;
+    width: 100%;
+    color: #fff;
+    padding: 0 40px;
+}
+.project .list ul li a .txt h3 {
+    font-family: 'Gmarket Sans';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.project .list ul li a .txt p {
+    display: none;
+    margin: 10px 0;
+    color: rgba(255,255,255,0.8);
+}
+.project .list ul li a .txt span {
+    display: none;
+    /* 숨김 - display:none은 아예 태그가 존재하지 않는 
+              것처럼 코딩됨 */
+    color: rgba(255,255,255,0.6);
+    padding: 0 22px 0 0;
+    font-size: 15px;
+    position: relative; /* after 정렬의 기준 */
+}
+.project .list ul li a .txt span::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_56_2166' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='18' height='18'%3E%3Crect width='18' height='18' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_56_2166)'%3E%3Cpath d='M12.4586 9.56311H3.9375C3.77788 9.56311 3.64425 9.50923 3.53662 9.40148C3.42887 9.29386 3.375 9.16023 3.375 9.00061C3.375 8.84098 3.42887 8.70736 3.53662 8.59973C3.64425 8.49198 3.77788 8.43811 3.9375 8.43811H12.4586L9.98944 5.96892C9.87794 5.8573 9.82288 5.72673 9.82425 5.57723C9.82575 5.42773 9.88081 5.2948 9.98944 5.17842C10.1058 5.06217 10.2394 5.00211 10.3903 4.99823C10.5413 4.99436 10.675 5.05061 10.7914 5.16698L14.1504 8.52605C14.2207 8.5963 14.2702 8.67036 14.2989 8.74823C14.3278 8.82611 14.3422 8.91023 14.3422 9.00061C14.3422 9.09098 14.3278 9.17511 14.2989 9.25298C14.2702 9.33086 14.2207 9.40492 14.1504 9.47517L10.7914 12.8342C10.6797 12.9457 10.5473 13.0008 10.3941 12.9994C10.2407 12.9979 10.1058 12.939 9.98944 12.8228C9.88081 12.7064 9.82456 12.5747 9.82069 12.4275C9.81681 12.2804 9.87306 12.1487 9.98944 12.0323L12.4586 9.56311Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+@media screen and (min-width:641px) {
+            /************ 오버했을때 641px 이상에서만 작동******************/
+
+            .project .list ul li a:hover .photo::before {
+                opacity: 0.9;
+            }
+            .project .list ul li a:hover .txt p {
+                display: block; /* none으로 숨긴건 흔히 block으로 보이게함 */
+            }
+            .project .list ul li a:hover .txt span {
+                display: inline-block;
+            }
+        }
+@media screen and (max-width:640px){
+                    .project {
+                        margin: 91px 0 0 0;
+                    }
+                    .project .wrapper {
+                        display: block; /* 다른속성값주면 해제 tit랑 list 위아래*/
+                    }
+                    .project .tit {
+                        position: relative; /* sticky를 해제하기 위해 다른속성을 줌 */
+                        top: auto; 
+                        /* top값을 지정하지 않은 것처럼 취소하는 값. 0이랑 다름
+                        */
+                    }
+                    .project .tit h2 {
+                        margin: 0 0 6px 0;
+                    }
+                    .project .list {
+                        width: auto; /* block요소 이거때문에 100% 들어감*/
+                        margin: 33px 0 0 0;
+                    }
+                    .project .list ul {
+                        gap: 18px 16px;
+                    }
+                    .project .list ul li {
+                        width: calc(50% - 8px);
+                        /*  100% / 한줄에 보일 li 갯수 = 100%/2 = 50%
+                            한줄에 있는 여백의 총합 / 한줄에 보일 li 갯수 = 18px/2 = 8px */
+                    }
+                    .project .list ul li:nth-child(even) { 
+                        /* 짝수 위로 올린거 취소 */
+                        transform: none;
+                    }
+                    .project .list ul li a .photo {
+                        border-radius: 0px;
+                        height: 111px;
+                        
+                    }
+                    .project .list ul li a .txt {
+                        position: relative; /* absolute 해제 */
+                        left: auto;
+                        bottom: auto;
+                        width: auto;
+                        color: #1d1d1d;
+                        padding: 9px 0 0 0;
+                    }
+                    .project .list ul li a .txt h3 {
+                       
+                        font-size: 15px;
+                        line-height: 1.2;
+                        letter-spacing: -0.05em;
+                    }
+                    .project .list ul li a .txt h3 br {
+                        display: none; /*줄바꿈 삭제*/
+                    }
+                    .project .list ul li a .txt p {
+                        display: none;
+                        margin: 10px 0;
+                        color: rgba(255,255,255,0.8);
+                    }
+                    .project .list ul li a .txt span {
+                        display: none;
+                        /* 숨김 - display:none은 아예 태그가 존재하지 않는 
+                                것처럼 코딩됨 */
+                        color: rgba(255,255,255,0.6);
+                        padding: 0 22px 0 0;
+                        font-size: 15px;
+                        position: relative; /* after 정렬의 기준 */
+                    }
+                    .project .list ul li a .txt span::after {
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        top: 2px;
+                        width: 18px;
+                        height: 18px;
+                        background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_56_2166' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='18' height='18'%3E%3Crect width='18' height='18' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_56_2166)'%3E%3Cpath d='M12.4586 9.56311H3.9375C3.77788 9.56311 3.64425 9.50923 3.53662 9.40148C3.42887 9.29386 3.375 9.16023 3.375 9.00061C3.375 8.84098 3.42887 8.70736 3.53662 8.59973C3.64425 8.49198 3.77788 8.43811 3.9375 8.43811H12.4586L9.98944 5.96892C9.87794 5.8573 9.82288 5.72673 9.82425 5.57723C9.82575 5.42773 9.88081 5.2948 9.98944 5.17842C10.1058 5.06217 10.2394 5.00211 10.3903 4.99823C10.5413 4.99436 10.675 5.05061 10.7914 5.16698L14.1504 8.52605C14.2207 8.5963 14.2702 8.67036 14.2989 8.74823C14.3278 8.82611 14.3422 8.91023 14.3422 9.00061C14.3422 9.09098 14.3278 9.17511 14.2989 9.25298C14.2702 9.33086 14.2207 9.40492 14.1504 9.47517L10.7914 12.8342C10.6797 12.9457 10.5473 13.0008 10.3941 12.9994C10.2407 12.9979 10.1058 12.939 9.98944 12.8228C9.88081 12.7064 9.82456 12.5747 9.82069 12.4275C9.81681 12.2804 9.87306 12.1487 9.98944 12.0323L12.4586 9.56311Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E%0A");
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                    }
+}/*@media*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    margin: 2000px 0 0 0;
+}
