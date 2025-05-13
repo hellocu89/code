@@ -1,0 +1,174 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.main_font {
+    font-family: "Eulyoo1945";
+    font-weight: 700;
+    line-height: 1.5;
+}
+header {
+    position: absolute; /* wrap을 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    color: #fff;
+    z-index: 100;
+    width: 100%; /*wrap을 기준으로 100%*/
+    height: 100px;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+header .logo a {
+    display: block; 
+    font-size: 0;/*이미지 하단에 존재하는 행간 삭제 - 이미지 감싸는곳에 줘야함*/
+    line-height: 0;
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none;
+}
+header .gnb .gnb_wrap ul{
+    display: flex;
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    line-height: 100px; /*header 높이와 같은 값을 행간으로 줌*/
+    padding: 0 26px;
+    font-size: 24px;
+}
+header .tnb {
+    display: flex; /*마이페이지랑 search 좌우배치*/
+    gap: 5px;
+}
+header .tnb .mypage,
+header .tnb .search {
+    display: block;
+    width: 41px;
+    height: 41px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+header .tnb .mypage {
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 12.4997C10.8958 12.4997 9.52255 11.9285 8.38019 10.7861C7.23783 9.64377 6.66665 8.27051 6.66665 6.66634C6.66665 5.06217 7.23783 3.68891 8.38019 2.54655C9.52255 1.40419 10.8958 0.833008 12.5 0.833008C14.1041 0.833008 15.4774 1.40419 16.6198 2.54655C17.7621 3.68891 18.3333 5.06217 18.3333 6.66634C18.3333 8.27051 17.7621 9.64377 16.6198 10.7861C15.4774 11.9285 14.1041 12.4997 12.5 12.4997ZM0.833313 24.1663V20.083C0.833313 19.2566 1.04599 18.4971 1.47133 17.8044C1.89668 17.1117 2.46179 16.583 3.16665 16.2184C4.67359 15.465 6.20484 14.8998 7.7604 14.5231C9.31595 14.1464 10.8958 13.958 12.5 13.958C14.1041 13.958 15.684 14.1464 17.2396 14.5231C18.7951 14.8998 20.3264 15.465 21.8333 16.2184C22.5382 16.583 23.1033 17.1117 23.5286 17.8044C23.954 18.4971 24.1666 19.2566 24.1666 20.083V24.1663H0.833313ZM3.74998 21.2497H21.25V20.083C21.25 19.8156 21.1831 19.5726 21.0495 19.3538C20.9158 19.1351 20.7396 18.965 20.5208 18.8434C19.2083 18.1872 17.8837 17.695 16.5469 17.3669C15.2101 17.0387 13.8611 16.8747 12.5 16.8747C11.1389 16.8747 9.78991 17.0387 8.4531 17.3669C7.1163 17.695 5.79165 18.1872 4.47915 18.8434C4.2604 18.965 4.08418 19.1351 3.9505 19.3538C3.81682 19.5726 3.74998 19.8156 3.74998 20.083V21.2497ZM12.5 9.58301C13.3021 9.58301 13.9887 9.29742 14.5599 8.72624C15.1311 8.15506 15.4166 7.46842 15.4166 6.66634C15.4166 5.86426 15.1311 5.17763 14.5599 4.60645C13.9887 4.03526 13.3021 3.74967 12.5 3.74967C11.6979 3.74967 11.0113 4.03526 10.4401 4.60645C9.8689 5.17763 9.58331 5.86426 9.58331 6.66634C9.58331 7.46842 9.8689 8.15506 10.4401 8.72624C11.0113 9.29742 11.6979 9.58301 12.5 9.58301Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+header .tnb .search {
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.2083 26.25L15.0208 17.0625C14.2917 17.6458 13.4531 18.1076 12.5052 18.4479C11.5573 18.7882 10.5486 18.9583 9.47917 18.9583C6.82986 18.9583 4.58767 18.0408 2.7526 16.2057C0.917535 14.3707 0 12.1285 0 9.47917C0 6.82986 0.917535 4.58767 2.7526 2.7526C4.58767 0.917535 6.82986 0 9.47917 0C12.1285 0 14.3707 0.917535 16.2057 2.7526C18.0408 4.58767 18.9583 6.82986 18.9583 9.47917C18.9583 10.5486 18.7882 11.5573 18.4479 12.5052C18.1076 13.4531 17.6458 14.2917 17.0625 15.0208L26.25 24.2083L24.2083 26.25ZM9.47917 16.0417C11.3021 16.0417 12.8516 15.4036 14.1276 14.1276C15.4036 12.8516 16.0417 11.3021 16.0417 9.47917C16.0417 7.65625 15.4036 6.10677 14.1276 4.83073C12.8516 3.55469 11.3021 2.91667 9.47917 2.91667C7.65625 2.91667 6.10677 3.55469 4.83073 4.83073C3.55469 6.10677 2.91667 7.65625 2.91667 9.47917C2.91667 11.3021 3.55469 12.8516 4.83073 14.1276C6.10677 15.4036 7.65625 16.0417 9.47917 16.0417Z' fill='%23FBFAFF'/%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width:640px){
+                header { 
+                    height: 56px;
+                    padding: 0 0 0 20px;
+                }
+                header .logo a img {
+                    width: 92px;
+                }
+                header .gnb .gnb_open {
+                    display: block;
+                    width: 60px;
+                    height: 60px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_47_323' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_47_323)'%3E%3Cpath d='M3 7V5H21V7H3ZM3 19V17H21V19H3ZM3 13V11H21V13H3Z' fill='%23FBFAFF'/%3E%3C/g%3E%3C/svg%3E%0A");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                header .gnb .gnb_wrap {
+                    display: none;
+                }
+                header .tnb {
+                    display: none;
+                }       
+}
+
+
+
+
+
+.visual {
+    height: 100vh; /*브라우저 고정값이 아니라 높이에 맞춰서*/
+    background: url(../images/visual_bg.jpg) no-repeat center center /cover;
+    color: #fff;
+    min-height: 530px;
+}
+.visual h2 {
+    font-size: 64px;
+    text-align: center;
+    padding: 50vh 0 0 0;
+}    
+
+@media screen and (max-width:640px){
+                .visual {
+                    height: 700px; /*브라우저 고정값이 아니라 높이에 맞춰서*/
+                    min-height: 0;
+                }
+                .visual h2 {
+                    font-size: 36px;
+                    padding: 50vh 0 70px 0;
+                } 
+}
+
+
+
+
+.book {
+    padding: 215px 0 228px 0;
+    background-color: #F1EEE7; 
+}
+.book .book_wrap {
+    width: calc(50% + 630px);
+    position: relative;
+    left: calc(50% - 630px);
+    display: flex; /**/
+    justify-content: space-between;
+    
+}
+.book .book_wrap .tit h2 {
+    font-size: 40px;
+    color: #1d1d1d;
+    margin: 0 0 14px 0;
+} 
+.book .book_wrap .list {
+    
+    width: calc(100% - 218px); 
+    /*book_wrap의 넓이를 100%로 하고 
+    왼쪽 tit의 넓이를 빼기*/
+    overflow-x: hidden; /*가로 스크롤바 삭제*/
+
+}
+.book .book_wrap .list ul {
+    display: flex;
+    gap: 24px;
+    width: 1296px;
+    /*
+           li의 넓이 * li의 갯수 = 240 * 5 = 1200
+           사이여백의 합 * li의 갯수 = 24*4 = 96
+           1200 + 96 =1296
+    */
+}
+.book .book_wrap .list ul li {
+    width: 240px;
+}
+.book .book_wrap .list ul li a {
+    display: block;
+    height: ;
+}
+.book .book_wrap .list ul li a .photo {
+    height: 100%;
+}
+.book .book_wrap .list ul li a .photo img {
+    width: 100%; 
+    /* 
+    높이는 비율에 맞게 알아서, 높이는 그에 맞춰 들어간다
+    -책은 이미지 전체가 나와야 하기 때문에 object-fit 안준다.
+    */
+}
+
+
+
+
+footer {
+    margin: 500px 0 0 0;
+}

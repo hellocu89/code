@@ -1,0 +1,29 @@
+/* 웹폰트를 선언 */
+
+@font-face {
+    font-family: "Eulyoo1945";
+	font-style: normal;
+    font-weight: 700;
+    src: url('../font/Eulyoo1945-SemiBold.eot');
+    src:url('../font/Eulyoo1945-SemiBold.?#iefix') format('embedded-opentype'),
+    url('../font/Eulyoo1945-SemiBold.woff2') format('woff2'),
+    url('../font/Eulyoo1945-SemiBold.woff') format('woff');
+    
+}
+@font-face {
+    font-family: "Eulyoo1945";
+	font-style: normal;
+    font-weight: 400;
+    src: url('../font/Eulyoo1945-Regular.eot');
+    src:url('../font/Eulyoo1945-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../font/Eulyoo1945-Regular.woff2') format('woff2'),
+    url('../font/Eulyoo1945-Regular.woff') format('woff');
+    
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../font/Pretendard-Regular.woff2) format('woff2'),
+	 url(../font/Pretendard-Regular.woff) format('woff');
+}
