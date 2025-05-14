@@ -61,7 +61,7 @@ header .tnb .search {
 
 @media screen and (max-width:640px){
                 header { 
-                    height: 56px;
+                    height: 60px;
                     padding: 0 0 0 20px;
                 }
                 header .logo a img {
@@ -123,6 +123,7 @@ header .tnb .search {
     left: calc(50% - 630px);
     display: flex; /**/
     justify-content: space-between;
+    position: relative;
     
 }
 .book .book_wrap .tit h2 {
@@ -136,6 +137,7 @@ header .tnb .search {
     /*book_wrap의 넓이를 100%로 하고 
     왼쪽 tit의 넓이를 빼기*/
     overflow-x: hidden; /*가로 스크롤바 삭제*/
+    padding: 10px 0 0 0;
 
 }
 .book .book_wrap .list ul {
@@ -153,19 +155,174 @@ header .tnb .search {
 }
 .book .book_wrap .list ul li a {
     display: block;
-    height: ;
 }
 .book .book_wrap .list ul li a .photo {
-    height: 100%;
+    overflow: hidden;
+    box-shadow: 3px 4px 4px 5px rgba(0,0,0,0.25);
 }
 .book .book_wrap .list ul li a .photo img {
     width: 100%; 
     /* 
     높이는 비율에 맞게 알아서, 높이는 그에 맞춰 들어간다
-    -책은 이미지 전체가 나와야 하기 때문에 object-fit 안준다.
+    책은 이미지 전체가 나와야 하기 때문에 object-fit 안준다.
     */
+    vertical-align: top; 
+    /*이미지에 vertical-align을 주면 이미지 하단에 행간이 사라짐*/
+    
+}
+.book .book_wrap .list ul li a h3 {
+    font-size: 30px;
+    margin: 54px 0 14px 0;
+    
+   
+    /*1줄제한
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    */
+
+    /*2줄제한
+    line-height: 1.4;
+    height: 2.8em;
+    text-overflow: ellipsis;
+    */
+
+}
+.book .book_wrap .list ul li a strong {
+    display: block; 
+}
+.book .book_wrap .more {
+    position: absolute;
+    left: 0;
+    top: 213px;
+    color: #1d1d1d;
+    padding: 0 18px 0 0;
+} 
+.book .book_wrap .more::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.0125 10L0.125 9.1125L4.2375 5L0.125 0.8875L1.0125 0L6.0125 5L1.0125 10Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
+@media screen and (min-width:641px){
+    /************오버효과****************/
+    .book .book_wrap .list ul li a h3 span{
+        position: relative; /*after정렬의 기준*/
+
+
+    }
+    .book .book_wrap .list ul li a h3 span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background-color: brown;
+        transition: 0.5s;
+    }
+    .book .book_wrap .list ul li a:hover h3 span::after {
+        width: 100%; /*span태그 기준으로 100%, span태그 넓이 맞춰서 들어가게 됨*/
+    }
+}
+
+
+
+
+
+@media screen and (max-width:640px){
+                
+                    .book {
+                        padding: 83px 0 113px 0;
+                        background-color: transparent; 
+                    }
+                    .book .book_wrap {
+                        width: auto;
+                        left: auto;
+                        display: block; /*flex 해제*/
+                    }
+                    .book .book_wrap .tit {
+                        margin: 0 98px 0 20px;
+                    }
+                    .book .book_wrap .tit h2 {
+                        font-size: 28px;
+                        margin: 0 0 29px 0;
+                        
+                    } 
+                    .book .book_wrap .tit h2 br {
+                        display: none;
+                    }
+                    .book .book_wrap .tit p {
+                        display: none;
+                    } 
+                    .book .book_wrap .list {
+                        
+                        width: auto; 
+                        overflow-x: auto; /*가로 스크롤바 삭제*/
+                        padding: 10px 0 10px 20px;
+                        margin: 29px 0 0 0;
+
+
+                    }
+                    .book .book_wrap .list ul {
+                        gap: 16px;
+                        width: 1162px;
+                        /*
+                            li의 넓이 * li의 갯수 = 146 * 5 = 730
+                            사이여백의 합 * li의 갯수 = 21*5 = 105
+                            730 + 105 =835
+                        */
+                    }
+                    .book .book_wrap .list ul li {
+                        width: 240px;
+                    }
+                    
+                    .book .book_wrap .list ul li a h3 {
+                        font-size: 16px;
+                        margin: 21px 0 5px 0;
+                        color: #1d1d1d;
+                        
+                    
+                        /*1줄제한
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        */
+
+                        /*2줄제한
+                        line-height: 1.4;
+                        height: 2.8em;
+                        text-overflow: ellipsis;
+                        */
+
+                    }
+                    .book .book_wrap .list ul li a strong {
+                        color: #1d1d1d;
+                    }
+                    .book .book_wrap .more {
+                        left: auto;
+                        right: 0;
+                        top: 0;
+                        padding: 0 20px 0 0;
+                    } 
+                    .book .book_wrap .more::after {
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        top: 6px;
+                        width: 12px;
+                        height: 12px;
+                        background-image: url("data:image/svg+xml,%3Csvg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.0125 10L0.125 9.1125L4.2375 5L0.125 0.8875L1.0125 0L6.0125 5L1.0125 10Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                    }  
+}
 
 
 
