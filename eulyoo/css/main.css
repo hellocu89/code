@@ -615,10 +615,11 @@ header .tnb .search {
 .stroy .list ul li {
     width: calc(25% - 16.5px );
     border: 1px solid #A6A0A0;
-    
+    border-radius: 10px;
+    overflow: hidden;
     
 }
-.stroy .list ul li a{
+.stroy .list ul li a {
     display: block;
 }
 .stroy .list ul li a .photo {
@@ -629,12 +630,14 @@ header .tnb .search {
 .stroy .list ul li.long a .photo {
     height: 445px;
     overflow: hidden;
+    border-radius: 10px 10px 0 0;
 }
 .stroy .list ul li a .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.5s;
+    
 }
 .stroy .list ul li a .txt {
     padding: 12px 6px ;
@@ -718,18 +721,164 @@ header .tnb .search {
                 .stroy .list ul li a:hover .txt h3 span::after {
                     width: 100%; /*span태그 기준으로 100%, span태그 넓이 맞춰서 들어가게 됨*/
                 }
-                
-
 }
 
 
 
 
 @media screen and (max-width:640px){
+                    .stroy {
+                        margin: 113px 0 0 0;
+                        padding: 0;
+                        background-color: transparent;
+                    }
+                    .stroy .tit h2 {
+                        font-size: 28px;
+                        color: #1d1d1d;
+                    }
+                    .stroy .list {
+                        margin: 30px 0 0 0;
+                    }
+                    .stroy .list ul {
+                        display: block;
+                    }
+                    .stroy .list ul li {
+                        width: auto;
+                        border: 0;
+                        border-bottom: 1px solid #8C6F4F;
+                        border-radius: 0;
+                        padding: 15px 0; 
+                    }
+                    .stroy .list ul li:first-child {
+                        border-top: 1px solid #8C6F4F;
+                        
+                    }
+                    .stroy .list ul li a {
+                        display: flex;
+                        flex-direction: row-reverse;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                    .stroy .list ul li a .photo {
+                        height: 82px;
+                        width: 46.87%;
+                        
+                    } 
+                    .stroy .list ul li.long a .photo {
+                        height: 82px;
+                        border-radius: 0;
+                    }
+                    
+                    .stroy .list ul li a .txt {
+                        padding: 0;
+                        width: 47.5%;
+                       
+                    }
+                    .stroy .list ul li a .txt strong {
+                        margin: 0 0 11px 0;
+                        /*1줄제한을 여러줄 허용*/
+                        white-space: normal; /*여러줄 허용*/
+                        overflow: visible; /*넘치는 요소 안짜름*/
+                        
+                    }
+                    
+                    .stroy .list ul li a .txt h3 {
+                        margin: 0;
+                        white-space: normal;
+                        overflow: visible;
+                    }
+                    .stroy .list ul li a .txt p {
+                        display: none;
+                    }
+                    
+                    .stroy .more {
+                        top: 9px;
+                    }
+                    
+
+
 
 }
 
 
 footer {
-    margin: 500px 0 0 0;
+    padding: 120px 0 61px 0;
+    background-color: rgba(114,78,66,0.7);
+    color: #1d1d1d;
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+footer .solgon P{
+    font-size: 40px;
+    color: #fff;
+}
+footer .f_infor h3 {
+    font-size: 20px;
+    margin: 0 0 6px 0;
+}
+footer .f_infor address,
+footer .f_infor ul.tel {
+    margin-bottom: 45px;
+}
+
+footer .f_infor ul.sns {
+    display: flex;
+    gap: 16px;
+}
+
+footer .copyright {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+footer .copyright .f_log {
+    margin: 0 0 17px 0;
+}
+footer .copyright .f_logo img {
+    width: 200px;
+    
+}
+
+@media screen and (max-width:640px){
+                footer {
+                    margin: 84px 0 0 0;
+                    padding: 69px 0 46px 0;
+                }
+                footer .wrapper {
+                    display: block;
+                }
+                footer .solgon P {
+                    font-size: 20px;
+                }
+                footer .f_infor {
+                    margin: 64px 0 0 0;
+                }
+                footer .f_infor h3 {
+                    font-size: 20px;
+                    margin: 0 0 6px 0;
+                }
+                footer .f_infor address,
+                footer .f_infor ul.tel {
+                    margin-bottom: 30px;
+                }
+                
+                
+                
+                footer .copyright {
+                    position: relative;
+                    left: auto;
+                    bottom: auto;
+                    margin: 70px 0 0 0;
+
+                }
+                footer .copyright .f_log {
+                    margin: 10px 0 0 0;
+                }
+                footer .copyright .f_logo img {
+                    width: 140px;
+                    
+                }
 }
