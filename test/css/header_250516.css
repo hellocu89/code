@@ -1,0 +1,167 @@
+@import url(default.css);
+@import url(res_common.css);
+@import url(font.css);
+
+header {
+    position: fixed; /*상단고정*/
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.8);
+    transition: 0.5s;
+}
+header .logo a {
+    display: block;
+    width: 156px;
+    height: 60px;
+    background: url(../images/logo_white.svg) no-repeat center center / contain;
+    /*contain - 로고를 안짤리고 영역에 맞게 리사이즈*/
+    transition: 0.5s;
+}
+header .wrapper {
+    display: flex; /*logo, gnb, tnb 좌우배치*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none; /*모바일에서만 나옴*/
+}
+header .gnb .gnb_wrap ul.depth1 {
+    display: flex; /*1차메뉴 li좌우배치*/
+}
+header .gnb .gnb_wrap ul.depth1 > li > a {
+    /*1차메뉴*/
+    display: block;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 100px; /*header높이와 동일*/
+    color: #fff;
+    padding: 0 27px; 
+    transition: 0.5s;
+
+}
+header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+    display: none;
+}
+
+header .tnb .search {
+    display: block;
+    width: 51px;
+    height: 51px;
+    background-image: url("data:image/svg+xml,%3Csvg width='35' height='44' viewBox='0 0 35 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5 22.1385C18.6688 22.1385 19.6693 21.7224 20.5016 20.8901C21.3339 20.0578 21.75 19.0573 21.75 17.8885C21.75 16.7198 21.3339 15.7193 20.5016 14.887C19.6693 14.0547 18.6688 13.6385 17.5 13.6385C16.3312 13.6385 15.3307 14.0547 14.4984 14.887C13.6661 15.7193 13.25 16.7198 13.25 17.8885C13.25 19.0573 13.6661 20.0578 14.4984 20.8901C15.3307 21.7224 16.3312 22.1385 17.5 22.1385ZM17.5 37.7573C21.8208 33.7906 25.026 30.187 27.1156 26.9464C29.2052 23.7057 30.25 20.8281 30.25 18.3135C30.25 14.4531 29.0193 11.2922 26.5578 8.83074C24.0964 6.36928 21.0771 5.13855 17.5 5.13855C13.9229 5.13855 10.9036 6.36928 8.44219 8.83074C5.98073 11.2922 4.75 14.4531 4.75 18.3135C4.75 20.8281 5.79479 23.7057 7.88438 26.9464C9.97396 30.187 13.1792 33.7906 17.5 37.7573ZM17.5 43.3885C11.7979 38.5365 7.53906 34.0297 4.72344 29.8682C1.90781 25.7068 0.5 21.8552 0.5 18.3135C0.5 13.001 2.20885 8.76876 5.62656 5.61667C9.04427 2.46459 13.0021 0.88855 17.5 0.88855C21.9979 0.88855 25.9557 2.46459 29.3734 5.61667C32.7911 8.76876 34.5 13.001 34.5 18.3135C34.5 21.8552 33.0922 25.7068 30.2766 29.8682C27.4609 34.0297 23.2021 38.5365 17.5 43.3885Z' fill='%23FAF9FF'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+}
+
+/********header가 고정되었을때********/
+
+header.fixed {
+    border-bottom: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 5px rgba(0,0,0,0.1);
+}
+header.fixed .logo a {
+    background-image: url(../images/logo_color.svg);
+    
+    /*background로 선언하고 배경이미지, 반복, 위치, 크기 지정했는데
+    이때 이미지만 변경하려면 반드시 background-image 라고 속성을 쓰고 변경해야함
+    background라고 하면 모든 반복, 위치, 크기등의 다른 속성이 취소됨*/
+}
+
+header.fixed .gnb .gnb_wrap ul.depth1 > li > a {
+    /*1차메뉴*/
+    color: #1d1d1d;
+}
+
+header.fixed .tnb .search {
+    background-image: url("data:image/svg+xml,%3Csvg width='35' height='43' viewBox='0 0 35 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5 21.5C18.6688 21.5 19.6693 21.0839 20.5016 20.2516C21.3339 19.4193 21.75 18.4188 21.75 17.25C21.75 16.0812 21.3339 15.0807 20.5016 14.2484C19.6693 13.4161 18.6688 13 17.5 13C16.3312 13 15.3307 13.4161 14.4984 14.2484C13.6661 15.0807 13.25 16.0812 13.25 17.25C13.25 18.4188 13.6661 19.4193 14.4984 20.2516C15.3307 21.0839 16.3312 21.5 17.5 21.5ZM17.5 37.1188C21.8208 33.1521 25.026 29.5484 27.1156 26.3078C29.2052 23.0672 30.25 20.1896 30.25 17.675C30.25 13.8146 29.0193 10.6536 26.5578 8.19219C24.0964 5.73073 21.0771 4.5 17.5 4.5C13.9229 4.5 10.9036 5.73073 8.44219 8.19219C5.98073 10.6536 4.75 13.8146 4.75 17.675C4.75 20.1896 5.79479 23.0672 7.88438 26.3078C9.97396 29.5484 13.1792 33.1521 17.5 37.1188ZM17.5 42.75C11.7979 37.8979 7.53906 33.3911 4.72344 29.2297C1.90781 25.0682 0.5 21.2167 0.5 17.675C0.5 12.3625 2.20885 8.13021 5.62656 4.97813C9.04427 1.82604 13.0021 0.25 17.5 0.25C21.9979 0.25 25.9557 1.82604 29.3734 4.97813C32.7911 8.13021 34.5 12.3625 34.5 17.675C34.5 21.2167 33.0922 25.0682 30.2766 29.2297C27.4609 33.3911 23.2021 37.8979 17.5 42.75Z' fill='black'/%3E%3C/svg%3E%0A");
+    
+}
+
+@media screen and (max-width:640px) {
+    header {
+        height: 60px;
+    }
+    header .wrapper {
+        margin-right: 0;
+        /*오른쪽 여백 삭제-gnb_open 배치하려고*/
+    }
+    header .logo a {
+        width: 89px;
+        height: 34px;
+    }
+    header .gnb .gnb_open {
+        display: block;; /*모바일에서만 나옴*/
+        width: 60px;
+        height: 60px;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_1_400' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_1_400)'%3E%3Cpath d='M3 21V19H21V21H3ZM3 13V11H21V13H3ZM3 5V3H21V5H3Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: 0.5s;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+    }
+    header .tnb  {
+        display: none;
+        /*search를 지우면 tnb잔재가 남아서 tnb를 안보이게 하는거임*/
+    }
+    
+    /********header가 고정되었을때********/
+    header.fixed .gnb .gnb_open {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_1_469' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_1_469)'%3E%3Cpath d='M3 21V19H21V21H3ZM3 13V11H21V13H3ZM3 5V3H21V5H3Z' fill='%23121212'/%3E%3C/g%3E%3C/svg%3E%0A");
+       
+    }
+
+
+}/*@media*/
+
+
+
+
+
+
+
+
+
+
+
+.visual {
+    height: 100vh;
+    background: url(../images/visual_bg.jpg) no-repeat center center /cover;
+    color: #fff;
+    border: 1px solid transparent;
+    /*투명한 1px border- padding 말고 margin을 꼭 써야할때
+    쓰는 꼼수. margin이 영역밖으로 못나가게 하는 방법*/
+}
+.visual h2 {
+    font-size: 48px;
+    text-align: center;
+    margin: 46vh 0 0 0;
+}
+
+
+@media screen and (max-width:640px) {
+        .visual h2 {
+        font-size: 32px;
+        margin: 62vh 0 0 0;
+        transform: translateY(-50%);
+        /*나의 높이 절반을 위로 이동
+          줄이 여러줄일때*/
+    }
+}/*@media*/
+
+
+
+
+
+
+
+footer {
+    margin: 1000px 0 0 0;
+}
