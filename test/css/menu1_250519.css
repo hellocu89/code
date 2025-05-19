@@ -1,0 +1,263 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+
+header {
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    z-index: 100;
+    color: #fff;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between; /*logo, gnb, tnb 좌우배치*/
+    align-items: center;
+}
+header .logo a {
+    /*a 를 클릭하면서 들어가야 되니깐*/
+    display: block;
+    width: 158px;
+    height: 60px;
+    background: url(../images/logo_white.svg) no-repeat center center / contain;
+}
+header .tnb .search {
+    display: block;
+    width: 51px;
+    height: 51px;
+    background-image: url("data:image/svg+xml,%3Csvg width='51' height='51' viewBox='0 0 51 51' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_15_237' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='51' height='51'%3E%3Crect width='51' height='51' fill='%23ffffff'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_15_237)'%3E%3Cpath d='M25.5 25.5C26.6688 25.5 27.6693 25.0839 28.5016 24.2516C29.3339 23.4193 29.75 22.4188 29.75 21.25C29.75 20.0812 29.3339 19.0807 28.5016 18.2484C27.6693 17.4161 26.6688 17 25.5 17C24.3312 17 23.3307 17.4161 22.4984 18.2484C21.6661 19.0807 21.25 20.0812 21.25 21.25C21.25 22.4188 21.6661 23.4193 22.4984 24.2516C23.3307 25.0839 24.3312 25.5 25.5 25.5ZM25.5 41.1188C29.8208 37.1521 33.026 33.5484 35.1156 30.3078C37.2052 27.0672 38.25 24.1896 38.25 21.675C38.25 17.8146 37.0193 14.6536 34.5578 12.1922C32.0964 9.73073 29.0771 8.5 25.5 8.5C21.9229 8.5 18.9036 9.73073 16.4422 12.1922C13.9807 14.6536 12.75 17.8146 12.75 21.675C12.75 24.1896 13.7948 27.0672 15.8844 30.3078C17.974 33.5484 21.1792 37.1521 25.5 41.1188ZM25.5 46.75C19.7979 41.8979 15.5391 37.3911 12.7234 33.2297C9.90781 29.0682 8.5 25.2167 8.5 21.675C8.5 16.3625 10.2089 12.1302 13.6266 8.97813C17.0443 5.82604 21.0021 4.25 25.5 4.25C29.9979 4.25 33.9557 5.82604 37.3734 8.97813C40.7911 12.1302 42.5 16.3625 42.5 21.675C42.5 25.2167 41.0922 29.0682 38.2766 33.2297C35.4609 37.3911 31.2021 41.8979 25.5 46.75Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width:1025px) {
+                /*******메뉴 PC버전******/
+                header .gnb .gnb_open,
+                header .gnb .gnb_close {
+                    display: none;
+                }
+                
+                header .gnb .gnb_wrap ul.depth1 {
+                    display: flex;
+                }
+                
+                header .gnb .gnb_wrap ul.depth1 > li > a { /*1차메뉴*/
+                    font-size: 22px;
+                    font-weight: 800;
+                    line-height: 100px; /* header 높이*/
+                    padding: 0 27px;
+                }
+                
+                header .gnb .gnb_wrap ul.depth1 > li {
+                    position: relative; /*2차메뉴 정렬의 기준*/
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 { 
+                    /*2차메뉴 - 꼭 absoulte로 코딩하는게 좋음*/
+                    position: absolute; /* li를 기준으로 정렬*/
+                    top: 86px; /*2차 메뉴가ㅏ 길어도 1차메뉴와 가운데 정렬로 배치*/
+                    left: 50%; /* 정렬의 기준 li 넓이의 절반*/
+                    transform: translateX(-50%); /* 2차메뉴 넓이의 절반*/
+                    background-color: rgba(231,135,91,0.63);
+                    color: #fff;
+                    border-radius: 21px;
+                    text-align: center;
+                    padding: 30px 20px;
+                    display: none; /* 마우스오버할때만 나타나게*/
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                    display: block;
+                    padding: 5px 0;
+                    white-space: nowrap; /*줄바꿈 금지 메뉴를 한줄에 표시*/
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+                    text-decoration: underline;
+                } 
+
+
+
+                /*******메뉴에 마우스 오버했을때******/
+                header.menu_over {
+                    background-color: #fff;
+                    box-shadow: 0 4px 4px 5px rgba(0,0,0,0.1);
+                    color: #1d1d1d;
+                }
+                
+                header.menu_over .logo a {
+                    background: url(../images/logo_color.svg) no-repeat center center / contain;
+                }
+                header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a { /*1차메뉴*/
+                    color: rgba(231,135,91,0.63);
+                }
+                header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
+                    display: block;
+                }
+                header .tnb .search {
+                    background-image: url("data:image/svg+xml,%3Csvg width='51' height='51' viewBox='0 0 51 51' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_1_234' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='51' height='51'%3E%3Crect width='51' height='51' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_1_234)'%3E%3Cpath d='M25.5 25.5C26.6688 25.5 27.6693 25.0839 28.5016 24.2516C29.3339 23.4193 29.75 22.4188 29.75 21.25C29.75 20.0813 29.3339 19.0807 28.5016 18.2484C27.6693 17.4161 26.6688 17 25.5 17C24.3313 17 23.3307 17.4161 22.4984 18.2484C21.6661 19.0807 21.25 20.0813 21.25 21.25C21.25 22.4188 21.6661 23.4193 22.4984 24.2516C23.3307 25.0839 24.3313 25.5 25.5 25.5ZM25.5 41.1188C29.8208 37.1521 33.026 33.5484 35.1156 30.3078C37.2052 27.0672 38.25 24.1896 38.25 21.675C38.25 17.8146 37.0193 14.6536 34.5578 12.1922C32.0964 9.73073 29.0771 8.5 25.5 8.5C21.9229 8.5 18.9036 9.73073 16.4422 12.1922C13.9807 14.6536 12.75 17.8146 12.75 21.675C12.75 24.1896 13.7948 27.0672 15.8844 30.3078C17.974 33.5484 21.1792 37.1521 25.5 41.1188ZM25.5 46.75C19.7979 41.8979 15.5391 37.3911 12.7234 33.2297C9.90781 29.0682 8.5 25.2167 8.5 21.675C8.5 16.3625 10.2089 12.1302 13.6266 8.97813C17.0443 5.82604 21.0021 4.25 25.5 4.25C29.9979 4.25 33.9557 5.82604 37.3734 8.97813C40.7911 12.1302 42.5 16.3625 42.5 21.675C42.5 25.2167 41.0922 29.0682 38.2766 33.2297C35.4609 37.3911 31.2021 41.8979 25.5 46.75Z' fill='black'/%3E%3C/g%3E%3C/svg%3E%0A");
+                }
+                
+
+}
+
+@media screen and (max-width:1024px) {
+    /***************모바일 버전************/
+                header {
+                    height: 60px;
+                }
+                header .wrapper {
+                    margin-right: 0;
+                }
+                header .logo a {
+                    /*a 를 클릭하면서 들어가야 되니깐*/
+                    width: 89px;
+                    height: 34px;
+                }
+                header .gnb .gnb_open {
+                    display: block;
+                    width: 60px;
+                    height: 60px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_1_400' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_1_400)'%3E%3Cpath d='M3 21V19H21V21H3ZM3 13V11H21V13H3ZM3 5V3H21V5H3Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+
+                }
+                header .gnb .gnb_wrap {
+                    display: none;
+                    position: fixed; 
+                    /*fixed는 무조건 body를 기준으로 정렬
+                    header가 고정이 아니더라도 메뉴는 모바일에서 일단 열리면 고정 되어야함*/
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fff;
+                    color : #555;
+                }
+                header .gnb .gnb_wrap ul.depth1 {
+                    height: calc(100% - 60px);
+                    margin: 60px 0 0 0; /*스크롤에 해당하지 않은 상단영역*/
+                    overflow-x: hidden; /*좌우스클로바 숨김*/
+                    overflow-y: auto;/*위아래스크롤바는 내부 콘텐츠가 더 길때만 생김*/
+                }
+                header .gnb .gnb_wrap ul.depth1 > li {
+                    border-bottom: 1px solid #ededed;
+
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > a {
+                    display: block;
+                    padding: 34px 49px 34px 20px ;
+                    font-size: 24px;
+                    position: relative; /*after기준*/
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > a::after {
+                    content: "";
+                    position: absolute;
+                    right: 18px;
+                    top: 33px;
+                    width: 32px;
+                    height: 32px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_10_211' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_10_211)'%3E%3Cpath d='M16 20.5L8 12.5L9.86667 10.6333L16 16.7333L22.1333 10.6333L24 12.5L16 20.5Z' fill='%23555555'/%3E%3C/g%3E%3C/svg%3E%0A");
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: contain;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li:first-child {
+                    border-top: 1px solid #ededed;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li >ul.depth2 {
+                    background-color: #EFEEEE;
+                    padding: 21px 0 21px 35px;
+                    display: none;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li >ul.depth2 > li > a {
+                    display: block;
+                    padding: 5px 0 ;
+                }
+
+
+                header .gnb .gnb_close {
+                    display: none;
+                    position: fixed; /*fixed는 무조건 body를 기준으로 정렬*/
+                    right: 0;
+                    top: 0;
+                    width: 60px;
+                    height: 60px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_10_206' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_10_206)'%3E%3Cpath d='M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z' fill='%231C1B1F'/%3E%3C/g%3E%3C/svg%3E%0A");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                header .tnb {
+                    display: none;
+                }
+
+                /*************** 모바일 메뉴 열림상태*******************/
+                header.menu_open .gnb .gnb_wrap {
+                    display: block;
+                }
+                header.menu_open .gnb .gnb_close {
+                    display: block;
+                }
+                
+
+                header.menu_open .gnb .gnb_wrap ul.depth1 > li.open > a {
+                    font-size: 20px;
+                    color: #6B5656;
+                }
+                header.menu_open .gnb .gnb_wrap ul.depth1 > li.open > a::after {
+                    
+                    background-image: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_10_223' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='33' height='33'%3E%3Crect x='31.9995' y='32.1584' width='32' height='32' transform='rotate(-179.716 31.9995 32.1584)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_10_223)'%3E%3Cpath d='M16.1013 11.5792L24.0615 19.6188L22.1856 21.4762L16.0826 15.3458L9.91909 21.4153L8.0617 19.5394L16.1013 11.5792Z' fill='%231C1B1F'/%3E%3C/g%3E%3C/svg%3E%0A");
+                    
+                }
+
+                header.menu_open .gnb .gnb_wrap ul.depth1 > li.open >ul.depth2 {
+                    display: block;
+                }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.visual {
+    height: 100vh;
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+}
+.visual p {
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    padding: 40vh 0 0 0;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    margin: 2000px 0 0 0;
+}
