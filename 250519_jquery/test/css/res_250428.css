@@ -1,0 +1,99 @@
+@import url(default.css);
+@import url(font.css);
+@import url(res_common.css);
+
+.tj {
+    margin: 165px 0 0 0;
+}
+.tj .group {
+    display: flex; /* tit photo 좌우로배치 */
+    justify-content: space-between; /* 좌우끝배치 */
+    align-items: center; /* 위아래가운데 */
+}
+.tj .group.left {
+    flex-direction: row-reverse; /* 좌우반대 */
+}
+.tj .group.right {
+    text-align: right;
+    margin: 58px 0 0 0;
+}
+.tj .group .tit h2 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: green;
+    margin: 0 0 21px 0;
+}
+.tj .group .photo {
+    border-radius: 34px;
+    overflow: hidden;
+    height: 370px;
+    width: 511px;
+}
+.tj .group .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:640px){ 
+                        .tj {
+                            margin: 91px 0 0 0;
+                        }
+                        .tj .group {
+                            display: block; 
+                            /* display:flex였는데 flex 안하려면 display에 
+                            다른 속성을 주면됨. - 만만한게 block
+                            flex-direction 같은 flex의 값은 flex가 해제되는 순간 
+                            값이 작동되지 않음 - 냅두면 됨. */
+                        }
+                        .tj .group.right {
+                            text-align: left;
+                            margin: 51px 0 0 0;
+                        }
+                        .tj .group .tit h2 {
+                            font-size: 30px;
+                            margin: 24px 0 14px 0;
+                        }
+                        .tj .group .tit p br {
+                            display: none;
+                            /* pc에서 준 줄바꿈을 모바일에서 삭제
+                               br태그를 숨김처리 */
+                        }
+                        .tj .group .photo {
+                            border-radius: 15px;
+                            height: 207px;
+                            width: auto; 
+                            /* 원래 속성대로 주는값 auto
+                               block요소면 넓이 100% */
+                        }
+}/* @media */
+
+.gallery {
+    margin: 149px 0 0 0;
+}
+.gallery .photo {
+    border-radius: 34px;
+    overflow: hidden; /* 필수 */
+    /* 이미지하단에 여백이 발생하는데 이는 이미지가 inline태그라서 하단에
+       글자 행간이 적용되어서 그렇게됨
+       이걸 없애기 위해서 이미지만 감싸는 요소에서 글자크기와 행간을 0으로
+       줘서 여백을 삭제 */
+    font-size: 0;
+    line-height: 0;
+}
+.gallery .photo img {
+    width: 100%; /* 이미지는 넓이만 주면 높이는 비율에 맞게 알아서 들어감 */
+}
+@media screen and (max-width:640px){
+                    .gallery {
+                        margin: 89px 0 0 0;
+                    }
+                    .gallery .photo {
+                        border-radius: 10px;
+                    }
+}/* @media */
+
+body {
+    margin: 0 0 400px 0;
+}

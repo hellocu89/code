@@ -1,0 +1,336 @@
+@import url(default.css);
+@import url(res_common.css);
+@import url(font.css);
+
+.news {
+    margin: 202px 0 0  0;
+}
+.news .wrapper {
+    display: flex; 
+    /* h2/list 좌우로배치 - more는 absolute라 계산X */
+    justify-content: space-between;
+    position: relative; /* more의 정렬의 기준 */
+}
+.news h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.news .list {
+    width: 66.03%;
+    /*
+        넓이는 %로 계산 - 콘텐츠 넓이에서 몇%로 계산
+        832 / 1260 * 100 = 66.03
+    */
+}
+.news .list ul li {
+    border-bottom: 1px solid #ccc;
+}
+.news .list ul li a {
+    display: flex; /* txt/photo 좌우로 배치 */
+    justify-content: space-between; /* 양끝 */
+    align-items: center; /* 위아래가운데 */
+    padding: 20px 0;
+}
+.news .list ul li a .txt {
+    width: calc(100% - 214px);
+    /* 사진의 넓이는 고정, 
+       제목이 들어갈 수 있는 넓이는 브라우저 넓이에 따라 바뀜 
+       글자와 사진 전체의 넓이 100% - 사진의 넓이와 여백값px */
+}
+.news .list ul li a .txt strong {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    display: block;
+    margin: 0 0 11px 0;
+
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news .list ul li a .photo {
+    width: 190px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+.news .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.news .more {
+    position: absolute; /* wrapper를 기준으로 정렬, after 정렬의 기준 */
+    left: 0;
+    top: 80px;
+    padding: 3px 32px 0 12px;
+    border: 1px solid #999;
+}
+.news .more::after {
+    content: "";
+    position: absolute; /* more를 기준으로 정렬 */
+    right: 6px;
+    top: 3px;
+    width: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_140' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='22' height='22'%3E%3Crect width='22' height='22' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_140)'%3E%3Cpath d='M10.3126 11.6873H5.72925C5.53446 11.6873 5.37121 11.6214 5.23952 11.4896C5.10767 11.3577 5.04175 11.1944 5.04175 10.9996C5.04175 10.8047 5.10767 10.6414 5.23952 10.5099C5.37121 10.3782 5.53446 10.3123 5.72925 10.3123H10.3126V5.729C10.3126 5.53421 10.3785 5.37097 10.5104 5.23927C10.6422 5.10743 10.8055 5.0415 11.0003 5.0415C11.1953 5.0415 11.3585 5.10743 11.49 5.23927C11.6217 5.37097 11.6876 5.53421 11.6876 5.729V10.3123H16.2709C16.4657 10.3123 16.6289 10.3783 16.7606 10.5101C16.8925 10.642 16.9584 10.8053 16.9584 11.0001C16.9584 11.195 16.8925 11.3583 16.7606 11.4898C16.6289 11.6215 16.4657 11.6873 16.2709 11.6873H11.6876V16.2707C11.6876 16.4655 11.6217 16.6287 11.4898 16.7604C11.358 16.8922 11.1946 16.9582 10.9999 16.9582C10.8049 16.9582 10.6417 16.8922 10.5101 16.7604C10.3784 16.6287 10.3126 16.4655 10.3126 16.2707V11.6873Z' fill='%23999999'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; /* 영역에 맞게 아이콘 안짤리게 꽉채우기 */
+    transition: 1s; /* 오버후에 속성이 변경되면 1초동안 천천히 실행 */
+}
+.news .more:hover::after {
+    transform: rotate(360deg);
+}
+@media screen and (max-width:640px){ 
+                /* 브라우저 사이즈가 640px 이하일때만 적용되는 스타일 */
+                .news {
+                    margin: 98px 0 0  0;
+                }
+                .news .wrapper {
+                    display: block;  /* flex 안함 */
+                }
+                .news h2 {
+                    font-size: 30px;
+                }
+                .news .list {
+                    width: auto; 
+                    /* 원래 속성대로 주기 - div 블럭요소라서 100% 들어감 */
+                    margin: 25px 0 0 0;
+                }
+                .news .list ul li a {
+                    align-items: flex-start; /* 위 정렬 */
+                    padding: 18px 0;
+                }
+                .news .list ul li a .txt {
+                    width: calc(100% - 112px);
+                }
+                .news .list ul li a .txt strong {
+                    font-size: 16px;
+                    font-weight: 400;
+                    margin: 0 0 10px 0;
+                
+                    /* 1줄제한 -> 무제한 */
+                    white-space: normal; /* nowrap 해제 */
+                    overflow: visible; /* hidden 해제 */
+                }
+                .news .list ul li a .photo {
+                    width: 96px;
+                    height: 66px;
+                    border-radius: 8px;
+                }
+                .news .more {
+                    left: auto;
+                    right: 0;
+                    /* left정렬에서 right 정렬로 변경하려면 
+                       left:auto;로 해제하고 right를 줘야함 */
+                    top: 6px;
+                    font-size: 14px;
+                    padding: 0 25px 0 10px;
+                }
+                .news .more::after {
+                    right: 8px;
+                    top: 2px;
+                    width: 16px;
+                    height: 16px;
+                }
+}/*@media*/
+
+.global {
+    margin: 232px 0 0 0;
+}
+.global .wrapper {
+    display: flex; /* txt/photo 좌우 배치 */
+    justify-content: space-between;
+}
+.global .txt {
+    width: calc(50% - 12px);
+    /* 2개니까 50%에 둘 사이 여백의 절반 */
+    padding: 39px 0;
+    /* 왼쪽글자의 높이에서 padding만큼 오른쪽 이미지가 늘어남 */
+}
+.global .txt h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 29px 0;
+    position: relative; /* after 정렬의 기준 */
+}
+.global .txt h2::after {
+    content: "";
+    position: absolute; /* h2를 기준으로 정렬 */
+    left: 0;
+    bottom: -16px;
+    width: 98px;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.global .photo {
+    width: calc(50% - 12px);
+    overflow: hidden;
+    border-radius: 20px;
+}
+.global .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:640px){ 
+                    .global {
+                        margin: 68px 0 0 0;
+                    }
+                    .global .txt {
+                        width: calc(50% - 8px);
+                        /* 2개니까 50%에 둘 사이 여백의 절반 */
+                        padding: 21px 0;
+                        /* 왼쪽글자의 높이에서 padding만큼 오른쪽 이미지가 늘어남 */
+                    }
+                    .global .txt h2 {
+                        font-size: 25px;
+                        margin: 0 0 20px 0;
+                    }
+                    .global .txt h2::after {
+                        bottom: -10px;
+                        width: 40px;
+                    }
+                    .global .txt h2 br {
+                        display: none; /* br태그로 인한 줄바꿈 삭제 */
+                    }
+                    .global .txt p br {
+                        display: none;
+                    }
+                    .global .photo {
+                        width: calc(50% - 8px);
+                        border-radius: 10px;
+                    }
+}/*@media*/
+
+.esg {
+    margin: 192px 0 0 0;
+}
+.esg .tit h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 13px 0;
+}
+.esg .list {
+    margin: 46px 0 0 0;
+}
+.esg .list ul {
+    display: flex; /* li를 좌우로 배치 */
+    justify-content: space-between;
+}
+.esg .list ul li {
+    width: calc(25% - 18px);
+    /*
+        100% / 1줄에 나오는 갯수 = 100/4 = 25%
+        1줄 여백의 총합 / 1줄에 나오는 갯수 = 24+24+24 / 4 = 72/4 = 18
+    */
+}
+.esg .list ul li a {
+    display: flex;
+    align-items: flex-end; /* 아래정렬 */
+    justify-content: center; /* 좌우 가운데 */
+    height: 434px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 0 0 51px 0; /* 글자와 하단 여백 */
+}
+.esg .list ul li.list01 a {
+    background-image: url(../images/esg_bg1.jpg);
+}
+.esg .list ul li.list02 a {
+    background-image: url(../images/esg_bg2.jpg);
+}
+.esg .list ul li.list03 a {
+    background-image: url(../images/esg_bg3.jpg);
+}
+.esg .list ul li.list04 a {
+    background-image: url(../images/esg_bg4.jpg);
+}
+@media screen and (max-width:640px){
+                .esg {
+                    margin: 130px 0 0 0;
+                }
+                .esg .tit h2 {
+                    font-size: 30px;
+                    margin: 0 0 8px 0;
+                }
+                .esg .list {
+                    margin: 30px 0 0 0;
+                }
+                .esg .list ul {
+                    flex-wrap: wrap; /* 2줄 허용 */
+                    gap: 10px;
+                }
+                .esg .list ul li {
+                    width: calc(50% - 5px);
+                    /*
+                        100% / 1줄에 나오는 갯수 = 100/2 = 50%
+                        1줄 여백의 총합 / 1줄에 나오는 갯수 = 10 / 2 = 5
+                    */
+                }
+                .esg .list ul li a {
+                    align-items: center; /* 위아래 가운데 정렬 */
+                    height: 140px;
+                    border-radius: 7px;
+                    font-size: 20px;
+                    padding: 0; /* 여백 삭제 */
+                }
+}/*@media*/
+
+.esg_fix {
+    margin: 222px 0 0 0;
+}
+.esg_fix .wrapper {
+    display: flex; /* tit/list */
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.esg_fix .tit {
+    width: 23%;
+    /* 
+        297px / 1260 * 100 = 23%
+    */
+    position: sticky;
+    top: 20px;
+}
+.esg_fix .list {
+    width: 57.54%;
+    /* 725 / 1260 * 100 = 57.54 */
+}
+.esg_fix .list ul li a {
+    display: block;
+    height: 434px;
+}
+.esg_fix .list ul li.list01 a {
+    background-image: url(../images/esg_bg1.jpg);
+}
+.esg_fix .list ul li.list02 a {
+    background-image: url(../images/esg_bg2.jpg);
+}
+.esg_fix .list ul li.list03 a {
+    background-image: url(../images/esg_bg3.jpg);
+}
+.esg_fix .list ul li.list04 a {
+    background-image: url(../images/esg_bg4.jpg);
+}
+
+body {
+    margin: 0 0 400px 0;
+}
