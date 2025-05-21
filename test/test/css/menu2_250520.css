@@ -271,7 +271,7 @@ header.fixed .util .search .search_open {
 }/*@media*/
 
 .visual {
-    height: 100vh;
+    height: 100dvh;
     background: url(../images/visual_bg2.jpg) no-repeat center center / cover;
     color: #fff;
     position: relative; 
