@@ -1,0 +1,104 @@
+@import url(font.css);
+@import url(common_full.css);
+@import url(default.css);
+
+.visual .popup .popup_wrap .popup_item {
+    height: 900px;
+    color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.visual .popup .popup_wrap .popup_item.bg1 {
+    background-image: url(../images/popup-1.jpg);
+}
+.visual .popup .popup_wrap .popup_item.bg2 {
+    background-image: url(../images/popup-2.jpg);
+}
+.visual .popup .popup_wrap .popup_item.bg3 {
+    background-image: url(../images/popup-3.jpg);
+}
+.visual .popup .popup_wrap .popup_item h3 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 342px 0 20px 0;
+}
+
+.visual .slick-prev,
+.visual .slick-next {
+    position: absolute; /*popup_wrap 기준으로 정렬*/
+    left: 20px;
+    top: 368px;
+    width: 76px;
+    height: 76px;
+    z-index: 10;
+    color: transparent; /*글자 안보이게*/
+    background-image: url("data:image/svg+xml,%3Csvg width='76' height='76' viewBox='0 0 76 76' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_52_90' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='76' height='76'%3E%3Crect width='76' height='76' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_52_90)'%3E%3Cpath d='M29.0842 37.9992L52.9379 61.8529C53.567 62.482 53.8737 63.2228 53.8578 64.0751C53.8415 64.928 53.5187 65.669 52.8896 66.2981C52.26 66.9272 51.519 67.2418 50.6666 67.2418C49.8143 67.2418 49.0733 66.9272 48.4436 66.2981L24.1521 42.0549C23.5795 41.4823 23.1552 40.8407 22.8791 40.1304C22.6031 39.42 22.4651 38.7096 22.4651 37.9992C22.4651 37.2888 22.6031 36.5784 22.8791 35.868C23.1552 35.1576 23.5795 34.5161 24.1521 33.9435L48.4436 9.65119C49.0733 9.02208 49.8225 8.71571 50.6912 8.73207C51.5599 8.74843 52.3088 9.07116 52.9379 9.70027C53.567 10.3294 53.8816 11.0704 53.8816 11.9233C53.8816 12.7756 53.567 13.5164 52.9379 14.1455L29.0842 37.9992Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .slick-next {
+    left: auto;
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+.visual ul.slick-dots {
+    position: absolute; /*popup_wrap을 기준으로 정렬*/
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    display: flex; /*li를 좌우로 배치*/
+    justify-content: center; /*가운데*/
+    gap: 9px;
+
+
+}
+.visual ul.slick-dots li button {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    color: transparent; /*숫자 투명하게*/
+}
+.visual ul.slick-dots li.slick-active button {
+    background-color: #fff;
+}
+
+.visual .btn_wrap .ctrl_stop {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+.visual .btn_wrap .ctrl_play {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: green;
+}
+
+@media screen and (max-width:1440px) {
+    .visual .slick-prev,
+    .visual .slick-next {
+        display: none !important; 
+        /*css 적용 우선순위 상관없이 무조건 먼저 실행하도록 하는 명령
+           !important --단 주의, 하나의 요소에 pc버전과 모바일버전에
+           각각 있다면 스타일이 꼬이게 된다*/
+    }
+ }
+
+ @media screen and (max-width:768px) {
+    .visual .popup .popup_wrap .popup_item {
+        height: 600px;
+    }
+    .visual .popup .popup_wrap .popup_item h3 {
+        font-size: 32px;
+        padding: 200px 0 15px 0;
+    }
+    .visual ul.slick-dots {
+        bottom: 25px;  
+    }
+ }

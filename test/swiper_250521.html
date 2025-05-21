@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--swiper 라이브러리-->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/swiper_250521.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper_250521.js"></script>
+
+    
+
+    <title>swiper 플러그인 팝업</title>
+</head>
+<body>
+    <div id="wrap">
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide popup1">
+                            <div class="wrapper">
+                                <h3>What is Lorem Ipsum?</h3>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <br>when an unknown printer took a galley of type</p>
+
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup2">
+                            <div class="wrapper">
+                                <h3>Sed ut perspiciatis,</h3>
+                                <p>unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
+                            
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup3">
+                            <div class="wrapper">
+                                <h3>Where does it come from?</h3>
+                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, </p>
+                            
+                            </div>
+                        </li>
+
+                    </ul>
+                    <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <button class="btn_pre"><span class="blind">이전 팝업보기</span></button>
+                    <button class="btn_next"><span class="blind">다음 팝업보기</span></button>
+                </div>
+            </section>
+            <section class="biz">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>What is Lorem Ipsum?</h2>
+                    </div>
+                    <div class="list">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz-1.jpg" alt="사슴"></div>
+                                        <h3>탄소중립 융합 인재양성</h3>
+                                        <p>Bachelor’s degree in Aerospace Engineering and Computer science(dual major), KAIST (2025)</p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz-2.jpg " alt="여우"></div>
+                                        <h3>녹색성장지속가능대학원</h3>
+                                        <p>녹색성장지속가능대학원은 녹색성장 및 탄소중립 달성을 위해 과학기술 과 정책·금융을 융합한 </p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz-3.jpg" alt="개"></div>
+                                        <h3>KAIST 장학생</h3>
+                                        <p>회·경제·환경 분야의 지속가능성 문제를 해결할 산업 및 공공부문의 리더와 창업가를 양성하기 위해</p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz-4.jpg" alt="고양이"></div>
+                                        <h3>일반 장학생</h3>
+                                        <p>2023년 2월 개원한 녹색성장지속가능대학원은 녹색경영 및 정책분야 리더를 양성해온 녹색성장대학원과</p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz-5.jpg" alt="강아지"></div>
+                                        <h3>군학프로그램</h3>
+                                        <p>탄소중립 과학기술 및 정책금융에 대한 통섭적인 이해를 추구하는 녹색성장지속가능대학원은 전일제 석사 및 박사학위를 위한 교과과정을 운영합니다.</p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="news">
+                <div class="tit">
+                    <div class="wrapper">
+                        <h2>What is Lorem Ipsum?</h2>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/new-1.jpg" alt="개"></div>
+                                    <div class="txt">
+                                        <h3>녹색성장지속가능대학원</h3>
+                                        <p>녹색성장지속가능대학원은 녹색성장 및 탄소중립 달성을 위해 과학기술 과 정책·금융을 융합한 </p>
+                                    </div>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/new-2.jpg" alt="사슴"></div>
+                                    <div class="txt">
+                                        <h3>일반 장학생</h3>
+                                        <p>2023년 2월 개원한 녹색성장지속가능대학원은 녹색경영 및 정책분야 리더를 양성해온 녹색성장대학원과 </p>
+                                    </div>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/new-3.jpg" alt="고양이"></div>
+                                    <div class="txt">
+                                        <h3>군학프로그램</h3>
+                                        <p>탄소중립 과학기술 및 정책금융에 대한 통섭적인 이해를 추구하는 녹색성장지속가능대학원은 전일제 석사 및 박사학위를 위한 교과과정을 운영합니다.</p>
+                                    </div>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/new-4.jpg" alt="강아지"></div>
+                                    <div class="txt">
+                                        <h3>탄소중립 융합 인재양성</h3>
+                                        <p>탄소중립의 대안을 제시하고 글로벌 녹색성장을 이끌 핵심인재를 배출하는 세계 정상급 교육·연구기관이 되겠습니다. </p>
+                                    </div>
+                                </a>
+                            </li> 
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>
