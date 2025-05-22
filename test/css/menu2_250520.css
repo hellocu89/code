@@ -42,7 +42,7 @@ header .logo a {
     display: block;
     width: 145px;
     height: 48px;
-    background: url(../images/logo_w.svg) no-repeat center center / contain;
+    background: url(../images/logo_white.svg) no-repeat center center / contain;
 }
 header .util .search .search_open {
     display: block;

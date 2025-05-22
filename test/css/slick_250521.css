@@ -2,6 +2,11 @@
 @import url(common_full.css);
 @import url(default.css);
 
+
+.visual {
+    position: relative; /*btn_wrap 정렬의 기준*/
+}
+
 .visual .popup .popup_wrap .popup_item {
     height: 900px;
     color: #fff;
@@ -46,15 +51,12 @@
 
 .visual ul.slick-dots {
     position: absolute; /*popup_wrap을 기준으로 정렬*/
-    left: 0;
+    right: 50%;
     bottom: 30px;
-    width: 100%;
     display: flex; /*li를 좌우로 배치*/
-    justify-content: center; /*가운데*/
     gap: 9px;
-
-
 }
+
 .visual ul.slick-dots li button {
     display: block;
     width: 15px;
@@ -66,18 +68,37 @@
 .visual ul.slick-dots li.slick-active button {
     background-color: #fff;
 }
+.visual .btn_wrap {
+    position: absolute; /*visual을 기준으로 정렬*/
+    left: calc(50% + 10px);
+    bottom: 29px;
+    display: flex;
+     /**********js 요소에 display:inline-block을 줘서 코딩이 틀어진걸 바로잡기위해
+        아래 행간이 발생된걸
+     *************/
+    
+    
 
+}
 .visual .btn_wrap .ctrl_stop {
     display: block;
-    width: 50px;
-    height: 50px;
-    background-color: red;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_81_442' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='10' height='10'%3E%3Crect width='9.66162' height='9.66162' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_81_442)'%3E%3Cpath d='M5.63607 7.64864V2.0127H7.24634V7.64864H5.63607ZM2.41553 7.64864V2.0127H4.0258V7.64864H2.41553Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 .visual .btn_wrap .ctrl_play {
-    display: block;
-    width: 50px;
-    height: 50px;
-    background-color: green;
+    display: none; /*처음에는 숨김*/
+    width: 17px;
+    height: 17px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_81_447' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='13' height='13'%3E%3Crect width='13' height='13' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_81_447)'%3E%3Cpath d='M5.4165 9.20817V3.7915L8.12484 6.49984L5.4165 9.20817Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
 @media screen and (max-width:1440px) {
@@ -101,4 +122,184 @@
     .visual ul.slick-dots {
         bottom: 25px;  
     }
+ }
+
+.biz {
+    margin: 116px 0 0 0;
+}
+.biz .tit h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1d1d1d;
+}
+.biz .list {
+    margin: 64px 0 0 0;
+    width: calc(100% + 24px);
+}
+
+.biz .list .list_wrap .list_item {
+    margin-right: 24px;
+}
+
+.biz .list .list_wrap .list_item a {
+    display: block;
+}
+
+.biz .list .list_wrap .list_item a .photo {
+    overflow: hidden;
+    height: 395px;
+}
+
+.biz .list .list_wrap .list_item a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.biz .list .list_wrap .list_item a h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 24px 0 12px 0;
+}
+
+@media screen and (max-width:768px) { 
+    .biz {
+        margin: 70px 0 0 0;
+    }
+    .biz .tit h2 {
+        font-size: 25px;
+    }
+    .biz .list {
+        margin: 24px 0 0 0;
+        width: calc(100% + 16px);
+    }
+    
+    .biz .list .list_wrap .list_item {
+        margin-right: 16px;
+    }
+    
+    .biz .list .list_wrap .list_item a .photo {
+        height: 222px;
+    }
+    
+    
+    .biz .list .list_wrap .list_item a h3 {
+        font-size: 20px;
+        margin: 16px 0 10px 0;
+    }
+
+
+}
+
+.news {
+    margin: 242px 0 0 0;
+    padding: 150px 0 184px 0;
+    background-color: #B197A2;
+    color: #fff;
+}
+
+.news .tit h2 {
+    font-size: 48px;
+    font-weight: 800;
+}
+.news .list {
+    margin: 51px 0 0 0;
+    width: calc(50% + 630px);
+    position: relative;
+    left: calc(50% - 630px);
+}
+
+.news .list .list_wrap .list_item {
+    width: 404px;
+    margin-right: 24px;
+}
+.news .list .list_wrap .list_item a {
+    display: block;
+    background-color: #fff;
+    border-radius: 20px;
+    color: #555;
+}
+
+.news .list .list_wrap .list_item a .photo {
+    overflow: hidden;
+    height: 392px;
+    border-radius: 20px 20px 0 0;
+}
+
+.news .list .list_wrap .list_item a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news .list .list_wrap .list_item a .txt {
+    padding: 40px 27px ;
+}
+.news .list .list_wrap .list_item a .txt h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 0 0 10px 0;
+}
+
+
+
+
+@media screen and (max-width:1300px) {
+    
+    .news .list {
+        margin: 24px 0 0 0;
+        width: calc(100% - 20px);
+        left: 20px;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .news {
+        margin: 24px 0 0 0;
+        padding: 56px 0 49px 0;
+    }
+    
+    .news .tit h2 {
+        font-size: 20px;
+    }
+    .news .list {
+        margin: 30px 0 0 0;
+    }
+    
+    .news .list .list_wrap .list_item {
+        width: 247px;
+    }
+    .news .list .list_wrap .list_item a {
+        border-radius: 10px;
+    }
+    
+    .news .list .list_wrap .list_item a .photo {
+        height: 238px;
+        border-radius: 10px 10px 0 0;
+    }
+    .news .list .list_wrap .list_item a .txt {
+        padding: 22px 17px ;
+    }
+    
+    .news .list .list_wrap .list_item a .txt h3 {
+        font-size: 20px;
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+ footer {
+    margin: 100px 0 0 0;
  }

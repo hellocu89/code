@@ -1,0 +1,111 @@
+@import url(font.css);
+@import url(common_full.css);
+@import url(default.css);
+
+.tour {
+    margin: 150px 0;
+}
+.tour .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 10px 0;
+}
+.tour .list {
+    margin: 34px 0 0 0;
+}
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+.tour.acc01 .list ul li {
+    /*width: 20%;*/
+    transition: 0.5s;
+    flex: 1 ;
+}
+.tour.acc01 .list ul li.on {
+    /*width: 50%;*/
+    flex: 3;
+}
+.tour.acc02 .list ul li {
+    /*width: calc(25% - 9px);*/
+    flex: 1;
+    transition: 0.5s;
+}
+.tour.acc02 .list ul li.on {
+    flex: 3;
+    
+}
+.tour .list ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 391px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 0 30px 44px 30px;
+
+}
+.tour .list ul li.list01 a {
+    background-image: url(../images/tour1.jpg);
+}
+.tour .list ul li.list02 a {
+    background-image: url(../images/tour2.jpg);
+}
+.tour .list ul li.list03 a {
+    background-image: url(../images/toru3.jpg);
+}
+.tour .list ul li.list04 a {
+    background-image: url(../images/toru4.jpg);
+}
+
+.tour .list ul li a h3 {
+     font-size: 25px;
+     font-weight: 800;
+}
+.tour .list ul li a p {
+    margin: 5px 0 0 0;
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+        .tour {
+            margin: 170px 0;
+        }
+        .tour .tit h2 {
+            font-size: 25px;
+            margin: 0 0 8px 0;
+        }
+        .tour .list {
+            margin: 16px 0 0 0;
+        }
+        .tour .list ul {
+            flex-direction: column;
+            gap: 16px;
+        }
+        .tour.acc01 .list ul li {
+            width: 100%;
+        }
+        .tour.acc01 .list ul li.on {
+            width: 100%;
+        }
+        .tour.acc02 .list ul li {
+            width: 100%;
+        }
+        .tour .list ul li a {
+            height: 200px;
+            padding: 0 20px 22px 20px;
+        
+        }
+        .tour .list ul li a h3 {
+            font-size: 20px;
+        }
+        .tour .list ul li a p {
+            margin: 5px 0 0 0;
+            display: block;
+        }
+}
