@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--jquery 라이브러리-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!--swiper 라이브러리-->
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>동물보호센터</title>
+</head>
+<body>
+    <div class="skip_nav">
+        <a href="#skip_content">본문바로가기</a>
+        <!--id="skip_content"인 요소로 바로가기 (내부링크)-->
+    </div>
+
+    <div id="wrap">
+        <!--
+            header에 마우스를 오버하거나 스크롤을 내리면 header에 fixed클래스 추가
+            메뉴에 마우스를 오버하면 오버한 li한테만 over클래스 추가
+
+            모바일에서 메뉴열기 버튼을 클릭하면 header에 menu_open 클래스 추가
+            모바일에서 1차 메뉴를 클릭하면 클릭한 li에 open 클래스 추가
+
+        -->
+        <header>
+            <h1 class="logo"><a href="#"><span class="blind">동물보호센터</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <li>
+                            <a href="https://samsungfire.com/"><span>찾습니다</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>실종신고</span></a></li>
+                                <li><a href="#"><span>구조정보/목격담</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://samsungfire.com/"><span>구조분양</span></a>
+                        </li>
+                        <li>
+                            <a href="https://samsungfire.com/"><span>네트워크</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>동물찾기 네트워크</span></a></li>
+                                <li><a href="https://www.animal.go.kr" target="_blank" title="새창열림"><span>국가동물보호정보시스템</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://samsungfire.com/"><span>재회성공담</span></a>
+                        </li>
+                        <li>
+                            <a href="https://samsungfire.com/"><span>대처방법</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>실종시 대처방법</span></a></li>
+                                <li><a href="#"><span>구조시 대처방법</span></a></li>
+                                <li><a href="#"><span>고양이에 대해</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+            </nav>
+            <div class="util">
+                <div class="search">
+                    <button class="search_open"><span class="blind">검색열기</span></button>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide bg1">
+                            <div class="wrapper">
+                                <p>사랑으로 맺어진 <br> 가족의 시작, 입양</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg2">
+                            <div class="wrapper">
+                                <p>작은 관심이 실종 동물에게 <br> 큰 희망이 됩니다</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg3">
+                            <div class="wrapper">
+                                <p>작은 생명에게 <br> 큰 사랑을 전해주세요</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn_wrap">
+                        <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
+                        <button class="btn_next"><span class="blind">다음팝업보기</span></button>
+                        <button class="btn_stop"><span class="blind">일시정지</span></button>
+                        <button class="btn_play"><span class="blind">다시시작</span></button>
+                    </div><!--btn_wrap-->
+                </div><!--swiper-->
+            </section><!--visual-->
+
+            <section class="find" id="skip_content">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>찾습니다</h2>
+                    </div>
+                    <div class="list">
+                        <div class="tab_list">
+                            <ul role="tablist">
+                                <!--
+                                    선택된 li에는 active 클래스 추가, button에 선택됨이라고 써줌
+                                    선택된 li에는 active클래스 추가 aria-selected가 true가 선택된것 false 선택이 안된것
+                                    data-content li를 눌렀을 나타날 탭 콘텐츠 id값
+                                    li를 클릭했을때 data-content값을 호출해서 id가 같은 요소만 보이게 함
+                                    data-content 는 내마음대로 속성을 추가한것(값을 저장할 공간이 필요해서-표준위배)-->
+                                <li role="tab" aria-selected="true" class="item1 active" data-content="tab_item1"><button>가족을<span class="">선택됨</span></button></li>
+                                <li role="tab" aria-selected="false" class="item2" data-content="tab_item2" ><button>주인을<span class=""></span></button></li>
+                            </ul>
+                        </div>
+                        <div class="tab_content">
+                            <!--가족을, 주인을 탭 콘텐츠를 구분하기 위해 item 1,2로 클래스명 구분
+                            현재 선택된 탭 콘텐츠는 active 클래스 추가-->
+                            <div class="tab_item item1 active" id="tab_item1">
+                                <h3 class="blind">가족을 찾습니다</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/family-1.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>한국고양이</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>원흥동 민속박물관부근</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-05</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>회색털 눈은 호박색</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/family-2.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>토이푸들</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>권선구 스타벅스부근</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-20</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>꼬리가 일자임</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/family-3.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>믹스견</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>원흥동 율재병원부근</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-02</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>왼쪽 귀가 접혀있음</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/family-4.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>골든 리트리버</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>안양시청 부근</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-17</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>검은 하네스 착용</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab_item item2" id="tab_item2">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/family-5.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">목격</strong>
+                                                <h4>브리티시 숏헤어</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>원흥동 426-6 부근</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-15</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>코가 납작합</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/family-6.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>믹스견</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>동춘동 청량산 부근</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-16</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>점박이, 덩치가 큼</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/family-7.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">목격</strong>
+                                                <h4>코리아 숏헤어</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>제주 월성로2길 부근</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-04-19</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>턱밑에 흰털이 있음</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/family-8.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_care">구조</strong>
+                                                <h4>푸들</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>안양시청 부근</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-11</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>벌레퇴치목걸이 착용</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--find-->
+
+            <section class="slogan"></section><!--slogan-->
+            <section class="adopt"></section><!--adopt-->
+            <section class="review"></section><!--review-->
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

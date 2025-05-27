@@ -1,0 +1,13 @@
+/* 웹폰트를 선언 */
+@font-face {
+    font-family: "Cafe24Oneprettynight";
+	font-style: normal;
+    font-weight: 400;
+    src: url('../font/Cafe24Oneprettynight.woff') format('woff2');
+}
+@font-face {
+    font-family: "Cafe24Supermagic";
+	font-style: normal;
+    font-weight: 700;
+    src: url('../font/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
+}

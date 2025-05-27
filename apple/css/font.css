@@ -1,0 +1,13 @@
+/* 웹폰트를 선언 */
+@font-face {
+    font-family: "LaundryGo";
+	font-style: normal;
+    font-weight: 400;
+    src: url('../font/TTLaundryGothicR.woff2') format('woff2');
+}
+@font-face {
+    font-family: "LaundryGo";
+	font-style: normal;
+    font-weight: 700;
+    src: url('../font/TTLaundryGothicB.woff2') format('woff2');
+}
