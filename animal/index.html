@@ -12,6 +12,7 @@
 
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <title>동물보호센터</title>
 </head>
 <body>
@@ -117,8 +118,8 @@
                                     data-content li를 눌렀을 나타날 탭 콘텐츠 id값
                                     li를 클릭했을때 data-content값을 호출해서 id가 같은 요소만 보이게 함
                                     data-content 는 내마음대로 속성을 추가한것(값을 저장할 공간이 필요해서-표준위배)-->
-                                <li role="tab" aria-selected="true" class="item1 active" data-content="tab_item1"><button>가족을<span class="">선택됨</span></button></li>
-                                <li role="tab" aria-selected="false" class="item2" data-content="tab_item2" ><button>주인을<span class=""></span></button></li>
+                                <li role="tab" aria-selected="true" class="item1 active" data-content="tab_item1"><button>가족을<span class="blind">선택됨</span></button></li>
+                                <li role="tab" aria-selected="false" class="item2" data-content="tab_item2" ><button>주인을<span class="blind"></span></button></li>
                             </ul>
                         </div>
                         <div class="tab_content">
@@ -322,8 +323,99 @@
                 </div>
             </section><!--find-->
 
-            <section class="slogan"></section><!--slogan-->
-            <section class="adopt"></section><!--adopt-->
+            <section class="slogan">
+                <div class="wrapper">
+                    <h2 class="blind">구조동물 발견시 대처요령</h2>
+                    <p class="sub_tit">
+                        <!--모바일에서 한단락으로 나왔으면 좋겠는 글자 strong으로 묶는다
+                        글자를 태그로 감싸고 inline-block를 주면 줄바꿈이 될때
+                        inline-block으로 묶인 글자는 단락으로 줄바뀌게 된다-->
+                        <strong>공공장소<span class="item1">(공원)</span> 에서</strong> <strong>주인 없이 떠도는<br></strong>
+                        <strong>동물<span class="item2">(동물)</span>을 발견한 경우<br> 
+                        <strong>관할 시군구청 또는 </strong><strong>동물보호센터<span class="item3">(건물)</span>에<br> </strong>
+                        <strong>신고<span class="item4">(두손)</span>하시기 바랍니다.</p></strong>
+                    <p class="ex_tit">※소유자를 알 수 없는 동물을 신고하지 않고 알선·구매하는 경우, 포획하여 팔거나 판매하거나 죽일 목적으로 포획하는 경우에는<br> 동물보호법 제10조제3항제1호·제3호·제4호를 위반하여 2년 이하 징역이나 2천만원 이하 벌금이 부과됩니다.</p>
+                </div>
+            </section><!--slogan-->
+
+
+            <section class="adopt">
+                <div class="tit">
+                    <h2>가족이 되어주세요</h2>
+                </div>
+                <dlv class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/adopt-1.jpg" alt=""></div>
+                                    <strong class="cate_adopt">분양</strong>
+                                    <h3>코리아 숏헤어</h3>
+                                    <p>세종특별시 보람동<br>애교가 많으며 마른편입니다</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/adopt-2.jpg" alt=""></div>
+                                    <strong class="cate_adopt">분양</strong>
+                                    <h3>코리아 불독</h3>
+                                    <p>대전광역시 유성구<br>소심하며 겁이 많습니다</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/adopt-3.jpg" alt=""></div>
+                                    <strong class="cate_adopt">분양</strong>
+                                    <h3>믹스견</h3>
+                                    <p>대전광역시 대덕구<br>잘웃으며, 사람을 잘 따릅니다</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/adopt-4.jpg" alt=""></div>
+                                    <strong class="cate_care">임보</strong>
+                                    <h3>코리아 숏헤어</h3>
+                                    <p>대전광역시 유성구<br>삼색냥이며, 엄청 순합니다</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/adopt-5.jpg" alt=""></div>
+                                    <strong class="cate_care">임보</strong>
+                                    <h3>브리티시 숏헤어</h3>
+                                    <p>청주시 흥덕구<br> 애교가 많으며 잠이 많습니다</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/adopt-6.jpg" alt=""></div>
+                                    <strong class="cate_adopt">분양</strong>
+                                    <h3>코리아 숏헤어</h3>
+                                    <p>대전광역시 유성구<br> 삼색냥이며, 엄청 순합니다</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/adopt-7.jpg" alt=""></div>
+                                    <strong class="cate_care">임보</strong>
+                                    <h3>말티즈</h3>
+                                    <p>청주시 서원구<br> 활발하고 저그를 잘합니다</p>
+                                </a>
+                            </li> 
+
+                        </ul>
+                    </div>
+                </dlv>
+                <div class="list_ctrl">
+                    <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
+                    <button class="btn_next"><span class="blind">다음팝업보기</span></button>
+                    <a href="#" class="more">전체보기</a>
+                </div>
+                <div class="rolling">
+                    <p>입양은 사랑의 시작입니다. 입양은 사랑의 시작입니다. 입양은 사랑의 시작입니다. 입양은 사랑의 시작입니다.</p>
+                </div>
+            </section><!--adopt-->
+
             <section class="review"></section><!--review-->
         </main>
         <footer></footer>

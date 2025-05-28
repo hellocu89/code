@@ -110,24 +110,9 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
     /****************************header와 메뉴 : 종료 ****************************/
 
-        let find_content // 클릭한 메뉴의 이름(id)
-
-
-        $('.find .list .tab_list ul li').on('click', function(){
-            
-            if($(this).hasClass('active') == false ){
-                //console.log('현재 선택안된메뉴')
-                find_content = $(this).attr('data-content')
-                console.log(find_content)
-            }
-        })
+        
 
 
     
@@ -157,7 +142,8 @@ $(document).ready(function(){
         $(this).hide() //재생버튼 자신은 숨김
         $('.visual .btn_wrap button.btn_stop').show() //정지버튼이 나타남
     })
-    /******************************visual swiper : 종료 ****************************/ 
+
+ /******************************visual swiper : 종료 ****************************/ 
 
 
 
@@ -165,20 +151,82 @@ $(document).ready(function(){
 
 
 /******************************find 탭 기능 : 시작 ****************************/ 
+/*
+    1. 클릭한 li에서 data-content값을 가져와서
+        ==>tab_item중에 해당 값이 id인 요소를 찾아서 나타나게 해야함(다른요소는 숨김)
+    2. 클릭한 li에만 active클래스 추가
+    3. 클릭한 li안에 있는 span에 선택됨이라고 글자 써움(다른 li에 있는 건 삭제)
+    4. 클릭한 li 속성 aria-selected값을 true로 변경(다른 li는 모두 false) 
+*/
+
+let find_content // 클릭한 메뉴의 이름(id)
 
 
+        $('.find .list .tab_list ul li').on('click', function(){
+            
+            if($(this).hasClass('active') == false ){
+                //console.log('현재 선택안된메뉴')
+                find_content = $(this).attr('data-content')
+                //console.log(find_content)
+
+                $('.find .list .tab_content .tab_item ').removeClass('active')
+                $('.find .list .tab_content').find('#'+find_content).addClass('active')
+
+
+
+                $('.find .list .tab_list ul li').removeClass('active')
+                $(this).addClass('active')
+
+
+
+                $('.find .list .tab_list ul li button span').text('')
+                $(this).find('span').text('선택됨')
+
+
+                $('.find .list .tab_list ul li').attr('aria-selected', 'flase')
+                $(this).attr('aria-selected', 'true')
+
+
+            }
+        })
 
 
 /******************************find 탭 기능 : 종료 ****************************/ 
 
 
 
+/******************************분양 swiper 기능 : 시작 ****************************/ 
+
+    const adopt_swiper = new Swiper('.adopt .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: "auto", /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            768: {    /* 640px 이상일때 적용 */
+                spaceBetween: 20,
+                centeredSlides: true
+            },
+        },
+        centeredSlides: false, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: 5000,
+            disableOnInteraction: true,
+        },
+        navigation: {
+            nextEl: '.adopt .list_ctrl .btn_next',
+            prevEl: '.adopt .list_ctrl .btn_prev',
+        },
+        // pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+        //     el: '.swiper-pagination', /* 해당 요소의 class명 */
+        //     clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+        //     type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+        // },
+    });
+    // adopt_swiper.autoplay.stop();  /* 일시정지 기능 */
+    // adopt_swiper.autoplay.start();  /* 재생 기능 */
 
 
-
-
-
-
+/******************************분양 swiper 기능 : 종료 ****************************/ 
 
 
 

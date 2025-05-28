@@ -15,10 +15,14 @@
     padding: 10px 0;
     background-color: #f56765;
     color: #fff;
-    transform: translateX(-120%); /*위로 올리기 위해서*/
+    position: absolute;
+    left: 0;
+    top: -100px;
+    width: 100%;
+
 }
 .skip_nav a:focus {
-    transform: translateX(0);
+    top: 0;
 }
 
 
@@ -486,8 +490,11 @@ header .gnb .gnb_wrap ul.depth1 > li.gnb_open:has(ul.depth2) > a::after {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
 }
-
+.find .list .tab_content .tab_item > ul > li > a:hover .photo img {
+   transform: scale3d(1.2,1.2,1);
+}
 .find .list .tab_content .tab_item > ul > li > a .subject {
     display: flex;
     gap: 16px;
@@ -543,6 +550,458 @@ header .gnb .gnb_wrap ul.depth1 > li.gnb_open:has(ul.depth2) > a::after {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+@media screen and (max-width:1024px){
+            .find {
+                padding: 120px 0 98px 0;
+            }
+            .find .tit h2 {
+                font-size: 38px;
+            }
+            .find .list {
+                margin: 20px 0 0 0;
+            }
+            .find .list .tab_list ul li button {
+                font-size: 20px;
+                border-radius: 50px;
+                padding: 8px 23px;
+            }
+            .find .list .tab_content .tab_item > ul {
+                gap: 38px 16px;
+                flex-wrap: wrap; /*줄바꿈허용*/
+            
+            }
+            .find .list .tab_content .tab_item > ul > li {
+                width: calc(50% - 8px);
+                /*여백의 총합 16/2 = 8px */
+            }
+            .find .list .tab_content .tab_item > ul > li> a .photo {
+                height: 200px;
+                border-radius: 10px;
+            }
+
+
+}
+
+
+
+@media screen and (max-width:768px){
+                    .find {
+                        padding: 100px 0 98px 0;
+                    }
+                    .find .tit h2 {
+                        font-size: 30px;
+                    }
+                    
+                    .find .list {
+                        margin: 24px 0 0 0;
+                    }
+                    .find .list .tab_list ul {
+                        gap: 20px; 
+                    
+                    }
+                    .find .list .tab_list ul li button {
+                        font-size: 18px;
+                        border-radius: 50px;
+                        padding: 8px 23px;
+                    }
+                                        
+                    .find .list .tab_content {
+                        margin: 40px 0 0 0;
+                    }
+                                      
+                                 
+                    .find .list .tab_content .tab_item > ul > li > a .subject {
+                        display: block;
+                        margin: 16px 0 0 0;
+                        position: relative; /*strong 정렬의 기준*/
+                    }
+                    .find .list .tab_content .tab_item > ul > li a .subject strong {
+                        position: absolute;
+                        left: 0;
+                        top: -47px;
+                        padding: 4px 14px;
+                        border-radius: 10px;
+                        font-size: 15px;
+                    }
+                    
+                    .find .list .tab_content .tab_item > ul > li a .subject h4 {
+                        font-size: 18px;
+                    
+                    }
+                    .find .list .tab_content .tab_item > ul > li a ul.detail {
+                        margin: 2px 0 0 0;
+                    }
+                    .find .list .tab_content .tab_item > ul > li a ul.detail li {
+                        display: block;
+                        line-height: 1.3;
+                        font-size: 18px;
+                    }
+                    .find .list .tab_content .tab_item > ul > li a ul.detail li strong {
+                        display: none;
+                    }
+                    .find .list .tab_content .tab_item > ul > li a ul.detail li:last-child {
+                        display: none;
+                    }
+                    .find .list .tab_content .tab_item > ul > li a ul.detail li span {
+                        display: block;
+                        color: rgba(255,255,255,0.8);
+                    }
+}
+
+
+
+.slogan {
+    margin: 233px 0 123px 0;
+}
+
+.slogan .sub_tit {
+    font-size: 64px;
+    font-family: "Cafe24Supermagic";
+    font-weight: 700;
+    text-align: center;
+    color: #1d1d1d;
+}
+.slogan .sub_tit strong {
+    display: inline-block;
+}
+.slogan .sub_tit span {
+    display: inline-block;
+    color: transparent;
+    position: relative; /* before 정렬의 기준*/
+
+}
+.slogan .sub_tit span::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* span의 영역에 위아래 가운데 좌우에 가운데*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.slogan .sub_tit span.item1 {
+    width: 3.07em;
+    /*공백넓이 197px / 글자크기 64px = 3.07em
+    글자크기만큼 줄어드는 단위
+    1em은 현재 해당 요소에 상속된 글자크기를 1로 봄
+    (상대크기, 소수점두자리까지)*/
+}
+.slogan .sub_tit span.item2 {
+    width: 2.68em;
+    /* 172 / 64 =2.68*/
+
+}
+.slogan .sub_tit span.item3 {
+    width: 2.68em;
+     /* 172 / 64 =2.68*/
+}
+.slogan .sub_tit span.item4 {
+    width: 2.34em;
+     /* 150 / 64 =2.34*/
+}
+.slogan .sub_tit span.item1::before {
+    width: 2.49em;/*162/65=2.98*/
+    height: 2.49em;/*162/65=*/
+    background-image: url(../images/벤치\ 1.png);
+    top : 0; 
+}
+.slogan .sub_tit span.item2::before {
+    width: 2.32em;/*151/65=2.32*/
+    height: 1.65em;/*107/65=*/
+    background-image: url(../images/동물들.png);
+}
+.slogan .sub_tit span.item3::before {
+    width: 2.46em;/*160/65=2.98*/
+    height: 1.12em;/*73/65=*/
+    background-image: url(../images/건물\ 1.png);
+}
+.slogan .sub_tit span.item4::before {
+    width: 1.93em;/*126/65=2.98*/
+    height: 1.56em;/*102/65=*/
+    background-image: url(../images/손가락\ 1.png);
+}
+.slogan .ex_tit {
+    font-size: 17px;
+    margin: 48px 0 0 0;
+    text-align: center;
+    color: #1d1d1d;
+}
+
+@media screen and (max-width:1300px){
+                    .slogan .sub_tit {
+                        font-size: 55px;
+                    }
+}
+@media screen and (max-width:1024px){
+                    .slogan .sub_tit {
+                        font-size: 42px;
+                    }
+                    .slogan .ex_tit br {
+                        display: none;
+                    }          
+                }
+
+@media screen and (max-width:768px){
+                    .slogan {
+                        margin: 117px 0 81px 0;
+                    }
+                    .slogan .sub_tit {
+                        font-size: 30px;
+                    }
+                    .slogan .sub_tit br {
+                        display: none;
+                    }                  
+                    .slogan .ex_tit {
+                        font-size: 17px;
+                        margin: 48px 0 0 0;
+                        text-align: center;
+                        color: #1d1d1d;
+                    }  
+                }
+
+
+.adopt {
+    padding: 200px 0 167px 0;
+    background-color: #FFE6C7;
+    text-align: center;
+    position: relative; /*rolling 정렬의 기준*/
+}
+.adopt .tit {
+    font-size: 40px;
+    font-family: "Cafe24Supermagic";
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 50px 0;
+}
+
+.adopt .list {
+    margin: 88px 0 0 0;
+}
+.adopt .list .swiper-slide {
+    width: 298px;
+}
+.adopt .list .swiper-slide a {
+    display: block;
+
+}
+
+.adopt .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 298px;
+    border-radius: 50%; /*동그라미*/
+}
+
+.adopt .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.adopt .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2,1.2,1);
+}
+.adopt .list .swiper-slide a strong {
+    display: inline-block;
+    font-size: 24px;
+    font-family: "Cafe24Supermagic";
+    font-weight: 700;
+    color: #fff;
+    padding: 6px 34px;
+    background-color: #FF6000;
+    border-radius: 35px;
+    transform: translateY(-20px);
+}
+.adopt .list .swiper-slide a strong.cate_care {
+    background-color: #FF9191;
+}
+
+.adopt .list .swiper-slide a h3 {
+    font-size: 24px;
+    color: #1d1d1d;
+}
+
+
+.adopt .list .swiper-slide a p {
+    margin: 5px 0 0 0;
+    font-size: 20px;
+    /*1줄제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.adopt .list_ctrl {
+    margin: 112px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.adopt .list_ctrl button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #FF6000;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_114_20' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='26' height='26'%3E%3Crect width='26' height='26' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_114_20)'%3E%3Cpath d='M10.8333 23.8337L0 13.0003L10.8333 2.16699L12.7562 4.08991L3.84583 13.0003L12.7562 21.9107L10.8333 23.8337Z' fill='%23FF6000'/%3E%3C/g%3E%3C/svg%3E%0A");
+
+}
+.adopt .list_ctrl button.btn_next {
+    transform: rotate(180deg);
+}
+.adopt .list_ctrl .more {
+    line-height: 34px;
+    height: 34px;
+    border: 1px solid #FF6000;
+    border-radius: 17px;
+    padding: 0 22px 0 11px;
+    position: relative;  /*before 정렬의 기준*/
+}
+
+.adopt .list_ctrl .more::before {
+    content: "";
+    position: absolute; /*more 기준으로*/
+    right: 4px;
+    top: 6px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_40_1624' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='14' height='14'%3E%3Crect width='14' height='14' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_40_1624)'%3E%3Cpath d='M6.79588 7.20397H3.67505V6.79564H6.79588V3.6748H7.20422V6.79564H10.325V7.20397H7.20422V10.3248H6.79588V7.20397Z' fill='%23FF6000'/%3E%3C/g%3E%3C/svg%3E%0A");
+
+}
+.adopt .rolling {
+    position: absolute; /*adopt를 기준으로 정렬*/
+    left: 0;
+    bottom: 25px;
+    width: 100%;
+} 
+
+
+.adopt .rolling p {
+    position: absolute; /*adopt를 기준으로 정렬*/
+    left: 0;
+    bottom: 0;
+    font-size: 96px;
+    font-family: "Cafe24Supermagic";
+    font-weight: 700;
+    color: rgba(255,96,0,0.4);
+    white-space: nowrap;
+
+    animation-name: rolling;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear; /*가속도 삭제*/
+
+}
+@keyframes rolling {
+    0% {left: 0;}
+    100% {left: -8.93em;}
+    
+}
+
+@media screen and (max-width:1024px){ 
+                .adopt .tit {
+                    font-size: 35px;
+                    margin: 0 0 40px 0;
+                }
+                .adopt .list .swiper-slide {
+                    width: 250px;
+                }
+                .adopt .list .swiper-slide a .photo {
+                    height: 250px;
+                }
+                .adopt .rolling p {
+                    font-size: 70px;
+                }
+}
+
+@media screen and (max-width:768px){ 
+                .adopt {
+                    padding: 100px 0 167px 0;
+                }
+                .adopt .tit {
+                    font-size: 30px;
+                    margin: 0 0 40px 0;
+                }
+                .adopt .list .swiper {
+                    padding-left: 16px;
+                }
+                .adopt .list .swiper-slide {
+                    width: 200px;
+                }
+                .adopt .list .swiper-slide a .photo {
+                    height: 200px;
+                }
+                .adopt .list .swiper-slide a strong {
+                    font-size: 15px;
+                    padding: 4px 12px;
+                    border-radius: 50px;
+                    transform: translateY(-10px);
+                }
+                .adopt .list .swiper-slide a h3 {
+                    font-size: 18px;
+                }
+                .adopt .list .swiper-slide a p {
+                    font-size: 16px;
+                }
+
+                .adopt .list_ctrl {
+                    margin: 61px 0 0 0;
+                }
+                
+                .adopt .list_ctrl button {
+                    display: none;
+                }
+
+                .adopt .list_ctrl .more {
+                    line-height: 33px;
+                    height: 33px;
+                    border-radius: 50px;
+                    padding: 0 37px 0 24px;
+                }
+                
+                .adopt .list_ctrl .more::before {
+                    right: 14px;
+                }
+                .adopt .rolling {
+                    bottom: 30px;
+                } 
+                .adopt .rolling p {
+                    font-size: 50px;
+                }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 footer {
