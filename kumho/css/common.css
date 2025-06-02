@@ -1,0 +1,90 @@
+/* 모든페이지에 공통으로 들어가는 기본 스타일 */
+html, body {
+    font-family: "El Messiri","Pretendard", sans-serif; /*앞에 쓴 서체가 적용하고 지원이 안되면 두번채 서체를 적용*/
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5; /* 배수 */
+    color: #555;
+    word-break: keep-all; /* 스페이스기준 단어별로 줄바꿈 */
+    word-wrap: break-word;
+    /* 단어가 너무 긴경우 강제로 줄바꿈을 주는 방법  */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 */
+}
+#wrap {
+    position: relative; /* header 정렬의 기준 */
+    overflow-x: hidden; /* 가로스크롤 삭제 */
+    width: 100%;
+}
+@media screen and (max-width:1300px){ /* 20+20 = 40 + 1260 = 1300 */
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+}
+@media screen and (max-width:768px){
+            /* 브라우저 넓이가 768px 이하에서만 작동 */
+            body {
+                font-size: 16px;
+            }
+}
+
+/* 글자를 숨겨야하는 경우 blind 클래스를 적용 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
+.skip_nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000; /*맨위*/
+    width: 100%;
+}
+.skip_nav a{
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f56765;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: -100px;
+    width: 100%;
+
+}
+.skip_nav a:focus {
+    top: 0;
+}
+/* css 변수 */
+:root {
+    --header-h : 100px; /* header 높이*/
+    --tit-font-color : #272729;
+    --point-font-color :#80011F;
+    --bold-weight : 700;
+    --tit-font-size : 2.65rem; /*45px / 17px = */
+    --tit-ico: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.7546C0 6.98958 0.0341828 7.2331 0.1282 7.46381C0.54273 8.48917 1.59829 9.12148 2.94017 8.58744C3.26068 8.45927 12.1367 4.8833 12.1367 4.8833C12.1367 4.8833 8.64102 13.7442 8.50854 14.0731C8 15.342 8.61111 16.4913 9.64957 16.8758C9.88034 16.9613 10.1197 17.004 10.3547 16.9997C11.2051 16.9954 11.953 16.4956 12.3205 15.4958C12.3761 15.3463 16.7479 3.34526 16.8419 3.05901C16.8974 2.88811 17 2.48651 17 2.20881C17 1.61495 16.7821 1.05527 16.359 0.632309C15.9444 0.213618 15.3889 0 14.8034 0C14.5171 0 14.2863 0.0512683 13.9359 0.16235C13.7265 0.230707 2.45726 4.42189 1.49573 4.78077C0.534188 5.13965 -2.34741e-06 5.90867 0.00427116 6.7546' fill='%2380011F'/%3E%3C/svg%3E%0A");
+    --tit-line-height : 1.5;
+}
+
+@media screen and (max-width:1024px){ 
+
+    :root {
+        --header-h : 60px; /* header 높이*/
+    }
+    
+}
+@media screen and (max-width:768px){ 
+
+    :root {
+        --tit-font-size : 1.88rem; /* 30px / 16px = */
+    }
+    
+}

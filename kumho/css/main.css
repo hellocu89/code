@@ -1,0 +1,103 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+
+
+.visual .swiper-slide .photo {
+    overflow: hidden;
+    height: 100dvh; /*모바일까지 고려한 브라우저 높이 100% */
+}
+.visual .swiper-slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1.5s;
+}
+.visual .swiper-slide.swiper-slide-active .photo img {
+    transform: scale3d(1.1, 1.1, 1);
+}
+.visual .swiper-slide .txt_wrap {
+    position: absolute; /*.visual .swiper-slide 기준*/
+    left: 0;
+    bottom: 27.6%;
+    width: 100%;
+}
+.visual .swiper-slide .txt_wrap .txt {
+    overflow: hidden; /*넘치는 애들은 다 자른다*/
+}
+.visual .swiper-slide .txt_wrap .txt p {
+    color: #fff;
+    font-size: 3.76rem; /*64/17 = */
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    white-space: nowrap; /*1줄로 표현 글자 위로 나오게 할때 꼭 지정해줘야함*/
+
+    transform: translateY(100%);
+    transition: 0.5s;
+    transition-delay: 1s;
+    
+ }
+
+ .visual .swiper-slide.swiper-slide-active .txt_wrap .txt p {
+    transform: translateY(0);
+   /* animation-name: visual_txt;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;*/
+ }
+ 
+ @keyframes visual_txt {
+    0% { transform: translateY(100%);}
+    100% { transform: translateY(0);}
+    
+ }
+ .visual .swiper-slide .txt_wrap .txt.mobile { 
+    display: none; /*숨김*/
+ }
+
+ .visual .swiper-slide .txt_wrap .txt.delay1 p {
+    transition: 1s;
+
+ }
+ .visual .swiper-slide .txt_wrap .txt.delay2 p {
+    transition: 1.5s;
+
+ }
+ .visual .swiper-slide .txt_wrap .txt.delay3 p {
+    transition: 2.0s;
+
+ }
+ .visual .swiper-slide .txt_wrap .txt.delay4 p {
+    transition: 2.5s;
+
+ }
+
+ @media screen and (max-width:1024px){ 
+    .visual .swiper-slide .txt_wrap {
+        position: absolute; /*.visual .swiper-slide 기준*/
+        left: 0;
+        bottom: 27.6%;
+        width: 100%;
+    }
+    .visual .swiper-slide .txt_wrap .txt.mobile { 
+        display: block;/*나타남*/
+     }
+     .visual .swiper-slide .txt_wrap .txt.pc { 
+        display: none; 
+     }
+     .visual .swiper-slide .txt_wrap .txt p  {
+        font-size: 2.35rem; /* 40px/17*/
+     }
+
+ }
+ @media screen and (max-width:768px){ 
+    .visual .swiper-slide .txt_wrap {
+        position: absolute; /*.visual .swiper-slide 기준*/
+        left: 0;
+        bottom: 27.6%;
+        width: 100%;
+    }
+    
+ }
