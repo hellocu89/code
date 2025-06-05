@@ -19,7 +19,7 @@ html, body {
     overflow-x: hidden; /* 가로스크롤 삭제 */
     width: 100%;
 }
-@media screen and (max-width:1300px){ /* 20+20 = 40 + 1260 = 1300 */
+@media screen and (max-width:1300px){ /* 20+20 = 40 + 1260 = 1300, wapper가 해제되는 사이즈 */
     .wrapper {
         width: auto;
         margin: 0 20px;
