@@ -564,12 +564,13 @@ section .tit h2 {
 
 .service .list{
     margin: 3.64em 0 0 0;
-    background: url(../images/main/service-1.jpg) no-repeat center center/ cover;
+    background: url(../images/main/service-11.jpg) no-repeat center center/ cover;
     height: 41.64em;
     color: #fff;
     text-align: center;
     display: flex; /* ul를 list의 높이의 위아래 가운데 정렬*/
     align-items: center;
+    transition: 0.5s;
 }
 .service .list ul {
     display: flex;
@@ -598,7 +599,7 @@ section .tit h2 {
     margin: 0 20%;
     padding: 4.70em 0 2.35em 0;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
-    backdrop-filter: blur(4px) ;
+    backdrop-filter: blur(4px);
 }
 .service .list ul li a:hover {
     background-color: #80011F;
@@ -634,4 +635,63 @@ section .tit h2 {
 }
 .service .list[data-bg="bg3"] {
     background-image: url(../images/main/service-4.jpg);
+}
+
+@media screen and (max-width:1024px){ 
+                .service .list{
+                    margin: 2.52em 0 0 0;
+                    height: auto;
+                    display: block; /* ul를 list의 높이의 위아래 가운데 정렬*/
+                }
+                .service .list ul {
+                    display: block;
+                    width: auto; /* list가 flex의 영향으로 넓이가 필요*/
+                }
+                .service .list ul li {
+                    width: auto;
+                }
+                .service .list ul li + li::before {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    transform: translateX(-50%);
+                    width: 11em;
+                    height: 1px;
+                }
+                .service .list ul li a {
+                    display: inline-block;
+                    border-radius: 0;
+                    border: 0;
+                    padding: 3.70em 0 2.05em 0;
+                    box-shadow: none ;
+                    backdrop-filter: blur(0) ;
+                    min-width: 50%;
+                }
+                .service .list ul li a strong {
+                    display: none;
+                }
+                .service .list ul li a .more {
+                    display: inline-block;
+                    position: relative;
+                    border: 1px solid #ccc;
+                    padding: 2px 25px 0 12px;
+                    border-radius: 15px;
+                }
+                .service .list ul li a .more::after {
+                    right: 7px;
+                }
+                .service .list ul li a:hover {
+                    border-radius: 20px;
+                }
+                .service .list[data-bg="bg1"] {
+                    background-image: url(../images/main/service-2.jpg);
+                }
+                .service .list[data-bg="bg2"]{
+                    background-image: url(../images/main/service-3.jpg);
+                }
+                .service .list[data-bg="bg3"] {
+                    background-image: url(../images/main/service-4.jpg);
+                }
+
 }

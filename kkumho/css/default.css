@@ -27,6 +27,7 @@ button {
     color: inherit;
     line-height: inherit;
     cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
+    text-align: left;
 }
 * {
     margin: 0;
