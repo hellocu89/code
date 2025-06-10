@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
     <!--jquery 라이브러리-->
     <script src="js/jquery-3.7.1.min.js"></script>
+
+
     <!--swiper 라이브러리-->
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!--aos 애니메이션 라이브러리-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
 
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
@@ -104,6 +112,7 @@
                 </div><!--//search-->
             </div><!--//util-->
         </header>
+
         <main class="container">
             <section class="visual">
                 <h2 class="blind">팝업</h2>
@@ -155,7 +164,7 @@
                 <div class="scroll_down"><span>scroll down</span></div>
             </section>
             <section class="biz">
-                <div class="tit">
+                <div class="tit" data-aos="fade-up">
                     <div class="wrapper">
                         <strong>BUSINESS</strong>
                         <h2>글로벌넘버원에 도전합니다</h2>
@@ -163,7 +172,7 @@
                 </div>
                 <div class="list">
                     <ul>
-                        <li>
+                        <li data-aos="fade-up">
                             <a href="#" class="more"><span class="blind">자세히보기</span></a>
                             <div class="photo"><img src="images/main/bz-1.jpg" alt=""></div>
                             <div class="txt">
@@ -173,7 +182,7 @@
                             </div>
                         </li>
                         <!--마우스 오버하면 on 클래스 추가-->
-                        <li>
+                        <li data-aos="fade-up" data-aos-delay="200">
                             <a href="#" class="more"><span class="blind">자세히보기</span></a>
                             <div class="photo"><img src="images/main/bz-2.jpg" alt=""></div>
                             <div class="txt">
@@ -182,7 +191,7 @@
                                 <a href="#">view all</a>
                             </div>
                         </li>
-                        <li>
+                        <li data-aos="fade-up" data-aos-delay="400">
                             <a href="#" class="more"><span class="blind">자세히보기</span></a>
                             <div class="photo"><img src="images/main/bz-3.jpg" alt=""></div>
                             <div class="txt">
@@ -191,7 +200,7 @@
                                 <a href="#">view all</a>
                             </div>
                         </li>
-                        <li>
+                        <li data-aos="fade-up" data-aos-delay="600">
                             <a href="#" class="more"><span class="blind">자세히보기</span></a>
                             <div class="photo"><img src="images/main/bz-4.jpg" alt=""></div>
                             <div class="txt">
@@ -200,18 +209,17 @@
                                 <a href="#">view all</a>
                             </div>
                         </li>
-
                     </ul>
                 </div>
             </section>
             <section class="news">
-                <div class="tit">
+                <div class="tit" data-aos="fade-up">
                     <div class="wrapper">
                         <strong>NEWS</strong>
                         <h2>고객의 곁에서 함께합니다</h2>
                     </div>
                 </div>
-                <div class="list">
+                <div class="list" data-aos="fade-up">
                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                         <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                             <li class="swiper-slide">
@@ -272,13 +280,13 @@
                 </div>
             </section>
             <section class="service">
-                <div class="tit">
+                <div class="tit" data-aos="fade-up">
                     <div class="wrapper">
                         <strong>KUMHO</strong>
                         <h2>금호건설은 아름다운 미래를 건설합니다</h2>
                     </div>
                 </div>
-                <div class="list" data-bg="">
+                <div class="list" data-bg=""> 
                     <div class="blind">
                         <!--마우스를 오버할때 배경이 변하는 애니메이션을 준다면
                         그 배경은 미리 html에 코딩되어 있어야
