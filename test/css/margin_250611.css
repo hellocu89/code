@@ -1,0 +1,46 @@
+@import url(common_full.css);
+@import url(default.css);
+@import url(font.css);
+
+.box1, .box2 {
+    height: 100px;
+    border: 1px solid #f60;
+    margin: 100px 0;
+}
+
+.box3 ul {
+    display: flex;
+}
+.box3 ul li {
+    width: 200px;
+    border: 1px solid #1d1d1d;
+    margin: 0 50px;
+}
+.box4 {
+    background-color: #ededed;
+    margin: 100px 0;
+}
+.box4 .box4_inner {
+    background-color: #3d3d3d;
+    color: #fff;
+    margin: 100px 0;
+}
+.box5 {
+    background-color: #f60;
+    color: #fff;
+    margin: 100px 0;
+}
+.box6 { 
+    background-color: aqua;
+    margin: 100px 0;
+
+}
+.box6 .box6_inner {
+    display: flex;
+}
+.box6 .box6_inner ul li {
+    margin: 100px 20px;
+    background-color: blueviolet;
+    color: #fff;
+    
+}

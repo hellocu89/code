@@ -30,6 +30,36 @@ $(window).resize(function(){//리사이즈 될때마다 1번실행
     resize_chk() //함수의 실행
 })
 $(document).ready(function(){//문서가 로딩 되고 단 1번 실행
+
+    /* top버튼을 클릭하면 상단으로 스크롤*/
+    $('footer .top').on('click', function(){
+        //console.log('눌렀다!!!!!!!!!!!!!!!!')
+        $(window).scrollTop(100)
+        $('html, body').animate({
+            screenTop: 0
+        }, 500)
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //console.log('로딩됐다!!!!!!!!!!!!!!!!')
     resize_chk() //함수의 실행
     scroll_chk()
@@ -83,21 +113,6 @@ $(document).ready(function(){//문서가 로딩 되고 단 1번 실행
 
         }
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

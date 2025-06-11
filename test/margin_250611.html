@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/margin_250611.css">
+    <title>margin 테스트</title>
+</head>
+<body>
+    <div class="box1"> box1 - margin 여백이 위아래 100px</div>
+    <div class="box2"> 
+        box2 - margin 여백이 위아래 100px<br>
+        위에 요소와 아래요소의 위아래 margin이 겹치면 둘중에 큰 값만 적용된다
+    </div>
+    <div class="box3">
+        <p>좌우여백은 중첩이 안됨, 겹쳐도 모두 적용됨(겹치는 현상이 없음)</p>
+        <ul>
+            <li>1번 박스</li>
+            <li>2번 박스</li>
+            <li>3번 박스</li>
+        </ul>
+    </div>
+    <div class="box4">
+        <p>box4는 위아래 여백이 100px </p>
+        <div class="box4_inner">inner박스도 위아래 여백이 100px</div>
+    </div>
+    <div class="box5">box5는 위아래 여백이 100px </div>
+
+
+    <div class="box6">
+        <p>박스6은 위아래 여백 100px</p>
+        <div class="box6_inner">
+            <ul>
+                <li>1번 박스 - 위아래 여백이 100px</li>
+                <li>2번 박스 - 위아래 여백이 100px</li>
+                <li>3번 박스 - 위아래 여백이 100px</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

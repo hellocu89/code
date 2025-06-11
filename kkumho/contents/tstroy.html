@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--jquery 라이브러리-->
-    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
 
     <link rel="stylesheet" href="../js/sub.js">
     <script src="../js/sub.js"></script>
@@ -145,13 +145,13 @@
                         <div class="photo"><img src="../images/contents/history_img1.jpg" alt=""></div>
                     </div>
 
-                    <div class="his_year_group">
+                    <div class="his_year_group" data-menu="year2020">
                         <div class="year_tit">
                             <h3>현재 - 2011</h3>
                             <div class="photo"><img src="../images/contents/history_side1.jpg" alt=""></div>
                             <p>주거브랜드 아테라</p>
                         </div>
-                        <div class="year_cont">
+                        <div class="year_cont" >
                             <h4>2025 ~ 2021</h4>
                             <ul>
                                 <li>
@@ -220,7 +220,7 @@
                     <div class="his_photo">
                         <div class="photo"><img src="../images/contents/history_img2.jpg" alt=""></div>
                     </div>
-                    <div class="his_year_group reverse"> <!--반대로 구성된 요소-->
+                    <div class="his_year_group reverse" data-menu="year2010"> <!--반대로 구성된 요소-->
                         <div class="year_tit">
                             <h3>2010 - 2001</h3>
                             <div class="photo"><img src="../images/contents/history_side2.jpg" alt=""></div>
@@ -313,7 +313,7 @@
                         <div class="photo"><img src="../images/contents/history_img3.jpg" alt=""></div>
                     </div>
 
-                    <div class="his_year_group">
+                    <div class="his_year_group" data-menu="year2000">
                         <div class="year_tit">
                             <h3>2000 - 1998</h3>
                             <div class="photo"><img src="../images/contents/history_side3.jpg" alt=""></div>
@@ -417,7 +417,7 @@
                     <div class="his_photo">
                         <div class="photo"><img src="../images/contents/history_img4.jpg" alt=""></div>
                     </div>
-                    <div class="his_year_group reverse"> <!--반대로 구성된 요소-->
+                    <div class="his_year_group reverse" data-menu="year1990"> <!--반대로 구성된 요소-->
                         <div class="year_tit">
                             <h3>2010 - 2001</h3>
                             <div class="photo"><img src="../images/contents/history_side4.jpg" alt=""></div>
@@ -483,10 +483,10 @@
 
                     <div class="his_nav">
                         <ul>
-                            <li><button>현재 - 2011</button></li>
-                            <li><button>2010 - 2002</button></li>
-                            <li><button>2000 - 1991</button></li>
-                            <li><button>1990 - 1960</button></li>
+                            <li data-link="year2020"><button>현재 - 2011</button></li>
+                            <li data-link="year2010"><button>2010 - 2002</button></li>
+                            <li data-link="year2000"><button>2000 - 1991</button></li>
+                            <li data-link="year1990"><button>1990 - 1960</button></li>
                         </ul>
                     </div>
 
