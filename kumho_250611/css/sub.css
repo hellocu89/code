@@ -1,0 +1,147 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+@import url(contents.css);
+
+/* 서브 레이아웃 요소(중복요소 - 페이지명까지) */
+.sub_visual {
+    height: 25.35em; /* 431/17 = 25.35 */
+    background: url(../images/sub/sub_visual01.jpg) no-repeat center center / cover;
+    color: #fff;
+    text-align: center;
+    padding: 12.59em 0 0 0; /* 214/17=12.59 */
+}
+.sub_visual.bg1 {
+    background-image: url(../images/sub/sub_visual01.jpg);
+}
+.sub_visual.bg2 {
+    background-image: url(../images/sub/sub_visual02.jpg);
+}
+.sub_visual.bg3 {
+    background-image: url(../images/sub/sub_visual03.jpg);
+}
+.sub_visual.bg4 {
+    background-image: url(../images/sub/sub_visual04.jpg);
+}
+.sub_visual.bg5 {
+    background-image: url(../images/sub/sub_visual05.jpg);
+}
+.sub_visual .breadcrumb ol {
+    display: flex;
+    justify-content: center;
+    gap: 1.59em; /* 27/17=1.59 */
+}
+.sub_visual .breadcrumb ol li.home {
+    width: 1.12em;
+    height: 1.12em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_187_145' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='19' height='19'%3E%3Crect width='19' height='19' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_187_145)'%3E%3Cpath d='M3.16675 16.625V7.125L9.50008 2.375L15.8334 7.125V16.625H11.0834V11.0833H7.91675V16.625H3.16675Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.sub_visual .breadcrumb ol li + li {
+    /* 첫번째 빼고 나머지 전부 */
+    position: relative; /* before 정렬의 기준 */
+}
+.sub_visual .breadcrumb ol li + li::before {
+    content: "";
+    position: absolute;
+    left: -0.9em;
+    top: 0.25em;
+    width: 0.41em; /*7/17=0.41*/
+    height: 0.71em; /*12/17=0.71*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.25637 0.0254409L7.15381 5.92288L1.25637 11.8203L0.209578 10.7735L5.06022 5.92288L0.209579 1.07224L1.25637 0.0254409Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.sub_visual .depth1_name {
+    font-size: 3.82rem;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    margin: 0.14em 0 0 0;
+}
+@media screen and (max-width:1024px){
+        .sub_visual {
+            height: 19.625em; /* 314/16 = 19.625 */
+            padding: 10.06em 0 0 0; /* 161/16=10.06 */
+        }
+        .sub_visual .depth1_name {
+            font-size: 3rem; 
+            margin: 0.31em 0 0 0;
+        }
+}
+@media screen and (max-width:768px){
+        .sub_visual .depth1_name {
+            font-size: 2.19rem;
+        }
+}
+
+.lnb {
+    background-color: var(--point-color);
+    color: #fff;
+}
+.lnb ul {
+    display: flex;
+    justify-content: center;
+    overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+    overflow-x: auto; /* 좌우 스크롤바 생성 */
+}
+.lnb ul li a {
+    display: block;
+    height: 4.15em; /* 83/20 = 4.15 */
+    line-height: 4.15em;
+    font-size: 1.18rem; /* 20/17=1.18 */
+    padding: 0 1.2em; /* 34/20=1.2 */
+}
+.lnb ul li.active a {
+    font-weight: var(--bold-weight);
+    position: relative; /* after 정렬의 기준 */
+}
+.lnb ul li.active a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.4em;
+    background-color: #fff;
+}
+@media screen and (max-width:768px){
+            .lnb ul {
+                justify-content: flex-start; /* 왼쪽 정렬 */
+            }
+            .lnb ul li a {
+                height: 3.33em; /* 60/18 = 3.33 */
+                line-height: 3.33em;
+                font-size: 1.125rem; /* 18/16=1.125 */
+                padding: 0 1em; /* 36/18=2 */
+            }
+}
+
+.page_tit {
+    margin: 2.26em 0 0.88em 0;
+    font-size: 2.94rem; /* 50/17=2.94rem  */
+    font-weight: var(--bold-weight);
+    text-align: center;
+    color: var(--tit-color);
+}
+@media screen and (max-width:1024px){
+    .page_tit {
+        font-size: 2.35rem;
+    }
+}
+@media screen and (max-width:768px){
+    .page_tit {
+        margin: 2.67em 0 1.33em 0;
+        font-size: 1.875rem; /* 30/16=1.875  */
+        font-weight: var(--bold-weight);
+        text-align: center;
+        color: var(--tit-color);
+    }
+}
+
+.contents {
+    min-height: 20em;
+}

@@ -5,7 +5,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: inherit;
     font-weight: inherit;
 }
-strong {
+strong,th { /*th= table 제목칸*/
     font-weight: inherit;
 }
 em,address {
@@ -18,16 +18,24 @@ a {
     color: inherit;
     text-decoration: none;
 }
-button {
+button, input[type="button"], input[type="submit"] {
     border: none;
     background: none;
+    cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
+    text-align: left;
+}
+select, input, button, textarea {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     color: inherit;
     line-height: inherit;
-    cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
-    text-align: left;
+}
+fieldset {
+    border: 0;
+}
+legend {
+    display: none;
 }
 * {
     margin: 0;
