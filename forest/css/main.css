@@ -1,0 +1,29 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual {
+    background-color: red;
+    color: #fff;
+}
+.tree {
+    background-color: blue;
+    color: #fff;
+}
+.work {
+    background-color: orange;
+    color: #fff;
+}
+.story {
+    background-color: purple;
+    color: #fff;
+}
+.story {
+    background-color: gray;
+    color: #fff;
+}
+.section {
+    text-align: center;
+    font-size: 80px;
+}
