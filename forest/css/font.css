@@ -1,21 +1,16 @@
 /* 웹폰트를 선언 */
-@import url('https://fastly.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/SeoulAlrimTTF-Heavy.woff2');
 @font-face {
-	font-family: "SeoulAlrimTTF-Heavy";
+	font-family: 'Paperlogy';
 	font-weight: 400;
 	font-display: swap;
-	src: local('SeoulAlrimTTF-Heavy-Regular'), 
-	url(../font/SeoulAlrimTTF-Heavy.woff2) format('woff2');
+	src: local('Paperlogy 4Regular'), 
+	url(../font/Paperlogy-4Regular.woff2) format('woff2');
 }
 
-
 @font-face {
-    font-family: "SeoulAlrimTTF-Heavy";
-	font-style: normal;
-    font-weight: 700;
-    src: url('../font/Eulyoo1945-SemiBold.eot');
-    src:url('../font/Eulyoo1945-SemiBold.?#iefix') format('embedded-opentype'),
-    url('../font/Eulyoo1945-SemiBold.woff2') format('woff2'),
-    url('../font/Eulyoo1945-SemiBold.woff') format('woff');
-    
+	font-family: 'Paperlogy';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Paperlogy 7Bold'),
+	url(../font/Paperlogy-7Bold.woff2) format('woff2');
 }

@@ -1,7 +1,6 @@
 /* 모든페이지에 공통으로 들어가는 기본 스타일 */
 html, body {
-    font-family: "SeoulAlrimTTF-Heavy", "Pretendard", sans-serif;
-    /* 앞에 쓴 서체를 적용하고 지원이 안되면 두번째 서체를 적용 */
+    font-family: "Paperlogy", sans-serif;
     font-size: 17px;
     font-weight: 400;
     line-height: 1.5; /* 배수 */
@@ -19,7 +18,7 @@ html, body {
     overflow-x: hidden; /* 가로스크롤 삭제 */
     width: 100%;
 }
-@media screen and (max-width:1300px){ /* 20+20 = 40 + 1260 = 1300, wapper가 해제되는 사이즈 */
+@media screen and (max-width:1300px){ /* 20+20 = 40 + 1260 = 1300 */
     .wrapper {
         width: auto;
         margin: 0 20px;
@@ -70,23 +69,24 @@ html, body {
     --header-h-m: -100px; /* header 높이 마이너스값 */
     --tit-color: #1d1d1d;
     --base-color: #555;
-    --point-color: #499500;
+    --main-color: #10A53A;
+    --point-color: #042536;
     --bold-weight: 700;
-    --tit-font-size: 2.65rem; /* 45px/17 = 2.65 */
-    --sub-font-size: 1.47rem; /* 25px/17 = 1.47 */
     --tit-line-height: 1.2;
+    --tit-size: 2.65rem; /* 45px/17 = 2.65 */
+    --sub-tit-size: 1.47rem; /* 25px/17 = 1.47 */
 }
 @media screen and (max-width:1024px){
     :root {
         --header-h: 56px; /* header 높이 */
         --header-h-m: -56px;
-        --tit-font-size: 2.05rem; /* 35px/17 =  중간사이즈*/
-        --sub-font-size: 1.29rem; /* 22px/17 = 1.29 */
+        --tit-size: 2.06rem; /* 35px/17 = 2.06 */
+        --sub-tit-size: 1.29rem; /* 22px/17 = 1.29 */
     }
 }
 @media screen and (max-width:768px){
     :root {
-        --tit-font-size: 1.56rem; /* 25px/16 = 1.56 */
-        --sub-font-size: 1.25rem; /* 20px/16 = 1.25 */
+        --tit-size: 1.56rem; /* 25px/16 = 1.56 */
+        --sub-tit-size: 1.25rem; /* 20px/16 = 1.25 */
     }
 }
