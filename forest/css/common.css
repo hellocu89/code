@@ -75,6 +75,7 @@ html, body {
     --tit-line-height: 1.2;
     --tit-size: 2.65rem; /* 45px/17 = 2.65 */
     --sub-tit-size: 1.47rem; /* 25px/17 = 1.47 */
+    --display-size: 3.53rem; /*60px/17 = 3.53*/
 }
 @media screen and (max-width:1024px){
     :root {
@@ -82,11 +83,13 @@ html, body {
         --header-h-m: -56px;
         --tit-size: 2.06rem; /* 35px/17 = 2.06 */
         --sub-tit-size: 1.29rem; /* 22px/17 = 1.29 */
+        --display-size: 2.65rem; /*45px/17 = 3.53*/
     }
 }
 @media screen and (max-width:768px){
     :root {
         --tit-size: 1.56rem; /* 25px/16 = 1.56 */
         --sub-tit-size: 1.25rem; /* 20px/16 = 1.25 */
+        --display-size: 1.87rem; /*30px/16 = 3.53*/
     }
 }
