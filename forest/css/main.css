@@ -1,6 +1,6 @@
 @import url(default.css);
 @import url(font.css);
-@import url(common.css);
+@import url(common.css?v=2506190558);
 @import url(layout.css);
 
 .visual .swiper {
