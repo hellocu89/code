@@ -1,0 +1,157 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+.visual {
+    height: 900px;
+    background: url(../images/interactive_250620.jpg) no-repeat center center / cover;
+}
+.slogan {
+    margin: 195px 0 184px 0;
+}
+.slogan .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /*p태그만 블록잡히게 하려고/ 글자만하게 블록잡히게 하려고
+    strong태그로 감싸서 해도되는 방법이있음*/
+}
+.slogan p {
+    font-size: 60px;
+    font-weight: 700;
+    color: #ccc;
+    line-height: 1.7;
+    position: relative;
+}
+.slogan p span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0E5B2E;
+    overflow: hidden;
+    width: 0;
+    white-space: nowrap;
+}
+
+.banner {
+    height: 334px;
+    background: url(../images/interactive_2.jpg) no-repeat center center / cover;
+}
+.Business {
+    padding: 218px 0 375px 0;
+}
+.Business h2 {
+    color: #1d1d1d;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+.Business.dark {
+    background-color: #38B1AB;
+    color: #fff;
+}
+.Business.dark h2 {
+    color: #fff;
+}
+
+
+
+.medi {
+    margin: 30px 30px 200px 30px;
+}
+
+.medi .bg {
+    height: 700px;
+    background: url(../images/interactive_3.jpg) no-repeat center center / cover;
+    clip-path: path('M177 74.5L8 227.5L1 504.5L1089.5 523L1049 2.5L939 202L852 10.5L737 215L627 24.5L509 238L397.5 102.5L213 238L177 74.5Z');
+  
+}
+.medi .photo {
+    overflow: hidden;
+    height: 944px;
+    border-radius: 50px;
+    position: relative; /*h2 정렬의기준*/
+
+}
+.medi .photo h2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 10px 40px 10px 20px ;
+    border-radius: 0 20px 0 0;
+    color: #1d1d1d;
+}
+.medi .photo h2::after {
+    content: "";
+    position: absolute;
+    right: -48px;
+    bottom: 0;
+    width: 48px;
+    height: 47px;
+    background: url(../images/inter_corner.png) no-repeat left bottom / contain;
+}
+.medi .photo h2::before { 
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 99px;
+    width: 48px;
+    height: 47px;
+    background: url(../images/inter_corner.png) no-repeat left bottom / contain;
+}
+.medi .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:768px) {
+            
+            .medi .photo {
+                height: 400px;
+                border-radius: 25px;
+            }
+            .medi .photo h2 {
+                font-size: 30px;
+                padding: 7px 25px 7px 10px ;
+                border-radius: 0 10px 0 0;
+            }
+            .medi .photo h2::after {
+               
+                right: -24px;
+                bottom: 0;
+                width: 24px;
+                height: 24px;
+                background: url(../images/inter_corner.png) no-repeat left bottom / contain;
+            }
+            .medi .photo h2::before { 
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 50px;
+                width: 24px;
+                height: 24px;
+                background: url(../images/inter_corner.png) no-repeat left bottom / contain;
+            }
+            
+ }
+ .icon {
+    margin: 100px 0 ;
+    text-align: center;
+ }
+ .icon button {
+    width: 300px;
+    height: 300px;
+    background-color: #1d1d1d;
+    mask-image: url("data:image/svg+xml,%3Csvg width='149' height='149' viewBox='0 0 149 149' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_13_849' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='149' height='149'%3E%3Crect width='148.203' height='148.203' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_13_849)'%3E%3Cpath d='M6.17529 129.677V98.8018H18.5255V117.327H37.0508V129.677H6.17529ZM111.152 129.677V117.327H129.677V98.8018H142.028V129.677H111.152ZM24.7006 111.152V37.0507H37.0508V111.152H24.7006ZM43.226 111.152V37.0507H49.4011V111.152H43.226ZM61.7513 111.152V37.0507H74.1015V111.152H61.7513ZM80.2766 111.152V37.0507H98.8019V111.152H80.2766ZM104.977 111.152V37.0507H111.152V111.152H104.977ZM117.327 111.152V37.0507H123.502V111.152H117.327ZM6.17529 49.4009V18.5254H37.0508V30.8756H18.5255V49.4009H6.17529ZM129.677 49.4009V30.8756H111.152V18.5254H142.028V49.4009H129.677Z' fill='black'/%3E%3C/g%3E%3C/svg%3E%0A");
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+ }
+ .icon button:hover {
+    background-color: #4000FF;
+ }
