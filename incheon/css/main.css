@@ -1,0 +1,20 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual {
+    background-color: aqua;
+}
+.perfor {
+    background-color: yellow;
+}
+.biz {
+    background-color: red;
+}
+.notice {
+    background-color: green;
+}
+.footer {
+    background-color: pink;
+}

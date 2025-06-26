@@ -1,10 +1,10 @@
 /* 모든페이지에 공통으로 들어가는 기본 스타일 */
 html, body {
-    font-family: "Paperlogy", sans-serif;
+    font-family: "TheJamsil5Bold", sans-serif;
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.5; /* 배수 */
-    color: #555;
+    color: #4d4d4d;
     word-break: keep-all; /* 스페이스기준 단어별로 줄바꿈 */
     word-wrap: break-word;
     /* 단어가 너무 긴경우 강제로 줄바꿈을 주는 방법  */
@@ -74,11 +74,12 @@ html, body {
     --header-h: 100px; /* header 높이 */
     --header-h-m: -100px; /* header 높이 마이너스값 */
     --tit-color: #1d1d1d;
-    --base-color: #555;
-    --main-color: #10A53A;
-    --point-color: #042536;
+    --base-color: #4d4d4d;
+    --main-color: #3F48D2;
+    --point-color1: #2A40E4;
+    --point-color2: #6EB43F;
     --bold-weight: 700;
-    --tit-line-height: 1.2;
+    --tit-line-height: 1.5;
     --tit-size: 2.65rem; /* 45px/17 = 2.65 */
     --sub-tit-size: 1.47rem; /* 25px/17 = 1.47 */
     --display-size: 3.53rem; /* 60/17 = 3.53 */
@@ -88,7 +89,7 @@ html, body {
         --header-h: 56px; /* header 높이 */
         --header-h-m: -56px;
         --tit-size: 2.06rem; /* 35px/17 = 2.06 */
-        --sub-tit-size: 1.29rem; /* 22px/17 = 1.29 */
+        --sub-tit-size: 1.29rem; /* 20px/17 = 1.29 */
         --display-size: 2.65rem; /* 45/17 = 2.65 */
     }
 }
