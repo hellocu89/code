@@ -1,0 +1,101 @@
+/* 모든페이지에 공통으로 들어가는 기본 스타일 */
+html, body {
+    font-family: "Paperlogy", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5; /* 배수 */
+    color: #555;
+    word-break: keep-all; /* 스페이스기준 단어별로 줄바꿈 */
+    word-wrap: break-word;
+    /* 단어가 너무 긴경우 강제로 줄바꿈을 주는 방법  */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 */
+}
+#wrap {
+    position: relative; /* header 정렬의 기준 */
+    overflow-x: hidden; /* 가로스크롤 삭제 */
+    width: 100%;
+}
+@media screen and (max-width:1540px){
+    .wrapper {
+        width: auto;
+        margin: 0 100px 0 140px; /* 가운데 */
+    }
+}
+@media screen and (max-width:1024px){ /* 20+20 = 40 + 1260 = 1300 */
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+}
+@media screen and (max-width:768px){
+            /* 브라우저 넓이가 768px 이하에서만 작동 */
+            html, body {
+                font-size: 16px;
+            }
+}
+
+/* 글자를 숨겨야하는 경우 blind 클래스를 적용 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
+.skip_nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000; /* 맨위 */
+    width: 100%;
+}
+.skip_nav a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #F56765;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: -1000px;
+    width: 100%;
+}
+.skip_nav a:focus {
+    top: 0;
+}
+
+/* css  변수 */
+:root {
+    --header-h: 100px; /* header 높이 */
+    --header-h-m: -100px; /* header 높이 마이너스값 */
+    --tit-color: #1d1d1d;
+    --base-color: #555;
+    --main-color: #10A53A;
+    --point-color: #042536;
+    --bold-weight: 700;
+    --tit-line-height: 1.2;
+    --tit-size: 2.65rem; /* 45px/17 = 2.65 */
+    --sub-tit-size: 1.47rem; /* 25px/17 = 1.47 */
+    --display-size: 3.53rem; /* 60/17 = 3.53 */
+}
+@media screen and (max-width:1024px){
+    :root {
+        --header-h: 56px; /* header 높이 */
+        --header-h-m: -56px;
+        --tit-size: 2.06rem; /* 35px/17 = 2.06 */
+        --sub-tit-size: 1.29rem; /* 22px/17 = 1.29 */
+        --display-size: 2.65rem; /* 45/17 = 2.65 */
+    }
+}
+@media screen and (max-width:768px){
+    :root {
+        --tit-size: 1.56rem; /* 25px/16 = 1.56 */
+        --sub-tit-size: 1.25rem; /* 20px/16 = 1.25 */
+        --display-size: 1.875rem; /* 30/16 = 1.875 */
+    }
+}

@@ -1,0 +1,16 @@
+/* 웹폰트를 선언 */
+@font-face {
+	font-family: 'Paperlogy';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Paperlogy 4Regular'), 
+	url(../font/Paperlogy-4Regular.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: 'Paperlogy';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Paperlogy 7Bold'),
+	url(../font/Paperlogy-7Bold.woff2) format('woff2');
+}
