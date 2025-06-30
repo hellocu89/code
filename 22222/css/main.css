@@ -3,14 +3,16 @@
 @import url(common.css);
 @import url(layout.css);
 
-/********* ASIDE 메뉴 *********/
+
+
 #fp-nav.fp-left {
     left: 20px;
 }
+
 #fp-nav {
     position: fixed;
     z-index: 100;
-    top: 50%;   
+    top: 50%;    /*??????????*/
 }
 #fp-nav ul li {
     display: block;
@@ -59,8 +61,7 @@
 #fp-nav ul li a span {
     display: none; /*숨김*/
 }
-#fp-nav ul li:hover .fp-tooltip, 
-#fp-nav.fp-show-active a.active+.fp-tooltip {
+#fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active+.fp-tooltip {
     /*마우스오버했거나 선택됐을때*/
     background-color: #3F48D2;
     font-weight: 700;
@@ -86,30 +87,9 @@
     border-radius: 3px;
 }
 
-/********** 배경이 흰색일때 ****************/
-body.bg_white #fp-nav ul li .fp-tooltip {
-    color: var(--base-color);
-}
-body.bg_white #fp-nav ul li:hover .fp-tooltip, 
-body.bg_white #fp-nav.fp-show-active a.active+.fp-tooltip {
-    color: #fff;
-}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/********* QUICK메뉴 *********/
 .quick {
     position: fixed;
     right: 20px;
@@ -171,42 +151,72 @@ body.bg_white #fp-nav.fp-show-active a.active+.fp-tooltip {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.visual {
-    
-
-
+.visual .swiper-slide {
+    color: #4d4d4d;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.visual .swiper-slide.bg1 {
+    background-image: url(../images/main/스크린샷\ 2025-06-29\ 오후\ 7.30.03.png);
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/main/bz-1.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/main/bz-2.jpg);
+}
+.visual .swiper-slide .wrapper {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 147px 0;
+}
+.visual .swiper .swiper-slide .right_txt { 
+    position: absolute;
+    right: 757px;
+    top: 0;
+    max-width: 757px;
+    width: calc(100% - 100px);
 
 }
 
 
 
-.perfor {
-    text-align: center;
-    background: url(../images/main/배경.jpg) no-repeat 105% top;
+
+
+.visual .swiper .swiper-slide .left_photo .bg-deco-cir1-left {
+    position: absolute;
+    bottom: 50px; /* 이미지 크기에 맞게 조절 */
+    left: 0;
+    width: 786px; /* 이미지 크기에 맞게 조절 */
+    z-index: 200; /* 콘텐츠보다 뒤에 있게 */
+    pointer-events: none; /* 클릭 방해 방지 */
 }
+.visual .swiper .swiper-slide .left_photo .bg-deco-cir2-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 337px; /* 이미지 크기에 맞게 조절 */
+    z-index: 110; /* 콘텐츠보다 뒤에 있게 */
+    pointer-events: none; /* 클릭 방해 방지 */
+}
+
+
+
+
+
+
+
+
+
 
 
 
 
 .perfor .tit{
     margin: 107px 0 53px 0;
-    text-align: center;
 }
 .perfor .tit h2 {
     font-size: 45px;
@@ -214,180 +224,49 @@ body.bg_white #fp-nav.fp-show-active a.active+.fp-tooltip {
     color: #1d1d1d;
     margin-bottom: 15px;
 }
-.perfor .tit .more {
+.perfor .tit a {
     display: inline-block;
-    margin: 20px 0 50px 0;
+    margin-top: 20px;
     border: 1px solid #4d4d4d;
     border-radius: 30px;
     padding: 12px 48px 12px 26px;
-    position: relative;
+
 }
-.perfor .tit .more::after {
-    content: "";
-    position: absolute;
-    right: 17px;
-    top: 12px;
-    width: 24px;
-    height: 24px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_120_6363' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_120_6363)'%3E%3Cpath d='M11 12.9223H5V10.9143H11V4.89062H13V10.9143H19V12.9223H13V18.946H11V12.9223Z' fill='%231C1B1F'/%3E%3C/g%3E%3C/svg%3E%0A");
-}
-.perfor .list > ul {
+.perfor .list ul {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
     gap: 24px;
 }
 .perfor .list ul li {
-    width: calc(20% - 19.2px);
-    /**여백의 총합 96 / 1줄에 나오는 li 갯수 5 = 19.2px **/
-    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.2);
-    border-radius: 30px;
-    overflow: hidden;
-    width: 297px;
-}
-.perfor .list > ul > li:nth-child(odd) {
-    transform: translateY(-40px);
+     width: calc(20% - 19.2px);
+    /*여백의 총합 96 / 1줄에 나오는 li 갯수 5 = 19.2px */
 }
 
-.perfor .list > ul > li:nth-child(even) {
-    transform: translateY(40px);
-}
-.perfor .list > ul > li .photo {
+.perfor .list ul li .photo {
     overflow: hidden;
     height: 207px;
     border-radius: 30px 30px 0 0;
 }
-.perfor .list > ul > li .photo img {
+.perfor .list ul li .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.5s;
 }
-.perfor .list > ul > li > .list_wrap {
-    
+
+.perfor .list ul li .list_wrap {
+    border: 1px solid #4d4d4d;
     border-radius: 0 0 30px 30px;
     background-color: #fff;
-    height: auto;
-    margin: 15px 0 0 0;
-    text-align: left;
-    padding: 16px;
+    height: 180px;
 }
-.perfor .list > ul > li > .list_wrap h3 {
-    font-size: 20px;
+.perfor .list ul li .list_wrap h3 {
+    font-size: 25px;
     font-weight: 700;
     margin: 20px 0 10px 0;
-    text-align: center;
-    color: #1d1d1d;
-}
-.perfor .list > ul > li .list_wrap > ul > li {
-    display: flex;
-    gap: 25px;
-    margin-bottom: 5px;
-}
-.perfor .list > ul > li .list_wrap > ul > li strong {
-    display: inline-block;
-    width: 40px;
-    font-weight: 700;
 }
 
-.perfor .list > ul > li .list_wrap a {
-    display: inline-block;
-    margin: 15px 0 0 0;
-    display: inline-block;
-    border: 1px solid #2A40E4;
-    background-color: #2A40E4;
-    border-radius: 30px;
-    color: #fff;
-    padding: 3px 34px;
-    text-align: center;
-}
-
-@media screen and (max-width:768px){ 
-    .perfor .wrapper {
-        position: relative;
-    }
-    .perfor .tit{
-        margin: 95px 0 27px 0;
-    }
-    .perfor .tit h2 {
-        font-size: 25px;
-        margin-bottom: 15px;
-    }
-    .perfor .tit .more {
-        position: absolute;
-        right: 0px;
-        top: 90px;
-        border-radius: 50%;
-        padding: 0;
-        width: 40px;
-        height: 40px;
-        background-color: #3F48D2;
-    }
-    .perfor .tit .more span {
-        display: none;
-    }
-    .perfor .tit .more::after {
-        background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_57_356' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='17' height='17'%3E%3Crect width='16.1538' height='16.1538' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_57_356)'%3E%3Cpath d='M7.40415 14.1349V8.7503H2.01953V7.40415H7.40415V2.01953H8.7503V7.40415H14.1349V8.7503H8.7503V14.1349H7.40415Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
-        right: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .perfor .list ul li {
-        width: auto;
-    }
-    .perfor .list > ul > li:nth-child(odd) {
-        transform: translateY(0);
-    }
-    
-    .perfor .list > ul > li:nth-child(even) {
-        transform: translateY(0);
-    }
-    .perfor .list > ul > li .photo {
-        height: 174px;
-    }
-    .perfor .list > ul > li > .list_wrap {
-        border-radius: 0 0 30px 30px;
-        background-color: #fff;
-        height: auto;
-        margin: 15px 0 0 0;
-        text-align: left;
-        padding: 16px;
-    }
-    .perfor .list > ul > li > .list_wrap h3 {
-        font-size: 20px;
-        font-weight: 700;
-        margin: 20px 0 10px 0;
-        text-align: center;
-        color: #1d1d1d;
-    }
-    .perfor .list > ul > li .list_wrap > ul > li {
-        display: flex;
-        gap: 25px;
-        margin-bottom: 5px;
-    }
-    .perfor .list > ul > li .list_wrap > ul > li strong {
-        display: inline-block;
-        width: 40px;
-        font-weight: 700;
-    }
-    
-    .perfor .list > ul > li .list_wrap a {
-        display: inline-block;
-        margin: 15px 0 0 0;
-        display: inline-block;
-        border: 1px solid #2A40E4;
-        background-color: #2A40E4;
-        border-radius: 30px;
-        color: #fff;
-        padding: 3px 34px;
-        text-align: center;
-    }
-
-
-
+.perfor .list ul li .list_wrap ul li {
+   display: flex;
 }
 
 
@@ -400,11 +279,23 @@ body.bg_white #fp-nav.fp-show-active a.active+.fp-tooltip {
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
 
 .biz {
-    background-color: red;
+    background-color: blue;
 }
 .notice {
-    background-color: green;
+    background-color: yellow;
+}
+.footer {
+    background-color: red;
 }
