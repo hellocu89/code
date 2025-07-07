@@ -1,0 +1,560 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none;
+}
+header .gnb .gnb_wrap ul {
+    display: flex;
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    padding: 0 23px;
+    font-size: 22px;
+    line-height: 100px;
+}
+@media screen and (max-width:640px){
+    header {
+        height: 56px;
+    }
+    header .wrapper {
+        margin-right: 0;
+    }
+    header .logo img {
+        width: 70px;
+    }
+    header .gnb .gnb_open {
+        display: block;
+        height: 56px;
+        width: 56px;
+        background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 21H24.5V18.6667H3.5V21ZM3.5 15.1667H24.5V12.8333H3.5V15.1667ZM3.5 7V9.33333H24.5V7H3.5Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    header .gnb .gnb_wrap { 
+        display: none;
+    }
+}/* header media 종료 */
+
+.visual {
+    background: url(../images/visual_bg01.png) no-repeat center center / cover;
+    color: #fff;
+}
+.visual .wrapper {
+    height:900px;
+    display: flex;
+    flex-direction: column;
+}
+.visual h2 {
+    padding: 373px 0 12px 0;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+@media screen and (max-width:640px){
+    .visual .wrapper {
+        height: 441px;
+        justify-content: center;
+        text-align: center;
+    }
+    .visual h2 {
+        padding: 0 0 9px 0;
+        font-size: 25px;
+    }
+}/* visual media 종료 */
+
+/****************** 제품 스타일 시작 ***************************************/
+
+.product {
+    margin: 195px 0 0 0;
+}
+.product .wrapper {
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: flex-start;
+}
+.product .tit {
+    position: sticky;
+    top: 20px;
+}
+.product h2 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1D1D1D;
+    margin: 0 0 11px 0;
+}
+
+.product .list {
+    width: 66.03%;
+    /*832/1260*100 = 66.03%*/
+    margin: 300px 0 0 0;
+}
+
+.product .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.product .list ul li {
+    width: calc(50% - 12px);
+    /* 100%/2 = 50%
+     24px/2 = 12px */
+    position: relative;
+}
+.product .list ul li:nth-child(odd) {
+    transform: translateY(-270px);
+}
+.product .list ul li a {
+    display: block;
+    position: relative;
+}
+.product .list ul li a .photo {
+    overflow: hidden;
+    height: 499px;
+    position: relative; /*after기준*/
+}
+.product .list ul li a .photo::after {
+    content: "";
+    position: absolute; /* photo를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(70,161,144,0.8);
+    opacity: 0;/*******/
+    transition: 0.2s;
+}
+.product .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product .list ul li a .txt {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: 51px;
+    width: 100%;
+    color: #fff;
+    padding: 0 40px;
+}
+.product .list ul li a .txt h3 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    padding: 0 0 190px 0;
+}
+
+
+.product .list ul li a .txt p {
+    display: none;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 10px 0 26px 0;
+
+}
+.product .list ul li a .txt span {
+    display: none;
+    font-size: 25px; 
+    font-weight: 800;
+    line-height: 1.5;
+}
+.product .more {
+    
+    position: absolute; /*wrapper 기준으로 */
+    left: 0;
+    top: 123px;
+    border: 1px solid #1d1d1d;
+    border-radius: 21px;
+    padding: 8px 39px 8px 21px;
+   
+
+}
+.product .more::after {
+    content: "";
+    position: absolute;
+    right: 17px;
+    top: 13px;
+    width: 14px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2502_75' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='14' height='14'%3E%3Crect width='14' height='14' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2502_75)'%3E%3Cpath d='M6.41667 12.8334V7.87502H1.75V6.12502H6.41667V1.16669H7.58333V6.12502H12.25V7.87502H7.58333V12.8334H6.41667Z' fill='%231C1B1F'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+}
+
+
+@media screen and (min-width:641px) {
+            .product .list ul li a:hover .photo::after {
+                
+                opacity: 1;/*******/
+            }
+            .product .list ul li a:hover .txt h3 {
+                display: none;
+                
+            }
+            .product .list ul li a:hover .txt p {
+                display: block;
+               
+            
+            }
+            .product .list ul li a:hover .txt span {
+                display: block;
+               
+            }
+}/*@media*/
+
+@media screen and (max-width:640px){
+            .product {
+                margin: 76px 0 0 0;
+            }
+            .product .wrapper {
+                display: block;
+                position: relative;
+            }
+            .product .tit {
+                position: relative;
+            }
+            .product h2 {
+                font-size: 30px;
+                margin: 0 0 6px 0;
+            }
+            
+            .product .list {
+                width: auto;
+                margin: 22px 0 0 0;
+            }
+            
+            .product .list ul {
+                display: block;
+                gap: 24px 20px;
+                
+            }
+            
+            .product .list ul li {
+                width: auto;
+                gap: 24px;
+            }
+            .product .list ul li:nth-child(odd) {
+                transform: none;
+            }
+            
+            .product .list ul li a .photo {
+                height: 167px;
+            }
+            
+            .product .list ul li a .txt {
+                bottom: 64px;
+                width: 100%;
+                color: #fff;
+                padding: 0 73px;
+            }
+            .product .list ul li a .txt h3 {
+                font-size: 32px;
+                padding: 0 ;
+            }
+           
+           
+
+
+
+
+
+}
+
+/****************** 제품 스타일 끝 ***************************************/
+
+.brand {
+    padding: 149px 0 111px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+.brand .tit h2 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1D1D1D;
+    margin: 1px 0 0 0;
+}
+.brand .tit h2 br {
+    display: none;
+}
+.brand .list {
+    margin: 92px 0 0 0;
+}
+.brand .list ul {
+    display: flex;
+}
+.brand .list ul li {
+    width: 25%;
+    position: relative;
+}
+.brand .list ul li::after {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 1px;
+    height: calc(100% - 30px);
+    background-color: #CCCCCC;
+    content: "";
+}
+.brand .list ul li:last-child:after {
+    display: none;
+}
+.brand .list ul li h3 {
+    padding: 51px 0 7px 0;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1D1D1D;
+}
+.brand .list ul li h3::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.brand .list ul li.made h3::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.9875 2.5C8.0875 2.5 2.5 8.1 2.5 15C2.5 21.9 8.0875 27.5 14.9875 27.5C21.9 27.5 27.5 21.9 27.5 15C27.5 8.1 21.9 2.5 14.9875 2.5ZM23.65 10H19.9625C19.5625 8.4375 18.9875 6.9375 18.2375 5.55C20.5375 6.3375 22.45 7.9375 23.65 10ZM15 5.05C16.0375 6.55 16.85 8.2125 17.3875 10H12.6125C13.15 8.2125 13.9625 6.55 15 5.05ZM5.325 17.5C5.125 16.7 5 15.8625 5 15C5 14.1375 5.125 13.3 5.325 12.5H9.55C9.45 13.325 9.375 14.15 9.375 15C9.375 15.85 9.45 16.675 9.55 17.5H5.325ZM6.35 20H10.0375C10.4375 21.5625 11.0125 23.0625 11.7625 24.45C9.4625 23.6625 7.55 22.075 6.35 20ZM10.0375 10H6.35C7.55 7.925 9.4625 6.3375 11.7625 5.55C11.0125 6.9375 10.4375 8.4375 10.0375 10ZM15 24.95C13.9625 23.45 13.15 21.7875 12.6125 20H17.3875C16.85 21.7875 16.0375 23.45 15 24.95ZM17.925 17.5H12.075C11.9625 16.675 11.875 15.85 11.875 15C11.875 14.15 11.9625 13.3125 12.075 12.5H17.925C18.0375 13.3125 18.125 14.15 18.125 15C18.125 15.85 18.0375 16.675 17.925 17.5ZM18.2375 24.45C18.9875 23.0625 19.5625 21.5625 19.9625 20H23.65C22.45 22.0625 20.5375 23.6625 18.2375 24.45ZM20.45 17.5C20.55 16.675 20.625 15.85 20.625 15C20.625 14.15 20.55 13.325 20.45 12.5H24.675C24.875 13.3 25 14.1375 25 15C25 15.8625 24.875 16.7 24.675 17.5H20.45Z' fill='%23666666'/%3E%3C/svg%3E%0A");
+}
+.brand .list ul li.best h3::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.25 27.5H22.5C23.5375 27.5 24.425 26.875 24.8 25.975L28.575 17.1625C28.6875 16.875 28.75 16.575 28.75 16.25V13.75C28.75 12.375 27.625 11.25 26.25 11.25H18.3625L19.55 5.5375L19.5875 5.1375C19.5875 4.625 19.375 4.15 19.0375 3.8125L17.7125 2.5L9.475 10.7375C9.025 11.1875 8.75 11.8125 8.75 12.5V25C8.75 26.375 9.875 27.5 11.25 27.5ZM11.25 12.5L16.675 7.075L15 13.75H26.25V16.25L22.5 25H11.25V12.5ZM1.25 12.5H6.25V27.5H1.25V12.5Z' fill='%23666666'/%3E%3C/svg%3E%0A");
+}
+.brand .list ul li.price h3::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.4875 13.625C12.65 12.8875 11.7375 12.125 11.7375 10.9375C11.7375 9.575 13 8.625 15.1125 8.625C17.3375 8.625 18.1624 9.6875 18.2374 11.25H20.9999C20.9124 9.1 19.5999 7.125 16.9875 6.4875V3.75H13.2375V6.45C10.8125 6.975 8.86245 8.55 8.86245 10.9625C8.86245 13.85 11.25 15.2875 14.7375 16.125C17.8624 16.875 18.4874 17.975 18.4874 19.1375C18.4874 20 17.875 21.375 15.1125 21.375C12.5375 21.375 11.525 20.225 11.3875 18.75H8.63745C8.78745 21.4875 10.8375 23.025 13.2375 23.5375V26.25H16.9875V23.5625C19.4249 23.1 21.3625 21.6875 21.3625 19.125C21.3625 15.575 18.325 14.3625 15.4875 13.625Z' fill='%23666666'/%3E%3C/svg%3E%0A");
+}
+.brand .list ul li.rating h3::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 7.375C16.45 7.375 17.625 8.55 17.625 10C17.625 11.45 16.45 12.625 15 12.625C13.55 12.625 12.375 11.45 12.375 10C12.375 8.55 13.55 7.375 15 7.375ZM15 18.625C18.7125 18.625 22.625 20.45 22.625 21.25V22.625H7.375V21.25C7.375 20.45 11.2875 18.625 15 18.625ZM15 5C12.2375 5 10 7.2375 10 10C10 12.7625 12.2375 15 15 15C17.7625 15 20 12.7625 20 10C20 7.2375 17.7625 5 15 5ZM15 16.25C11.6625 16.25 5 17.925 5 21.25V25H25V21.25C25 17.925 18.3375 16.25 15 16.25Z' fill='%23666666'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:640px){
+    .brand {
+        padding: 110px 0 95px 0;
+        margin: 16px 0 0 0;
+    }
+    .brand .tit h2 {
+        font-size: 30px;
+    }
+    .brand .tit h2 br {
+        display: block;
+    }
+    .brand .list {
+        margin: 69px 0 0 0;
+    }
+    .brand .list ul {
+        flex-wrap: wrap;
+        gap: 50px 0;
+        position: relative;
+    }
+    .brand .list ul::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+    }
+    .brand .list ul::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 2px;
+        width: 1px;
+        height: calc(100% - 4px);
+        background-color: #ccc;
+    }
+    .brand .list ul li {
+        width: 50%;
+    }
+    .brand .list ul li::after {
+        display: none;
+    }
+    .brand .list ul li h3 {
+        padding: 29px 0 1px 0;
+        font-size: 16px;
+    }
+    .brand .list ul li h3::before {
+        width: 20px;
+        height: 20px;
+    }
+}/* brand media 종료 */
+
+.service .list ul {
+    display: flex;
+}
+.service .list ul li {
+    width: 33.33%;
+}
+.service .list ul li a {
+    display: block;
+    height: 329px;
+    padding: 59px 0 0 50px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+}
+.service .list ul li.how a {
+    background-image: url(../images/service01.png);
+}
+.service .list ul li.store a {
+    background-image: url(../images/service02.png);
+}
+.service .list ul li.color a {
+    background-image: url(../images/service03.png);
+}
+.service .list ul li a strong {
+    display: block;
+}
+.service .list ul li a h3 {
+    position: relative;
+    padding: 1px 0 53px 0;
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.service .list ul li a h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 35px;
+    height: 35px;
+    background-image: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.875 7.29175L19.8187 9.348L26.4979 16.0417H2.91663V18.9584H26.4979L19.8041 25.6522L21.875 27.7084L32.0833 17.5001L21.875 7.29175Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media screen and (max-width:640px){
+    .service .list ul {
+        display: block;
+    }
+    .service .list ul li {
+        width: auto;
+    }
+    .service .list ul li a {
+        height: 170px;
+        padding: 30px 0 0 20px;
+    }
+    .service .list ul li a h3 {
+        padding: 1px 0 36px 0;
+        font-size: 25px;
+    }
+    .service .list ul li a h3::after {
+        width: 25px;
+        height: 25px;
+    }
+}/* service media 종료 */
+
+footer {
+    padding: 0 0 100px 0;
+    background-color: #2D2D2D;
+    color: rgba(255,255,255,0.8);
+}
+footer .inner {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 41px 0 32px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+footer .sns ul {
+    display: flex;
+    gap: 5px;
+}
+footer .sns ul li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.6);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 19px auto;
+}
+footer .sns ul li.facebook a {
+    background-image: url(../images/sns_facebook.svg);
+}
+footer .sns ul li.naver a {
+    background-image: url(../images/sns_naver.svg);
+}
+footer .sns ul li.insta a {
+    background-image: url(../images/sns_insta.svg);
+}
+footer .sns ul li.youtube a {
+    background-image: url(../images/sns_youtube.svg);
+}
+footer .f_logo img {
+    width: 85px;
+    opacity: 0.8;
+}
+footer .f_info {
+    margin: 45px 0 25px 0;
+}
+footer .f_info .group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 40px;
+    margin: 0 0 5px 0;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
+@media screen and (max-width:640px){
+    footer {
+        padding: 0 0 68px 0;
+    }
+    footer .inner {
+        display: block;
+        border-bottom: 0;
+        padding: 0;
+    }
+    footer .sns {
+        padding: 20px 0 24px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    footer .sns ul {
+        justify-content: center;
+    }
+    footer .sns ul li a {
+        width: 25px;
+        height: 25px;
+    }
+    footer .f_logo {
+        margin: 40px 0 0 0;
+    }
+    footer .f_info {
+        margin: 18px 0 24px 0;
+    }
+}/* footer media 종료 */

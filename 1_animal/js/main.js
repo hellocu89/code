@@ -45,22 +45,28 @@ function resize_chk(){ //함수선언
     //console.log(device_status)
 }
 
+$('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:last-child').on('focusout', function(){
+    $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+})
 
 /*******  header에 마우스 오버했을때 ***************/
 
-$('header').on('mouseenter', function(){
+$('header').on('mouseenter focusin', function(){
     //console.log('오버!!!!!!!')
-    $('header').addClass('fixed')
+    if(device_status == 'PC'){
+        $('header').addClass('fixed')
+    }
+    
 })
 
 $('header').on('mouseleave', function(){
     //console.log('아웃!!!!!!!')
     if(scrolling <= 0){
         $('header').removeClass('fixed')
-    }
+    }//if종료
     
 })
-$('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+$('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin' , function(){
     if(device_status == 'PC'){
         $(this).addClass('over')
     }
@@ -72,8 +78,26 @@ $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
 })
 
 $('header .gnb .gnb_open').on('click', function(){
-    $('header')addClass('menu_open')
+    $('header').addClass('menu_open')
 })
+
+$('header .gnb .gnb_close').on('click', function(){
+    $('header').removeClass('menu_open')
+})
+
+/*
+    닫힌메뉴를 클릭하면 열리고, 열린메뉴를 클릭하면 닫힘
+    동시에 여러개의 메뉴가 열려있을수도 있음
+    토글클래스- 클래스가 없으면 추가하고, 있으면 삭제
+*/
+$('header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a ').on('click', function(e){
+    if(device_status == 'mobile'){
+        e.preventDefault()
+    console.log('클릭했당!!!!!!!')
+    $(this).parents('li').toggleClass('open')
+    }   
+}
+)
 
 /****************************header : 종료***************************** */
 
@@ -119,13 +143,41 @@ $('header .gnb .gnb_open').on('click', function(){
 
 
 
+/****************************find tap기능 : 시작***************************** 
+1. 클릭한 li에서 data-content 값을 가져와서 tab_tiem 중에 해당같이 id인 요소를 찾아서 나타나게 해야함
+ * (다른요소는 숨김)
+ 2.클릭한 ㅁli에만 active클래스 줌
+ 3. 클릭한 li안에 있는 span에 선택됨이라고 글자 써줌(다른 li에 있는 건 삭제)
+ 4. 클릭한 li속성 aria-selected값을 true로 변경 ( 다른 li는 모든 false)
+*/
+
+let find_content // 선택된 메뉴(iD) 이름
+
+$('.find .list .tab_list ul li').on('click', function(){
+   
+   if($(this).hasClass('active') == false){
+    find_content = $(this).attr('data-content')
+    //console.log(find_content)
+
+    $('.find .list .tab_content .tab_item').removeClass('active')
+    $('.find .list .tab_content').find('#'+find_content).addClass('active')
 
 
 
+    $('.find .list .tab_list ul li').removeClass('active')
+    $(this).addClass('active')
+
+    $('.find .list .tab_list ul li button span').text('')
+    $(this).find('span').text('선택됨')
 
 
+    $('.find .list .tab_list ul li').attr('aria-selected', 'false')
+    $(this).attr('aria-selected', 'true')
+   }
+})
 
 
+/****************************find tap기능 : 종료***************************** */
 
 
 
