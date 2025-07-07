@@ -1,0 +1,65 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.story {
+    margin-top: 489px;
+    color: #333;
+}
+.story .inner {
+    display: flex;
+    position: relative;
+    justify-content: flex-end; /*오른쪽*/
+}
+.story .inner .story_top {
+    position: absolute; /*.story .inner 기준으로 정렬*/
+    left: 0;
+    top: -300px;
+    width: 100%;
+    font-weight: 700;
+}
+.story .story_top span {
+    display: block;
+    color: rgba(221, 221, 221, 0.5);
+    font-size: 70px;
+    line-height: 1.2;
+}
+.story .story_top strong {
+    display: block;
+    font-size: 90px;
+    margin-left: 8%;
+    margin-top: -5%;
+}
+.story .story_bottom {
+    width: calc(100% - 581px);
+    font-weight: 700;
+}
+.story .story_bottom span {
+    display: inline-block;
+    padding: 12px 23px;
+    background-color: #E3D3B8;
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+.story .story_bottom strong {
+    display: block;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.story .story_bottom .more {
+    display: inline-block;
+    margin: 50px 0 ;
+    padding-right: 30px;
+    position: relative;
+}
+.story .story_bottom .more::after {
+    content: "";
+    position: absolute;
+    right: -3px;
+    top: -2px;
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_4_7' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect x='0.703674' y='0.611084' width='29.2963' height='29.2963' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_4_7)'%3E%3Cpath d='M20.4481 16.4799H5.58636V14.0385H20.4481L13.6123 7.20273L15.3518 5.49377L25.1172 15.2592L15.3518 25.0247L13.6123 23.3157L20.4481 16.4799Z' fill='%231C1B1F'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
