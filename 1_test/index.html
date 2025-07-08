@@ -3,26 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--jquery 라이브러리-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!--swiper 라이브러리-->
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!--aos 애니메이션 라이브러리-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+
+    <!--타이핑 효과 라이브러리-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
     <title>연습</title>
 </head>
 <body>
+    <div class="tiping">타이핑효과</div> 
     <section class="story">
         <div class="wrapper">
             <h2 class="blind">원광효도요양병원</h2>
             <div class="inner">
                 <div class="story_top">
                     <span data-aos="fade-up" data-aos-delay="150">"We sincerely treat you<br> with the right treatment."</span>
-                    <strong>Treat you</strong>
+                    <strong data-aos="fade-up" data-aos-delay="550">Treat you</strong>
                 </div>
-                <div class="story_bottom">
+                <div class="story_bottom" data-aos="fade-up" data-aos-delay="750">
                     <span>한 번의 의료서비스가</span>
                     <strong>세상을 치료합니다.</strong>
                     <p>연령과 질병에 따라 어르신뿐만 아니라 아이까지 환자에 맞는 전문 요양 및 재활, 투석, 호스피스 등 의료서비스를 제공하고 있으며, 특히 가정에서 모시기 어려운 치매와 중풍 등의 만성질환으로 인한 가족의 부담을 덜어드리고자 전문인력에 의한 24시간 간병인 시스템을 도입해 정성을 다해 의료서비스를 제공하고 있습니다.</p>
                     <div class="more"><a href="#">READ MORE</a></div>
                 </div>
+                <script>// 반드시 콘텐츠 하단에 배치해야 한다.
+                    AOS.init({
+                    offset: 150, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+                    duration: 500, // 애니메이션 효과가 작동되는 시간
+                    easing: 'ease', // 가속도
+                    });
+                </script>
             </div>
         </div>
     </section>
-</body>
-</html>
+
+    <section class="guide">
+        <div class="wrapper">
+            <h2 class="blind">공간안내</h2>
+            <div class="guide_top">
+                <div class="tit aos-init aos-animate" data-aos="fade-up"  data-aos-delay="500">
+                    <h3>공간안내</h3>
+                    <p>멍글멍글팻글램핑에서 반려견 친화적인 시설들을 만나보세요</p>
+                </div>
+                <div class="tab_menu aos-init aos-animate" data-aos="fade-up"  data-aos-delay="600">
+                    <button class="menu1 on">소형견 글램핑</button>
+                    <button class="menu2">대형견 글램핑</button>
+                    <button class="menu3">천연 잔디 운동장</button>
+                    <button class="menu4">반려견 전용 수영장</button>
+                    <button class="menu5">반려견 샤워부스</button>
+                    <button class="menu6">반려견 드라이룸</button>
+                </div>
+            </div>
+            <div class="guide_bottom aos-init aos-animate" data-aos="fade-up"  data-aos-delay="750">
+                <ul>
+                    <li class="menu1 on">
+                        <div class="photo"><img src="images/1.jpg" alt="강아지1"></div>
+                        <div class="tit">
+                            <h4>소형견 글램핑</h4>
+                            <p>작은 아이들을 위한 필수품 완벽 구비</p>
+                            <a href="#">VIEW MORE</a>
+                        </div>
+                    </li>
+                    <li class="menu2">
+                        <div class="photo"><img src="images/2.jpg" alt="강아지2"></div>
+                        <div class="tit">
+                            <h4>대형견 글램핑</h4>
+                            <p>대형견들만을 위한 구역에서 안전하고 즐거운 놀이</p>
+                            <a href="#">VIEW MORE</a>
+                        </div>
+                    </li>
+                    <li class="menu3">
+                        <div class="photo"><img src="images/3.jpg" alt="강아지3"></div>
+                        <div class="tit">
+                            <h4>천연 잔디 운동장</h4>
+                            <p>안전하고 푹신한 잔디밭을 내 것 처럼</p>
+                            <a href="#">VIEW MORE</a>
+                        </div>
+                    </li>
+                    <li class="menu4">
+                        <div class="photo"><img src="images/4.jpg" alt="강아지4"></div>
+                        <div class="tit">
+                            <h4>반려견 전용 수영장</h4>
+                            <p>오직 반려견들만을 위한 대형 수영장</p>
+                            <a href="#">VIEW MORE</a>
+                        </div>
+                    </li>
+                    <li class="menu5">
+                        <div class="photo"><img src="images/5.jpg" alt="강아지5"></div>
+                        <div class="tit">
+                            <h4>반려견 샤워부스</h4>
+                            <p>물에 젖은 우리 아이, 차에 태우기 전에 씻겨주세요</p>
+                            <a href="#">VIEW MORE</a>
+                        </div>
+                    </li>
+                    <li class="menu6">
+                        <div class="photo"><img src="images/6.jpg" alt="강아지6"></div>
+                        <div class="tit">
+                            <h4>반려견 드라이룸</h4>
+                            <p>최고성능 드라이룸 10대 구비</p>
+                            <a href="#">VIEW MORE</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="room">
+        <div class="tit">
+            <h2>곤지암 리조트</h2>
+            <p>최고의 편안함과 품격있는 휴가를 위한 선택</p>
+        </div>
+        <div class="list">
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div class="photo"><img src="images/room-1.jpg" alt="룸1타입"></div>
+                            <div class="list_tit">
+                                <h3>디럭스 A타입</h3>
+                                <span>방2개, 욕실1개</span>
+                                <p>투숙인원 4인</p>
+                            </div>
+                        </a>
+                    </li> 
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div class="photo"><img src="images/room-2.jpg" alt="룸2타입"></div>
+                            <div class="list_tit">
+                                <h3>디럭스 B타입</h3>
+                                <span>방1개, 욕실1개</span>
+                                <p>투숙인원 2인</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div class="photo"><img src="images/room-3.jpg" alt="룸3타입"></div>
+                            <div class="list_tit">
+                                <h3>디럭스 C타입</h3>
+                                <span>방2개, 욕실1개</span>
+                                <p>투숙인원 4인</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div class="photo"><img src="images/room-4.jpg" alt="룸4타입"></div>
+                            <div class="list_tit">
+                                <h3>디럭스 D타입</h3>
+                                <span>방2개, 욕실1개</span>
+                                <p>투숙인원 6인</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>

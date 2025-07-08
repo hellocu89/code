@@ -16,3 +16,223 @@
 	url(../font/Pretendard-Regular.woff2) format('woff2'), 
 	url(../font/Pretendard-Regular.woff) format('woff');
 }
+
+
+.guide {
+    margin: 100px 2% 0 2%;
+}
+.guide h2 {
+    display: none;
+}
+.guide .inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.guide .tit h3 {
+    color: var(--color-main-tit);
+    font-size: 3.12rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+.guide .tit p {
+    font-size: 1.37rem;
+}
+.guide .tab_detail {
+    margin-top: 30px;
+}
+.guide .tab_detail ul li {
+    position: relative; /* tit 정렬 기준 */
+}
+.guide .tab_detail ul li .photo {
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    border-radius: 39px;
+}
+.guide .tab_detail ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.guide .tab_detail ul li>.tit {
+    position: absolute; /* li 기준 정렬 */
+    right: 17%;
+    bottom: 53px;
+    text-align: right;
+    color: #fff;
+}
+.guide .tab_detail ul li>.tit h4 {
+    font-size: 2.62rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+.guide .tab_detail ul li>.tit a {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 1.37rem;
+    border: 1px solid #fff;
+    border-radius: 24px;
+    padding: 9px 52px 9px 22px;
+    position: relative; /* after 정렬 기준 */
+}
+.guide .tab_detail ul li>.tit a::after {
+    position: absolute;
+    right: 19px;
+    top: 15px;
+    width: 21px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5384 15.9616L12.4768 14.8827L18.6095 8.74996H0.5V7.24996H18.6095L12.4768 1.11721L13.5384 0.0383301L21.5 7.99996L13.5384 15.9616Z' fill='white'/%3E%3C/svg%3E%0A");
+    content: "";
+}
+.guide .tab_detail ul li>.tit a:hover {
+    background-color: var(--color-main-blue);
+    border-color: var(--color-main-blue);
+}
+/* tab menu 구현 */
+.guide .tab_menu br {
+    display: none;
+}
+.guide .tab_menu button {
+    color: #b2b2b2;
+    font-size: 1.06rem;
+    width: 151px;
+}
+.guide .tab_menu button.on {
+    color: var(--color-main-tit);
+    font-weight: 800;
+    font-size: 1rem;
+    border: 1px solid #1d1d1d;
+    border-radius: 10px;
+    padding: 7px 0;
+}
+.guide .tab_detail ul li {
+    display: none;
+}
+.guide .tab_detail ul li.on {
+    display: block;
+}
+/* //tab menu 구현 */
+@media screen and (max-width:1300px) {
+    .guide .tit h3 {
+        font-size: 2.68rem;
+    }
+    .guide .tit p {
+        font-size: 1.18rem;
+    }
+    .guide .tab_menu button {
+        font-size: 1rem;
+        width: 130px;
+        height: 30px;
+    }
+    .guide .tab_menu button.on {
+        font-size: 1rem;
+        border-radius: 7px;
+        padding: 0;
+    }
+    .guide .tab_menu br {
+        display: block;
+    }
+    .guide .tab_detail ul li .photo {
+        border-radius: 20px;
+    }
+    .guide .tab_detail ul li>.tit h4 {
+        font-size: 2.18rem;
+    }
+    .guide .tab_detail ul li>.tit a {
+        margin-top: 17px;
+        font-size: 1.18rem;
+        border: 1px solid #fff;
+        border-radius: 24px;
+        padding: 7px 52px 7px 22px;
+        position: relative; /* after 정렬 기준 */
+    }
+    .guide .tab_detail ul li>.tit a::after {
+        top: 13px;
+        width: 17px;
+        height: 13px;
+    }
+}/* //guide_media_1300*/
+@media screen and (max-width:880px) {
+    .guide {
+        margin: 81px 4% 0 4%;
+    }
+    .guide .inner {
+        display: block;
+    }
+    .guide .tit {
+        text-align: center;
+    }
+    .guide .tit h3 {
+        font-size: 1.56rem;
+        margin-bottom: 2px;
+    }
+    .guide .tit p {
+        font-size: 14px;
+    }
+    .guide .tab_menu {
+        margin-top: 23px;
+        overflow-x: auto;
+    }
+    .guide .tab_menu .tab_list {
+        display: flex;
+    }
+    .guide .tab_menu br {
+        display: none;
+    }
+    .guide .tab_menu button {
+        font-size: 14px;
+        width: 128px;
+        height: auto;
+        white-space: nowrap;
+        margin-right: 15px;
+    }
+    .guide .tab_menu button.on {
+        font-size: 14px;
+        border: 1px solid #1d1d1d;
+        border-radius: 8px;
+        padding: 4px 10px;
+    }
+    .guide .tab_menu::-webkit-scrollbar {
+        height: 0;
+        background-color: transparent;
+    }
+    .guide .tab_menu::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    .guide .tab_menu::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    .guide .tab_detail {
+        margin-top: 10px;
+    }
+    .guide .tab_detail ul li .photo {
+        border-radius: 0;
+        height: 242px;
+    }
+    .guide .tab_detail ul li>.tit {
+        right: 3%;
+        bottom: 23px;
+        text-align: right;
+        color: #fff;
+    }
+    .guide .tab_detail ul li>.tit h4 {
+        font-size: 1.31rem;
+        margin-bottom: 3px;
+    }
+    .guide .tab_detail ul li>.tit a {
+        margin-top: 18px;
+        font-size: 14px;
+        padding: 3px 37px 3px 17px;
+    }
+    .guide .tab_detail ul li>.tit a::after {
+        position: absolute;
+        right: 16px;
+        top: 7px;
+        width: 14px;
+        height: 11px;
+    }
+}/* //guide_media_880*/
